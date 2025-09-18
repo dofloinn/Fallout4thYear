@@ -1,0 +1,58 @@
+{
+  "cascadeColors": true,
+  "colorBackground": true,
+  "palette": [
+    {
+      "id": "QLDDjRqzwHHmvn4xI8uy4",
+      "name": "Red",
+      "value": "#ff0000"
+    },
+    {
+      "id": "51D7FcRISHXEJT59y0GWN",
+      "name": "Yellow",
+      "value": "#f1ff33"
+    },
+    {
+      "id": "EmCYt779DrypfZI_C_SsI",
+      "name": "Green",
+      "value": "#12fd41"
+    },
+    {
+      "id": "NCK2OqkJhxdmAX-LPH2al",
+      "name": "Blue",
+      "value": "#2efffc"
+    },
+    {
+      "id": "BCGoIRmJDiEHMQGxWYgcb",
+      "name": "Purple",
+      "value": "#ad0fe6"
+    },
+    {
+      "id": "9uNqN9Ik5G5ka4WTYhe4x",
+      "name": "Pink",
+      "value": "#ff00dd"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "1_Advanced Databases",
+      "color": "EmCYt779DrypfZI_C_SsI"
+    },
+    {
+      "path": "1_Distributed Systems",
+      "color": "51D7FcRISHXEJT59y0GWN"
+    },
+    {
+      "path": "1_Forensics",
+      "color": "NCK2OqkJhxdmAX-LPH2al"
+    },
+    {
+      "path": "1_Image Processing",
+      "color": "BCGoIRmJDiEHMQGxWYgcb"
+    },
+    {
+      "path": "Final Year Project",
+      "color": "9uNqN9Ik5G5ka4WTYhe4x"
+    }
+  ]
+}
