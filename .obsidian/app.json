@@ -1,3 +1,7 @@
 {
-  "showLineNumber": true
+  "showLineNumber": true,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "root",
+  "newFileFolderPath": "images",
+  "attachmentFolderPath": "images"
 }

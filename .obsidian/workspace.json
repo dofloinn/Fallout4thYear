@@ -1,26 +1,24 @@
 {
   "main": {
-    "id": "be561d620ffd60ac",
+    "id": "40d06f4f090855a6",
     "type": "split",
     "children": [
       {
-        "id": "c4d86fc9723312e7",
+        "id": "d3219d711aa42e9b",
         "type": "tabs",
         "children": [
           {
-            "id": "cdd26fe593454570",
+            "id": "68c49fbef954a16a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Distributed Systems/02 Lab Notes - Python and Java Networking.md",
-                "file": "Final Year Project/00 General.md",
+                "file": "1_Advanced Databases/02 Data Models.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 Lab Notes - Python and Java Networking"
-              "title": "00 General"
+              "title": "02 Data Models"
             }
           }
         ]
@@ -29,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "3fc0ab810e15e625",
+    "id": "0c1fc13e57447d59",
     "type": "split",
     "children": [
       {
-        "id": "6255d40d7a14a359",
+        "id": "641f180dfc4827ef",
         "type": "tabs",
         "children": [
           {
-            "id": "a4ef80c4f211837b",
+            "id": "058e1db111519fc0",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -50,7 +48,7 @@
             }
           },
           {
-            "id": "f5bb7498c068c75e",
+            "id": "3bc902739e6201f2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,7 +65,7 @@
             }
           },
           {
-            "id": "70cc0c0441d71956",
+            "id": "9f9253515e8bf4af",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -80,23 +78,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "ffe5c355043a0e0b",
+    "id": "39f7645219470cf8",
     "type": "split",
     "children": [
       {
-        "id": "79785152795338b6",
+        "id": "0e8b90e342c42e89",
         "type": "tabs",
         "children": [
           {
-            "id": "90b157624e3d83ff",
+            "id": "2e8a2bb673906310",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1_Forensics/00 General.md",
+                "file": "1_Advanced Databases/02 Data Models.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,25 +105,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 00 General"
+              "title": "Backlinks for 02 Data Models"
             }
           },
           {
-            "id": "3e996bf10b0515b7",
+            "id": "95f7c802c1e02553",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1_Forensics/00 General.md",
+                "file": "1_Advanced Databases/02 Data Models.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 00 General"
+              "title": "Outgoing links from 02 Data Models"
             }
           },
           {
-            "id": "347f3b52a0fc7bfc",
+            "id": "5570c606ce44c568",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -139,18 +138,18 @@
             }
           },
           {
-            "id": "7d71da763a15670e",
+            "id": "565ff5bf3d232756",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "1_Forensics/00 General.md",
+                "file": "1_Advanced Databases/02 Data Models.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 00 General"
+              "title": "Outline of 02 Data Models"
             }
           }
         ]
@@ -172,20 +171,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "a4ef80c4f211837b",
+  "active": "68c49fbef954a16a",
   "lastOpenFiles": [
-    "1_Image Processing/00 General.md",
-    "Final Year Project/00 General.md",
+    "1_Advanced Databases/01 Introduction.md",
+    "1_Advanced Databases/02 Data Models.md",
     "1_Advanced Databases/00 General.md",
-    "1_Forensics/01 Introduction.md",
-    "1_Forensics/00 General.md",
-    "1_Distributed Systems/01 Distributed Systems Introduction.md",
-    "1_Distributed Systems/00 General.md",
-    "Final Year Project",
-    "1_Forensics",
-    "1_Image Processing",
-    "1_Advanced Databases",
-    "1_Distributed Systems",
-    "Welcome.md"
+    "images/Pasted image 20250924112925.png",
+    "images",
+    "images/Pasted image 20250924111023.png",
+    "images/Pasted image 20250924111013.png",
+    "images/Pasted image 20250924110913.png"
   ]
 }
