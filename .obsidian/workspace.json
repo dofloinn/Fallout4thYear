@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Distributed Systems/01 Distributed Systems Introduction.md",
+                "file": "1_Distributed Systems/02 Lab Notes - Python and Java Networking.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 Distributed Systems Introduction"
+              "title": "02 Lab Notes - Python and Java Networking"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ffe5c355043a0e0b",
@@ -173,8 +172,9 @@
   },
   "active": "cdd26fe593454570",
   "lastOpenFiles": [
-    "1_Distributed Systems/00 General.md",
     "1_Distributed Systems/01 Distributed Systems Introduction.md",
+    "1_Distributed Systems/02 Lab Notes - Python and Java Networking.md",
+    "1_Distributed Systems/00 General.md",
     "Final Year Project/00 General.md",
     "1_Forensics/00 General.md",
     "1_Advanced Databases/00 General.md",
