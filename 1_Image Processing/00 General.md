@@ -1,1 +1,1 @@
-Lecturer: Jane Courtney
+Lecturer: Jane Courtney and Jack O'Neill

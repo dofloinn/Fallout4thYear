@@ -79,5 +79,14 @@
       ],
       "key": "3"
     }
+  ],
+  "app:toggle-left-sidebar": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "B"
+    }
   ]
 }
