@@ -301,4 +301,98 @@ INTERSECT
 ![[Pasted image 20250928221223.png]]![[Pasted image 20250928221235.png]]
 ![[Pasted image 20250928221251.png]]
 
-# <mark style="background: #FFB8EBA6;">SLIDE 31:</mark>
+### <mark style="background: #04FF00A6;">CouchDB:</mark>
+
+```JSON
+{
+	"_id": "student_joe_001",
+	"studentDetails": {
+		"name": "Joe",
+		"age": 16,
+		"dept": "computers",
+		"hobbies": [
+			"dance",
+			"books",
+			"public speaking",
+			"golf"
+		],
+		"isClassLeader": false
+	}
+}
+```
+
+### <mark style="background: #04FF00A6;">CouchDB:</mark>
+
+<mark style="background: #04FF00A6;">_id: Required field in CouchDB:</mark>
+- You can provide your own meaningful string (e.g., "student_joe_001")
+- Or let CouchDB auto-generate one (if you omit it).
+
+<mark style="background: #04FF00A6;">_rev:</mark> Will be added automatically by CouchDB after the first save and updated on every modification.
+
+### <mark style="background: #04FF00A6;">Strengths of Document Model</mark>
+
+<mark style="background: #04FF00A6;">Flexible Schema:</mark>
+- Can handle records with different fields without needing a fixed schema.
+- New attributes can be added without database migrations.
+
+<mark style="background: #04FF00A6;">Natural Representation:</mark>
+- JSON/BSON documents map neatly to objects in code (less ORM overhead).
+- Hierarchical/nested data fits well (e.g., blog post with comments, product with variations).
+
+<mark style="background: #04FF00A6;">Efficient for Whole-Object Access:</mark>
+- Fetching a full record is fast — no joins needed for nested data.
+- Ideal when the application usually needs the whole document.
+
+<mark style="background: #04FF00A6;">High Scalability and Distribution:</mark>
+- Designed to scale horizontally via partitioning (sharding).
+- Can be easily replicated for fault tolerance and load balancing.
+
+<mark style="background: #04FF00A6;">Good Fit for Web and APIs:</mark> Works natively with JSON, which is common in REST and GraphQL APIs. 
+
+<mark style="background: #04FF00A6;">High Insert and Read Performance:</mark>
+- Writes are efficient since documents are stored as blobs.
+- Reads are fast when fetching by ID or simple query.
+
+### <mark style="background: #04FF00A6;">Weakness of Document Model</mark>
+
+<mark style="background: #04FF00A6;">Poor at Complex Relationships:</mark>
+- No (or very limited) joins across collections.
+- If relationships exist (e.g., users → orders → products), you may duplicate data or handle joins in the application.
+
+<mark style="background: #04FF00A6;">Aggregation Limitations:</mark>
+- Some aggregations and analytics are harder or less efficient than in relational DBs.
+- Developers often need to use pipelines or external processing.
+
+<mark style="background: #04FF00A6;">Update Costs:</mark>
+- Updating a large document may require rewriting the whole object.
+- If document size changes a lot, storage fragmentation can occur.
+
+<mark style="background: #04FF00A6;">Inconsistent Schema Enforcement:</mark>
+- Flexibility can become a problem if documents drift apart in structure.
+- Application code must enforce consistency.
+
+<mark style="background: #04FF00A6;">Distribution Requires Planning:</mark>
+- Developers must carefully design partition keys/shards.
+- Poor choices can cause hotspots and uneven load.
+
+<mark style="background: #04FF00A6;">Indexing Trade-offs:</mark>
+- Indexes improve performance but come at high storage and update costs.
+- Multi-field indexes are less flexible than SQL query optimisers.
+
+### <mark style="background: #04FF00A6;">Guidelines for Choosing the Document Model</mark>
+
+<mark style="background: #04FF00A6;">Data Looks Semi-Structured:</mark>
+- A rigid schema doesn’t fit — a flexible document model (JSON) is more natural.
+- E.g. looking at product catalogues where each item has different attributes- books have authors, electronics have warranty info, clothing has sizes.
+
+<mark style="background: #04FF00A6;">Schema Changes Frequently:</mark>
+- e.g. today, need to store `deliveryInstructions`; tomorrow might need `giftWrapOption`.
+- With documents, can add new fields without changing the whole database schema.
+
+<mark style="background: #04FF00A6;">Records Are Hierarchical or Nested:</mark>
+- e.g. a blog post has comments, tags, likes, and embedded user details.
+- All this can live inside a single JSON document instead of spreading across multiple tables.
+
+<mark style="background: #04FF00A6;">Data Will Be Accessed as Whole Objects:</mark>
+- e.g. the app often fetches an entire user profile or order with all details at once.
+- A single document read is faster than joining multiple relational tables

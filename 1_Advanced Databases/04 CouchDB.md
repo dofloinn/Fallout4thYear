@@ -320,9 +320,6 @@ We can create this view function as a string stored inside the views field of a 
 - Creates an entry in our view result.
 - Can be called multiple times in the map function to create multiple entries in the view results from a single document.
 
-Suppose we want to query our Students data by course and by
-degree
-
 ```json
 {
 	"_id": "_design/students",
@@ -339,4 +336,117 @@ degree
 }
 ```
 
-# <mark style="background: #FFB8EBA6;">SLIDE 39</mark>
+### <mark style="background: #04FF00A6;">View - Filter:</mark>
+
+Suppose we want to query our Students data by course and by
+degree
+
+<mark style="background: #04FF00A6;">To create this view you can use this command:</mark>
+
+```bash
+curl -X PUT http://admin:couchdb@127.0.0.1:5984/students/_design/students \
+	-H "Content-Type: application/json" \
+	-d '{
+		"_id": "_design/students",
+		"views": {
+			"by_course": {
+				"map": "function(doc) { if (doc.course_name) { emit(doc.course_name, doc); } }"
+			},
+			"by_degree": {
+				"map": "function(doc) { if (doc.degree_name) { emit(doc.degree_name, doc); } }"
+			}
+		}
+	}'
+```
+
+``<Curl Command> <server>/db/_design/nameofdesigndoc –d {view : map function}``
+
+We then query the view, CouchDB takes the source code and runs it for you on every document in the database your view was defined in. You query your view to retrieve the view result using the following command:
+
+``curl -X GET "http://admin:couchdb@127.0.0.1:5984/students/_design/students/_view/by_course"``
+
+### <mark style="background: #04FF00A6;">Map Functions</mark>
+
+<mark style="background: #04FF00A6;">All map functions have a single parameter doc:</mark>
+- This is a single document in the database.
+- In our example the map function checks whether our document has a `course_name` attribute
+- It then calls the built-in emit() function with that attribute as an argument
+- `emit()` takes 2 arguments
+- The first is key, the second is value
+- This creates an entry in our View Result
+- It can be called multiple times in a map function to create multiple entries in the view result from a single document
+
+CouchDB uses a B-tree storage engine.
+
+<mark style="background: #04FF00A6;">B-tree:</mark> a sorted data structure that allows for searches, insertions, and deletions in logarithmic time
+
+![[Pasted image 20250930104016.png]]
+
+### <mark style="background: #04FF00A6;">How does it work?</mark>
+
+When you query your view, CouchDB takes the source code and runs it for you on every document in the database.
+
+<mark style="background: #04FF00A6;">If you have a lot of documents, that takes quite a bit of time:</mark>
+- CouchDB is designed to avoid any extra costs: it only runs through all documents once, when you first query your view.
+- If a document is changed, the map function is only run once, to recompute the keys and values for that single document.
+
+<mark style="background: #04FF00A6;">The view result is stored in a B-tree, just like the structure that is responsible for holding your documents:</mark>
+- View B-trees are stored in their own file.
+- The B-tree provides very fast lookups of rows by key, as well as efficient streaming of rows in a key range. In our example, a single view can answer all questions that involve time: “Give me all the blog posts from last week” or “last month” or “this year.”
+
+### <mark style="background: #04FF00A6;">MapReduce</mark>
+
+<mark style="background: #04FF00A6;">Reduce</mark> function operates on rows emitted from the map function
+
+Suppose for our course data we wanted to count how many students were taking a course
+
+We create a design document ``coursematch``
+
+<mark style="background: #04FF00A6;">We define a map function to emit course names:</mark>
+```JS
+if (doc.course_name) {
+	emit(doc.course_name, 1);
+}
+```
+
+<mark style="background: #04FF00A6;">We define a reduce function:</mark>
+
+```JS
+sum(values)
+// we use _sum
+```
+
+<mark style="background: #04FF00A6;">To create the design document we need to ensure that CouchDB knows it is a view:</mark>
+
+```json
+{ 
+	"_id": "_design/course_counts",
+	"views": { 
+		"course_count": { 
+			"map": "function(doc) { if (doc.course_name) { emit(doc.course_name, 1); } }",
+			"reduce": "_sum" 
+		} 
+	}
+}
+```
+
+<mark style="background: #04FF00A6;">We can execute the view in a Browser:</mark>
+http://admin:couchdb@127.0.0.1:5984/students/_design/course_counts/_view/course_count
+
+<mark style="background: #04FF00A6;">Showing the groupings per course:</mark>
+http://admin:couchdb@127.0.0.1:5984/students/_design/course_counts/_view/course_count?group=true
+
+### <mark style="background: #04FF00A6;">Consistency</mark>
+
+The CouchDB file layout and commitment system features all <mark style="background: #04FF00A6;">Atomic Consistent Isolated Durable (ACID) properties</mark>.
+
+On-disk, CouchDB never overwrites committed data or associated structures, ensuring the database file is always in a consistent state.
+
+Single document updates (add, edit, delete) are all or nothing, either succeeding entirely or failing completely.
+
+The database never contains partially saved or edited documents
+
+<mark style="background: #04FF00A6;">The CouchDB document update model is lockless and optimistic:</mark>
+- Document edits are made by client applications loading documents, applying changes, and saving them back to the database.
+- If another client editing the same document saves their changes first, the client gets an edit conflict error on save.
+- To resolve the update conflict the latest document version can be opened, the edits reapplied and the update tried again.
