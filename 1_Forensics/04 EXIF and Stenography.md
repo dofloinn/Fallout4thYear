@@ -109,3 +109,29 @@ When files are uploaded to web platforms the EXIF metadata can be removed.
 For a forensic investigation it is always good to find pictures relating to the case.  
 
 It will be important to determine where, when, and with what device the pictures were taken.
+
+### <mark style="background: #00ECFFA6;">Steganography with Steghide</mark>
+
+<mark style="background: #00ECFFA6;">Steganography:</mark> concealing a message within another message or a physical object
+
+“Steghide is a steganography program that is able to hide data in various kinds of image- and audio-files. The colour- respectively sample-frequencies are not changed thus making the embedding resistant against first-order statistical tests.”
+
+<mark style="background: #00ECFFA6;">Stegdetect</mark> is an automated tool for detecting steganographic content in images. It is capable of detecting several different steganographic methods to embed hidden information in JPEG images.  
+
+<mark style="background: #00ECFFA6;">Machine Learning:</mark>  
+- Detection of Image Steganography Using Deep Learning and Ensemble Classifiers  
+- Using machine learning to analyse and improve digital images, the practice of steganalysis is gaining in popularity.
+
+<mark style="background: #00ECFFA6;">Command to hide:</mark>
+`steghide embed -cf earth.jpg -ef Forensics_Open_Book_Exam_2020.pdf`
+
+<mark style="background: #00ECFFA6;">Breakdown:</mark>
+- steghide — The name of the program  
+- embed — This is the command  
+- -cf — This flag is for the cover file (file used to embed data)  
+- filename — This is the name of the cover file (earth.jpg)  
+- -ef — This flag is for the embed file (file that will be embedded)  
+- filename — This is the name of the embedded file (Forensics_Open_Book_Exam_2020.pdf)
+
+<mark style="background: #00ECFFA6;">Command to extract:</mark>
+`steghide extract -sf Clouds.JPG`
