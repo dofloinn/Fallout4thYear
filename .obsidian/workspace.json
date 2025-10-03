@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Image Processing/01 Image Basics.md",
+                "file": "1_Forensics/04 EXIF and Stenography.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 Image Basics"
+              "title": "04 EXIF and Stenography"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5,
-    "collapsed": true
+    "width": 253.5
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -183,21 +182,26 @@
   },
   "active": "68c49fbef954a16a",
   "lastOpenFiles": [
-    "images/Pasted image 20251001101138.png",
-    "images/Pasted image 20251001101119.png",
-    "images/Pasted image 20251001101030.png",
-    "images/Pasted image 20251001100935.png",
-    "images/Pasted image 20251001100916.png",
-    "images/Pasted image 20251001100804.png",
-    "images/Pasted image 20251001100734.png",
-    "images/Pasted image 20251001100620.png",
-    "images/Pasted image 20251001100557.png",
-    "images/Pasted image 20251001100520.png",
-    "images/Pasted image 20251001100034.png",
+    "1_Advanced Databases/06 Data Replication.md",
+    "1_Forensics/04 EXIF and Stenography.md",
+    "images/Pasted image 20251003100452.png",
+    "images/Pasted image 20251002164521.png",
+    "images/Pasted image 20251002163310.png",
+    "images/Pasted image 20251002163011.png",
+    "images/Pasted image 20251002162557.png",
+    "images/Pasted image 20251002162506.png",
+    "images/Pasted image 20251002162408.png",
+    "images/Pasted image 20251002160806.png",
+    "1_Advanced Databases/05 Lab - CouchDb.md",
+    "images/Pasted image 20251002153742.png",
+    "images/Pasted image 20251002153656.png",
+    "1_Distributed Systems/Producer and Consumer Problem.md",
+    "1_Distributed Systems/06 Lab Notes - Multithreading.md",
+    "1_Distributed Systems/05 Concurrency.md",
+    "1_Image Processing/01 Image Basics.md",
     "1_Forensics/01 Introduction.md",
     "1_Image Processing/00 General.md",
     "1_Forensics/00 General.md",
-    "1_Image Processing/01 Image Basics.md",
     "1_Distributed Systems/04 Lab Notes - Socket Communication.md",
     "1_Distributed Systems/03 Communication.md",
     "1_Distributed Systems/02 Lab Notes - Python and Java Networking.md",

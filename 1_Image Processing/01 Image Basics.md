@@ -272,3 +272,92 @@ I[i,j,:] = 255
 The first fills all the pixels in the rectangle from (300, 100) to (400, 200) in blue.  
 
 The second sets the pixel at location (i,j) to white
+
+### <mark style="background: #C900FFA6;">Drawing on Images:</mark>
+
+<mark style="background: #C900FFA6;">Keep a Copy:</mark>  
+- Before you start doodling on your image, you may want to keep a backup copy to revert if things get messy.  
+- To do this, call the copy function:  ``Original = I.copy()``  
+- Original is now a copy of the image I.
+
+### <mark style="background: #C900FFA6;">Drawing a Line</mark>  
+
+To draw a line, we need the endpoints, colour and thickness...  
+
+```python
+cv2.line(img = I, pt1 = (200,200), pt2 =  
+(500,600), color = (255,255,255), thickness = 5)
+```  
+
+This will draw a 5-pixel thick white line from (200,200) to (500,600).*
+
+<mark style="background: #C900FFA6;">*Note:</mark> images start counting from the top left as they are matrices and these are (x,y) coordinates.
+
+![[Pasted image 20251001141803.png]]
+
+### <mark style="background: #C900FFA6;">Drawing a Circle</mark>
+
+To draw a circle, we need the centre, radius, colour and thickness...  
+
+```python
+cv2.circle(img = I, center = (800,400), radius =  
+50, color = (0,0,255), thickness = -1)
+```
+
+This will draw a red circle at (800,400) with radius 50.  
+
+A thickness of -1 leads to a filled circle.  
+
+Otherwise, thickness behaves as before in the line function.
+
+### <mark style="background: #C900FFA6;">Drawing a Rectangle</mark> 
+
+To draw a rectangle, we need the top-left and bottom-right corners, colour and thickness...  
+
+```
+cv2.rectangle(img = I, pt1 = (500,100), pt2 = (800,300), color = (255,0,255), thickness = 10)
+```
+
+This will draw a 10-pixel thick, magenta rectangle from (500,100) to (800,300).
+
+![[Pasted image 20251001142011.png]]
+
+### <mark style="background: #C900FFA6;">Drawing on Images</mark>
+
+There are many other drawing tools available, including text boxes, ellipses, polygons, etc.  
+
+These and more drawing and plotting functions can also be performed in MatPlotLib.  
+
+For more specific drawing, we need to know how to access the pixels.
+
+### <mark style="background: #C900FFA6;">User Input</mark>
+
+Capturing user input can be a very useful thing in designing a user interface.  
+
+We can access the location where a user has clicked using mouse events.  
+
+To do this, we need to initialise a <mark style="background: #C900FFA6;">window</mark> for the image and a callback <mark style="background: #C900FFA6;">function</mark> for the mouse event.  
+
+This involves a bit more coding ...
+
+![[Pasted image 20251001142135.png]]
+
+<mark style="background: #C900FFA6;">Task:</mark>
+1. Open a user-selected image (if easygui is available on your platform)
+2. Show this image on the screen;  
+3. Capture the user’s click on the image;  
+4. Draw a 201 x 201, 5-pixel thick red square around this location;  
+5. Convert the pixels within the square to YUV.  
+
+<mark style="background: #C900FFA6;">Advanced Task:</mark> Don’t fall off the edge!
+
+<mark style="background: #C900FFA6;">In this section you have learned about:</mark>  
+- Digital Images  
+- Colour Spaces  
+- Reading and Writing Images  
+- Showing Images  
+- Pixels  
+- Drawing on Images  
+- User Input  
+
+These topics were implemented and tested in Python with OpenCV.
