@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5e2560fe4376aedc",
+        "id": "4cff8134bc948e96",
         "type": "tabs",
         "children": [
           {
-            "id": "a360a6cfd64e9212",
+            "id": "2dae42c5fb818802",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Advanced Databases/08 Cassandra.md",
+                "file": "1_Advanced Databases/11 CouchDB Document Collections.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08 Cassandra"
+              "title": "11 CouchDB Document Collections"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "table",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -180,29 +181,38 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "a360a6cfd64e9212",
+  "active": "2dae42c5fb818802",
   "lastOpenFiles": [
-    "images/Pasted image 20251010122756.png",
-    "images/Pasted image 20251010122742.png",
-    "images/Pasted image 20251010122512.png",
-    "images/Pasted image 20251010120628.png",
-    "images/Pasted image 20251010120310.png",
-    "images/Pasted image 20251010120226.png",
-    "images/Pasted image 20251010120134.png",
-    "images/Pasted image 20251010115916.png",
-    "images/Pasted image 20251010115821.png",
-    "images/Pasted image 20251010115451.png",
-    "images/Pasted image 20251010114819.png",
+    "images/Pasted image 20251017161738.png",
+    "images/Pasted image 20251017161659.png",
+    "1_Advanced Databases/10 Data Warehousing.md",
+    "1_Advanced Databases/11 CouchDB Document Collections.md",
+    "images/Pasted image 20251017160337.png",
+    "images/Pasted image 20251017160246.png",
+    "images/Pasted image 20251017160150.png",
+    "images/Pasted image 20251017154845.png",
+    "images/Pasted image 20251017154515.png",
+    "images/Pasted image 20251017154433.png",
+    "images/Pasted image 20251017154423.png",
+    "images/Pasted image 20251017142139.png",
+    "images/Pasted image 20251017141942.png",
+    "1_Forensics/06 NTFS and MTF.md",
+    "1_Forensics/07 CA.md",
     "1_Forensics/05 Case Management & Report Writing and Tools of the Digital Investigator.md",
+    "1_Distributed Systems/11 Clock Synchronisation.md",
+    "1_Distributed Systems/10 Remote Invocation.md",
+    "1_Advanced Databases/02 Data Models.md",
+    "1_Advanced Databases/09 Lab - Couch DB Replication and Cassandra.md",
     "1_Advanced Databases/08 Cassandra.md",
-    "1_Advanced Databases/07 Denormalisation.md",
+    "1_Image Processing/02 Transformation.md",
     "1_Distributed Systems/08 Architectures.md",
     "1_Distributed Systems/09 Lab Notes - HTTP Usage in Distributed Systems.md",
+    "Final Year Project/04 System Feasibility.md",
+    "1_Advanced Databases/07 Denormalisation.md",
     "1_Forensics/04 EXIF and Stenography.md",
     "Final Year Project/00 General.md",
     "1_Distributed Systems/07 Producer and Consumer Problem.md",
     "Untitled",
-    "1_Image Processing/02 Transformation.md",
     "1_Distributed Systems/01 Distributed Systems Introduction.md",
     "1_Advanced Databases/06 Data Replication.md",
     "Final Year Project/01 FYP Overview.md",
@@ -210,15 +220,6 @@
     "Final Year Project/03 Project Ideas.md",
     "1_Image Processing/01 Image Basics.md",
     "1_Advanced Databases/05 Lab - CouchDb.md",
-    "1_Distributed Systems/06 Lab Notes - Multithreading.md",
-    "1_Distributed Systems/05 Concurrency.md",
-    "1_Forensics/01 Introduction.md",
-    "1_Image Processing/00 General.md",
-    "1_Forensics/00 General.md",
-    "1_Distributed Systems/04 Lab Notes - Socket Communication.md",
-    "1_Distributed Systems/03 Communication.md",
-    "1_Distributed Systems/02 Lab Notes - Python and Java Networking.md",
-    "1_Distributed Systems/00 General.md",
     "images"
   ]
 }
