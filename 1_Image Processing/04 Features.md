@@ -1,4 +1,4 @@
-<mark style="background: #C900FFA6;">This section will cover:</mark>  
+v<mark style="background: #C900FFA6;">This section will cover:</mark>  
 - Edges & Gradients  
 - Corners  
 - Contours  
