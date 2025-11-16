@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Advanced Databases/16 Improving CouchDB Performance.md",
+                "file": "1_Image Processing/04 Features.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "16 Improving CouchDB Performance"
+              "title": "04 Features"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -181,23 +182,24 @@
   },
   "active": "2dae42c5fb818802",
   "lastOpenFiles": [
-    "images/Pasted image 20251111174647.png",
-    "1_Advanced Databases/15 Improving PostgreSQL Performance.md",
+    "images/Pasted image 20251116175229.png",
+    "images/Pasted image 20251116175156.png",
+    "images/Pasted image 20251116175126.png",
+    "images/Pasted image 20251116175047.png",
+    "images/Pasted image 20251116174544.png",
+    "images/Pasted image 20251116174413.png",
+    "images/Pasted image 20251116174102.png",
+    "images/Pasted image 20251116174050.png",
+    "images/Pasted image 20251116174035.png",
+    "images/Pasted image 20251116174004.png",
+    "images/Pasted image 20251116173943.png",
+    "1_Image Processing/03 Segmentation.md",
+    "1_Image Processing/04 Features.md",
     "1_Advanced Databases/16 Improving CouchDB Performance.md",
+    "1_Advanced Databases/15 Improving PostgreSQL Performance.md",
     "1_Forensics/10 Memory Forensics.md",
     "1_Advanced Databases/14 Relational Database Query Processing.md",
-    "images/Pasted image 20251106163116.png",
-    "images/Pasted image 20251106162336.png",
-    "images/Pasted image 20251106162207.png",
-    "images/Pasted image 20251106160421.png",
-    "images/Pasted image 20251106151619.png",
-    "images/Pasted image 20251106145518.png",
-    "images/Pasted image 20251106143931.png",
-    "images/Pasted image 20251106142431.png",
-    "images/Pasted image 20251106142305.png",
     "1_Distributed Systems/13 Indirect Communication.md",
-    "images/Pasted image 20251106140726.png",
-    "1_Image Processing/03 Segmentation.md",
     "Final Year Project/06 Project Critical Thinking.md",
     "1_Forensics/04 EXIF and Steganography.md",
     "1_Forensics/01 Introduction.md",
@@ -216,7 +218,6 @@
     "1_Image Processing/01 Image Basics.md",
     "1_Image Processing/00 General.md",
     "Final Year Project/05 Literature Review.md",
-    "1_Advanced Databases/11 CouchDB Document Collections.md",
     "Untitled",
     "images"
   ]

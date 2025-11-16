@@ -287,5 +287,185 @@ B is the combined mask and B1 and B2 are the originals.
 5. Use the inverse of the orange mask to cut an orange-shaped hole in the water picture;  
 6. Combine the orange and water masked images to create a composite image.
 
-# <mark style="background: #FFB8EBA6;">DO MORPHOLOGY</mark>
+### <mark style="background: #C900FFA6;">Morphology</mark>
 
+In real images, ROIs are not so easily defined.  
+
+Thresholding will give a general segmentation but there are likely to be imperfections.  
+
+These include holes (missing ROI pixels) and blobs (extra ROI pixels).  
+
+To fix these issues, we use a technique called morphology.
+
+<mark style="background: #C900FFA6;">Morphology</mark> means shape analysis.  
+
+In image processing, we use morphology to look at the shape of the ROI.  
+
+This can then be modified using morphological processing.  
+
+This is useful for clearly delineating the ROI and removing any imperfections in the shape.
+
+<mark style="background: #C900FFA6;">Here we will look at a few basic morphological processes, including:</mark>
+- Erosion  
+- Dilation  
+- Opening  
+- Closing  
+
+These can be combined and extended to develop morphological algorithms such as Boundary Extraction.
+
+### <mark style="background: #C900FFA6;">Structuring Elements:</mark> 
+
+To perform morphological processing, we use a <mark style="background: #C900FFA6;">structuring element</mark>.  
+
+This is the razor with which we will tidy the ROI.  
+
+The shape of this structuring element will determine the look of the final ROI.  
+
+A sharp shape such as a rectangle will give a blocky result while an ellipse can give a curvy result.
+
+### <mark style="background: #C900FFA6;">Erosion</mark>
+
+As it’s name suggests, erosion erodes the ROI.  
+
+This is achieved by shaving away the boundaries of the ROI using a razor in the shape of the structuring element.  
+
+This is useful for smoothing boundaries and eliminating blobs.  
+
+However, in eroding, it is important not to lose too much of our ROI.
+
+![[Pasted image 20251112140738.png]]
+
+![[Pasted image 20251112140750.png]]
+
+![[Pasted image 20251112140806.png]]
+
+![[Pasted image 20251112140822.png]]
+
+### <mark style="background: #C900FFA6;">Dilation</mark>
+
+As it’s name suggests, dilation dilates the ROI.  
+
+This is achieved by shaving away the <mark style="background: #C900FFA6;">background</mark> of the ROI using a razor in the shape of the structuring element.  
+
+This is useful for smoothing boundaries and filling gaps.  
+
+However, in dilating, it is important not to accentuate unwanted blobs.
+
+![[Pasted image 20251112140940.png]]
+![[Pasted image 20251112140955.png]]![[Pasted image 20251112141005.png]]
+
+### <mark style="background: #C900FFA6;">Opening</mark>
+
+In both Erosion and Dilation, there are gains and losses to the ROI.  
+
+Also, in both cases, the general size of the ROI is changed.  
+
+Because of this, it is better to use a combination of the two processes to achieve the desired results.  
+
+An <mark style="background: #C900FFA6;">Opening</mark> is an Erosion followed by a Dilation.  
+
+This is useful for removing unwanted blobs.
+
+![[Pasted image 20251112141126.png]]
+
+![[Pasted image 20251112141343.png]]
+
+### <mark style="background: #C900FFA6;">Closing</mark>
+
+<mark style="background: #C900FFA6;">Closing</mark> is a Dilation followed by an Erosion.  
+
+This is useful for filling small holes.
+
+![[Pasted image 20251112141422.png]]
+
+![[Pasted image 20251112141454.png]]
+
+### <mark style="background: #C900FFA6;">Final ROI</mark>
+
+Again, both Opening and Closing have their merits but to achieve a final satisfying ROI, a combo of the two gives best results.  
+
+Good results can also be achieved by iteratively repeating morphological operations.  
+
+Finally, the size and shape of the structuring element plays a significant part in determining the quality of the ROI.
+
+![[Pasted image 20251112141654.png]]
+![[Pasted image 20251112141704.png]]
+
+### <mark style="background: #C900FFA6;">Boundary Extraction</mark>
+
+The Boundary of an ROI can be useful.  
+
+This is very easily extracted by subtracting the eroded mask from the original:  
+
+```
+𝐵 = 𝑀 − 𝑒𝑟𝑜𝑑𝑒𝑑 𝑀
+```  
+
+The thickness of the boundary will be determined by the size of the structuring element.
+
+![[Pasted image 20251112141802.png]]
+![[Pasted image 20251112141814.png]]
+
+![[Pasted image 20251112141830.png]]
+
+### <mark style="background: #C900FFA6;">Structuring Elements</mark>
+
+Structuring Elements can be constructed manually but are much easier created using the getStructuringElement function:  
+
+```python
+shape = cv2.getStructuringElement(cv2.MORPH_RECT,(2,2))
+```  
+
+This will create a 2x2 rectangular structuring element, shape.  
+
+The type ``MORPH_RECT`` can be replaced by ``MORPH_ELLIPSE`` for an elliptical element.
+
+### <mark style="background: #C900FFA6;">Erosion</mark>
+
+Erosion is achieved using the erode function:  
+
+```
+NewMask = cv2.erode(OldMask,shape)
+```
+
+Where ``OldMask`` is the original binary mask and ``NewMask`` is the eroded version and shape is the structuring element used.
+
+### <mark style="background: #C900FFA6;">Dilation</mark>
+
+Dilation is achieved using the dilate function:  
+
+```python
+NewMask = cv2.dilate(OldMask,shape)
+```
+
+Where ``OldMask`` is the original binary mask and ``NewMask`` is the dilated version and shape is the structuring element used.
+
+### <mark style="background: #C900FFA6;">Opening</mark>
+
+Opening is part of the ``morphologyEx`` function:  
+
+```python
+NewMask = cv2.morphologyEx(OldMask,cv2.MORPH_OPEN,shape)
+```  
+
+Where ``OldMask`` is the original binary mask and ``NewMask`` is the opened version and <mark style="background: #C900FFA6;">shape</mark> is the structuring element used.
+
+### <mark style="background: #C900FFA6;">Closing</mark>
+
+Closing is also part of the ``morphologyEx`` function:  
+
+```python
+NewMask = cv2.morphologyEx(OldMask,cv2.MORPH_CLOSE,shape)
+```
+
+Where ``OldMask`` is the original binary mask and ``NewMask`` is the closed version and <mark style="background: #C900FFA6;">shape</mark> is the structuring element used.
+
+### <mark style="background: #C900FFA6;">Boundary Extraction</mark>
+
+Boundary extraction is included in the ``morphologyEx`` function as ``MORPH_GRADIENT``:  
+
+```python
+Boundary = cv2.morphologyEx(mask,cv2.MORPH_GRADIENT,shape)
+```  
+
+Where ``mask`` is the original binary mask and ``Boundary`` is the extracted boundary (as a binary mask) and ``shape`` is the structuring element used.
