@@ -12,7 +12,7 @@ These topics will be implemented and tested in Python with OpenCV
 
 Images are originally captured as light and converted to a signal.  
 
-These signals are then broken down into discrete pixels (sampled), creating digital images.  
+These signals are then broken down into discrete pixels (sampled), creating digital images. 
 
 Capture technologies can vary from photographic, to X-Ray, to infra-red and beyond.
 
@@ -45,7 +45,7 @@ Numpy is optimised for working with matrices. Don't double-nest your for-loops.
 
 The value that is used to represent the pixels will help describe the visual appearance of the image at that point.  
 
-We have already seen two examples of pixel representation – grayscale (2D) and RGB (3D).  
+We have already seen two examples of pixel representation – grayscale (2D) and RGB (3D). 
 
 There are many other ways to represent a pixel, in different colour spaces.
 
@@ -88,7 +88,7 @@ HSV (or HSI) stands for Hue, Saturation and Value (or Intensity).
 
 ### <mark style="background: #C900FFA6;">YUV</mark>
 
-YUV contains information about the luminance (Y) and the chrominance (UV) of an image.  
+YUV contains information about the luminance (Y) and the chrominance (UV) of an image. 
 
 This can be useful in improving the apparent quality of an image as humans see luminance variations more clearly than chrominance.  
 
@@ -194,7 +194,7 @@ cv2.imwrite('image.jpg', I)
 
 ### <mark style="background: #C900FFA6;">Showing Images</mark>
 
-Showing images on the screen can be achieved using OpenCV or MatPlotLib...  
+Showing images on the screen can be achieved using OpenCV or MatPlotLib.  
 
 ```python
 OpenCV : cv2.imshow("image", I)  
@@ -565,7 +565,7 @@ Threshold selection is often a challenge
 
 Thresholds can be selected in various ways.  
 
-Using a priori knowledge (what you already know about the image) can be reasonable in some applications.  
+Using prior knowledge (what you already know about the image) can be reasonable in some applications.  
 
 When little is known, a threshold is often selected by statistical analysis of the image.  
 
@@ -631,8 +631,7 @@ T, B = cv2.threshold(G, thresh = T, maxval = 255,  type = cv2.THRESH_BINARY)
 
 ### <mark style="background: #C900FFA6;">Threshold Selection</mark>  
 
-To select better thresholds based on statistical analysis of the image, we use Numpy.  
-
+To select better thresholds based on statistical analysis of the image, we use Numpy.
 For example, to implement a threshold of ![[Pasted image 20251022142944.png]] 
 
 ```python
@@ -799,7 +798,7 @@ B is the combined mask and B1 and B2 are the originals.
 2. Using thresholding, create a mask with the orange as ROI;  
 3. Use this mask to extract the orange from the image;  
 4. Open “Water.jpg”;  
-5. Use the inverse of the orange mask to cut an orange-shaped hole in the water picture;  
+5. Use the inverse of the orange mask to cut an orange-shaped hole in the water picture; 
 6. Combine the orange and water masked images to create a composite image.
 
 ### <mark style="background: #C900FFA6;">Morphology</mark>
@@ -1060,6 +1059,7 @@ This is a hedge:
 <mark style="background: #C900FFA6;">In Practice:</mark> 
 - Digital images are not continuous signals so derivatives make no sense.
 - Instead, they are approximated by simply subtracting the pixel intensity by its neighbour in the specific direction.
+
 ![[Pasted image 20251116162021.png]]
 
 <mark style="background: #C900FFA6;">As Kernels</mark>
