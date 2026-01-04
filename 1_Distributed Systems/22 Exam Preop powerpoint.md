@@ -16,4 +16,3 @@ Revision:
 - Lecture notes, lab notes and lab tasks should be studied to prepare for the exam
 
 When she says "discuss", it means describe, compare and contrast. No bullet points or listing.
-

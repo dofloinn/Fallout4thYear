@@ -33,18 +33,18 @@
 - Assessed in CA (partially CA)  
 
 <mark style="background: #04FF00A6;">Understand and apply:</mark>
-- Different approaches To data integration, both semantic and physical  
+- Different approaches to data integration, both semantic and physical  
 - Understand Assessed in Exam/Apply assessed in CA  
 
 <mark style="background: #04FF00A6;">Understand and apply:</mark>
-- Data modelling techniques for logical and physical design To support contemporary enterprise applications  
+- Data modelling techniques for logical and physical design to support contemporary enterprise applications  
 - Understand Assessed in Exam/Apply assessed in CA
 
 ### <mark style="background: #04FF00A6;">Key Point – What the exam IS NOT</mark>  
 
 It is not based on recall and application  
 
-Memorizing text from lecture notes and reproducing these will get you zer- marks.  
+Memorizing text from lecture notes and reproducing these will get you zero marks.  
 
 <mark style="background: #04FF00A6;">You will not be required to:</mark>
 - Write code.  
@@ -55,21 +55,21 @@ Memorizing text from lecture notes and reproducing these will get you zer- marks
 
 It is based on synthesis and evaluation  
 
-You will be expected To demonstrate knowledge and understanding  
+You will be expected to demonstrate knowledge and understanding  
 
-This will require you To explain your understanding of concepts/issues IN YOUR OWN WORDS.  
+This will require you to explain your understanding of concepts/issues IN YOUR OWN WORDS.  
 
-<mark style="background: #04FF00A6;">You will be expected To be able To apply that knowledge and understanding:</mark>
-- To discuss questions posed/ideas suggested  
-- To make decisions about issues/scenarios/applications  
-- To provide advice/guidance about issues/scenarios/applications  
-- To justify opinions/decisions/choices/advice  
+<mark style="background: #04FF00A6;">You will be expected to be able to apply that knowledge and understanding:</mark>
+- to discuss questions posed/ideas suggested  
+- to make decisions about issues/scenarios/applications  
+- to provide advice/guidance about issues/scenarios/applications  
+- to justify opinions/decisions/choices/advice
 
-<mark style="background: #04FF00A6;">You will be expected To be able to apply that knowledge and understanding:</mark>
-- To discussion of questions posed/ideas suggested  
-- To make decisions about issues/scenarios/applications  
-- To provide advice/guidance about issues/scenarios/applications  
-- To justify opinions/decisions/choices/advice
+<mark style="background: #04FF00A6;">You will be expected to be able to apply that knowledge and understanding:</mark>
+- to discussion of questions posed/ideas suggested  
+- to make decisions about issues/scenarios/applications  
+- to provide advice/guidance about issues/scenarios/applications  
+- to justify opinions/decisions/choices/advice
 
 ### <mark style="background: #04FF00A6;">The exam paper</mark>
 
@@ -79,7 +79,7 @@ Even if you answer all of these correctly, you will not get much more than a pas
 
 You must be able to demonstrate that you can synthesise your knowledge and use it to evaluate/make judgments or decision/support your opinions.
 
-<mark style="background: #04FF00A6;">Broad Topics Covered:</mark> Refer to CMPU4003 – Revision Guide.pdf
+<mark style="background: #04FF00A6;">Broad topics Covered:</mark> Refer to CMPU4003 – Revision Guide.pdf
 
 ### <mark style="background: #04FF00A6;">Tackling the Exam Paper:</mark>
 

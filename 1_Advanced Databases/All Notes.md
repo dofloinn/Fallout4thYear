@@ -13,7 +13,7 @@ And so is the variation in the type of questions analysis organisations want to 
 ![[images/Pasted image 20250924110913.png]]
 
 <mark style="background: #04FF00A6;">Big Data 5 Vs:</mark>
-- <mark style="background: #04FF00A6;">Volume:</mark> The size of the data
+- <mark style="background: #04FF00A6;">Volume:</mark> the size of the data
 - <mark style="background: #04FF00A6;">Velocity:</mark> The speed data appears and disappears
 - <mark style="background: #04FF00A6;">Veracity:</mark> The reliability of the data
 - <mark style="background: #04FF00A6;">Value:</mark> The relevance of the data
@@ -64,7 +64,9 @@ Databases needed to support contemporary enterprise applications
 
 ### <mark style="background: #04FF00A6;">Module Content:</mark>
 
-<mark style="background: #04FF00A6;">Relational database design:</mark> reviewing and distinguishing between conceptual and logical design and addressing considerations and implications of implementing physical design from logical design.
+<mark style="background: #04FF00A6;">Relational database design:</mark> 
+- reviewing and distinguishing between conceptual and logical design
+- addressing considerations and implications of implementing physical design from logical design.
 
 <mark style="background: #04FF00A6;">Data warehouses:</mark> 
 - definitions, rationale, architectures, design, implementation, and manipulation; 
@@ -410,13 +412,15 @@ INTERSECT
 - Objects and arrays can be embedded within an object
 
 ```SQL
-{ "studentDetails": {
-	"name" : "Joe",
-	"age" : 16,
-	"dept" : "computers",
-	"hobbies" : ["dance", "books", "public speaking",
-	"golf"],
-	"isClassLeader" : false
+{ 
+	"studentDetails": 
+	{
+		"name" : "Joe",
+		"age" : 16,
+		"dept" : "computers",
+		"hobbies" : ["dance", "books", "public speaking",
+		"golf"],
+		"isClassLeader" : false
 	}
 }
 ```
@@ -434,9 +438,9 @@ INTERSECT
 
 ```JSON
 {
-"name": "Joe",
-"age": 16,
-"hobbies": ["dance", "books"]
+	"name": "Joe",
+	"age": 16,
+	"hobbies": ["dance", "books"]
 }
 ```
 
@@ -567,11 +571,13 @@ INTERSECT
 
 ### <mark style="background: #04FF00A6;">Why JSONB?</mark>
 
-Offers flexibility for semi-structured data - E.g. preferences, events, attributes
+Offers flexibility for semi-structured data - E.g. preferences, events, attributes.
 
-Provides rich operators and JSONPath
+Provides rich operators and JSONPath.
 
-Allows use of GIN indexing for nested keys - Prefer columns when shape is stable and heavily queried
+<mark style="background: #04FF00A6;">GIN</mark> is the abbreviation for <mark style="background: #04FF00A6;">Generalised Inverted Index</mark> in PostgreSQL. GIN indexes search operations on various data structures that contain elements, such as arrays, JSONB, and full-text search data.
+
+Allows use of GIN indexing for nested keys - Prefer columns when shape is stable and heavily queried.
 
 ### <mark style="background: #04FF00A6;">Core operators you’ll use</mark>
 
@@ -783,48 +789,43 @@ curl -X GET http://admin:couchdb@127.0.0.1:5984/_all_dbs
 - Documents
 - Replication
 
-### <mark style="background: #04FF00A6;">Server:</mark>
-
+<mark style="background: #04FF00A6;">Server:</mark>
 ```bash
 curl -X GET
 http://adminusername:adminpassword@serveraddress:port#
 curl -X GET http://admin:couchdb@127.0.0.1:5984
 ```
 
-### <mark style="background: #04FF00A6;">Databases:</mark>
-
+<mark style="background: #04FF00A6;">Databases:</mark>
 ```bash
 curl -X GET http://admin:CouchDB@127.0.0.1:5984/_all_dbs
 ```
 
-### <mark style="background: #04FF00A6;">Create a Database:</mark>
-
+<mark style="background: #04FF00A6;">Create a Database:</mark>
 ```bash
 curl -X PUT
 http://admin:couchdb@127.0.0.1:5984/dbdemo
 ```
 
-### <mark style="background: #04FF00A6;">Delete a database:</mark>
-
+<mark style="background: #04FF00A6;">Delete a database:</mark>
 ```bash
 curl -X DELETE
 http://admin:couchdb@127.0.0.1:5984/dbdemo1
 ```
 
-### <mark style="background: #04FF00A6;">All Documents:</mark>
-
+<mark style="background: #04FF00A6;">All Documents:</mark>
 ```bash
 curl -X GET
 http://admin:couchdb@127.0.0.1:5984/examresults/_all_docs
 ```
 
-### <mark style="background: #04FF00A6;">Get a document:</mark>
-
+<mark style="background: #04FF00A6;">Get a document:</mark>
 ```
 curl -X GET http://admin:couchdb@127.0.0.1:5984/examresults/ddaac67cbfc0cd252b93a072500004ac
 ```
 
 You need to provide the id.
+
 Results in the document:
 ```
 `{"_id":"ddaac67cbfc0cd252b93a072500004ac","_rev":"5- 5b7375dbfc4f0b730c17d7cd9ff540db","studentid":69,"firs tname":"Peter smith","lastname":"Mcclain","examid":37,"examdate":"20 19-12-01","score":60.15,"grade":"C"}`
@@ -889,7 +890,7 @@ If you want to update or delete a document, then CouchDB expects you to include 
 
 <mark style="background: #04FF00A6;">When CouchDB accepts the change, it will generate a new revision number:</mark>
 - This ensures that, if somebody else made a change before you got to request the document update, CouchDB will not accept your update because you are likely to overwrite data you didn’t know existed.
-- Simple language: whoever saves a change to a document first, wins.
+- <mark style="background: #04FF00A6;">Simple language:</mark> whoever saves a change to a document first, wins.
 
 ### <mark style="background: #04FF00A6;">Bulk Loading Data:</mark>
 
@@ -940,7 +941,7 @@ CouchDB delegates computation of design documents functions to <mark style="back
 
 ### <mark style="background: #04FF00A6;">CouchDB Architecture:</mark>
 
-By default, CouchDB has a built-in Javascript query server
+By default, CouchDB has a built-in JavaScript query server
 
 We can define JavaScript functions to pull back documents/parts of documents we want to query
 
@@ -1159,7 +1160,7 @@ The database never contains partially saved or edited documents
 
 <mark style="background: #04FF00A6;">If we store all our data in a single database and that database crashes:</mark>  
 - Without replication data would at minimum become unavailable and applications unusable
-- At its most catastrophic data could be lost
+- At its most catastrophic, data could be lost
 
 <mark style="background: #04FF00A6;">If we operate in multiple geographic locations</mark>
 - If we have a single database that is located in a single region, other regions will experience latency and our application performance will be impacted
@@ -1189,7 +1190,7 @@ The database never contains partially saved or edited documents
 - Replicating data to a separate system or data warehouse allows organisations to run real-time analytics and reporting without impacting the performance of their primary operational database
 
 <mark style="background: #04FF00A6;">Compliance and Data Governance:</mark>
-- Replicating data can assist organizations in meeting compliance requirements, as it provides redundancy and data security. It also enables the implementation of data retention policies and auditing capabilities.  
+- Replicating data can assist organisations in meeting compliance requirements, as it provides redundancy and data security. It also enables the implementation of data retention policies and auditing capabilities.  
 
 <mark style="background: #04FF00A6;">Geographic Distribution:</mark>  
 - Organisations with a global presence may use data replication to ensure that users in different regions have low-latency access to data.  
@@ -1206,29 +1207,7 @@ The database never contains partially saved or edited documents
 - Organisations can route traffic to a secondary database while performing maintenance on the primary one.  
 
 <mark style="background: #04FF00A6;">Migrating Data:</mark>  
-- Data replication is useful when migrating data from one system to another, ensuring that both systems remain synchronized during the transition period.
-
-<mark style="background: #04FF00A6;">Group Question 1</mark>
-
-Consider the industry you have been assigned.  
-
-Pick the two most critical replication use case for that domain.  
-
-Discuss for 5 mins and be prepared to feedback to the class.  
-
-<mark style="background: #04FF00A6;">Use Cases:</mark>  
-- High Availability  
-- Fault Tolerance  
-- Scaling and Performance  
-- Load Balancing  
-- Real-time Analytics  
-- Compliance and Data Governance  
-- Geographic Distribution  
-- Data Backup and Archiving  
-- Disaster Recovery  
-- Database Maintenance  
-- Data Migration
-
+- Data replication is useful when migrating data from one system to another, ensuring that both systems remain synchronised during the transition period.
 
 ### <mark style="background: #04FF00A6;">Replication Models/Architecture: Leader → Follower (AKA Primary → Replica, or Single Leader)</mark>
 
@@ -1279,13 +1258,13 @@ Replication can then happen
 
 ### <mark style="background: #04FF00A6;">Replication Models/Architecture: Multi-leader (AKA Multi-Primary, Active to Active)</mark>
 
-All the nodes are primary/leaders.  
+All the nodes are primary/leaders.
 
 All the nodes can process read and write requests.  
 
 Clients can send read/write requests to any nodes.  
 
-Each node propagates its changes to every other node so that the system stays consistent.  
+Each node propagates its changes to every other node so that the system stays consistent.
 
 Each primary/leader node is a follower of primary/leader node.  
 
@@ -1402,7 +1381,7 @@ What happens during a regional outage — does the model recover quickly?
 <mark style="background: #04FF00A6;">Asynchronous Replication (Lazy Replication):</mark>
 - Execute updates as separate transactions  
 - Aims to strike a balance between consistency and performance by delaying the propagation of updates to replicas until they are actually needed  
-- Provides eventual consistency: All replicas will eventually converge to the same state given enough time and absence of new updates.  
+- <mark style="background: #04FF00A6;">Provides eventual consistency:</mark> All replicas will eventually converge to the same state given enough time and absence of new updates.  
 - Need to employ a conflict resolution strategy for when concurrent writes occur.  
 - Can tolerate failures without impacting the overall performance.  
 - Lower latency for write operations as the primary node doesn't wait for acknowledgments from replicas.  
@@ -1416,21 +1395,21 @@ What happens during a regional outage — does the model recover quickly?
 - Could involve comparing timestamps, applying predetermined rules, or involving a central authority to resolve conflicts.
 
 <mark style="background: #04FF00A6;">Monitoring and Alerts for Inconsistencies:</mark>
-- Implement a monitoring system that constantly checks the data across replicas for any deviations or discrepancies.  
+- Implement a monitoring system that constantly checks the data across replicas for any deviations or discrepancies.
 - When inconsistencies are detected, automated alerts can notify administrators/trigger an automatic response - Facilitates investigation and resolution of issues.  
 - This helps maintain data consistency by identifying and addressing problems as they arise.  
 - Introduces complexity and an overhead which may impact performance  
 - Requires extensive knowledge and a comprehensive strategy to be effective  
 - Reactive rather than preventative  
-- May waste time if other approaches are employed - by the time issue is investigated it may be resolved
+- May waste time if other approaches are employed - by the time issue is investigated it may be resolved.
 
 ### <mark style="background: #04FF00A6;">Consider this scenario:</mark>
 
-You are working as database engineers for a global e-commerce company (think Amazon).  
+You are working as database engineers for a global e-commerce company (think Amazon).
 
 The company uses a Multi-Leader (Active–Active) replication model to support operations in different regions (e.g., Europe, US, and Asia).  
 
-Each regional data centre can accept both reads and writes, and updates are asynchronously replicated between leaders.  
+Each regional data centre can accept both reads and writes, and updates are asynchronously replicated between leaders.
 
 <mark style="background: #04FF00A6;">This setup is chosen to:</mark>  
 - Reduce latency (customers write to the nearest data centre).  
@@ -1462,10 +1441,10 @@ What trade-offs are being made between performance, availability, and consistenc
 - <mark style="background: #04FF00A6;">Customer confusion / business errors:</mark> Wrong shipping address could lead to failed deliveries
 
 <mark style="background: #04FF00A6;">How could the system resolve this conflict?</mark>
-- <mark style="background: #04FF00A6;">Last-write-wins</mark> (timestamp-based): Keep the most recent update — simple but may discard a valid change.  
-- <mark style="background: #04FF00A6;">Application</mark>-level rules: e.g., customer edits override staff edits (or vice versa). This ties resolution to business rules.  
-- <mark style="background: #04FF00A6;">Manual resolution:</mark> System detects the conflict and prompts the user to confirm the correct address. Reliable, but slower.  
-- <mark style="background: #04FF00A6;">Consensus/majority vote:</mark> Leaders exchange updates and decide collectively, but this adds latency and complexity.  
+- <mark style="background: #04FF00A6;">Last-write-wins (timestamp-based):</mark> Keep the most recent update — simple but may discard a valid change.
+- <mark style="background: #04FF00A6;">Application-level rules:</mark> e.g., customer edits override staff edits (or vice versa). This ties resolution to business rules.
+- <mark style="background: #04FF00A6;">Manual resolution:</mark> System detects the conflict and prompts the user to confirm the correct address. Reliable, but slower.
+- <mark style="background: #04FF00A6;">Consensus/majority vote:</mark> Leaders exchange updates and decide collectively, but this adds latency and complexity.
 
 <mark style="background: #04FF00A6;">What trade-offs are being made between performance, availability, and consistency?</mark>  
 - <mark style="background: #04FF00A6;">Performance:</mark> Asynchronous replication improves write performance (no waiting for all replicas).  
@@ -1488,8 +1467,8 @@ The approach to replication (synchronous, asynchronous, time-based) has a signif
 
 Replicating sensitive data across multiple nodes introduces security challenges.  
 
-<mark style="background: #04FF00A6;">Encrypting data during transmission and at restis important:</mark>
-- authorisation mechanisms  
+<mark style="background: #04FF00A6;">Encrypting data during transmission and at rest is important:</mark>
+- authorization mechanisms  
 - protecting against unauthorized access.  
 - data masking at rest
 
@@ -1547,7 +1526,7 @@ What problems arise, and how would you fix them?
 
 <mark style="background: #04FF00A6;">Consider security:</mark> 
 - How do we protect sensitive data as it travels between Dublin and Sydney? 
-- What measures (e.g., encryption in transit, secure authentication) are needed to prevent unauthorised access?
+- What measures (e.g., encryption in transit, secure authentication) are needed to prevent unauthorized access?
 
 ### <mark style="background: #04FF00A6;">Consider this Scenario - Solution</mark> 
 
@@ -1583,7 +1562,7 @@ What problems arise, and how would you fix them?
 
 ### <mark style="background: #04FF00A6;">Replication in CouchDB:</mark>
 
-Persistent replication in CouchDB is controlled through a document in the <mark style="background: #04FF00A6;">_replicator</mark> database.  
+Persistent replication in CouchDB is controlled through a document in the <mark style="background: #04FF00A6;">_replicator</mark> database.
 
 Each <mark style="background: #04FF00A6;">document in _replicator</mark> describes one replication process.  
 
@@ -1611,13 +1590,13 @@ Provide a continuous stream of changes as they occur, allowing clients to stay s
 
 Allows you to receive real-time updates about changes to the database.  
 
-A change feed is typically accessed through a continuous feed, an HTTP connection that stays open and continuously sends updates to the client as changes occur in the database.  
+A change feed is typically accessed through a continuous feed, an HTTP connection that stays open and continuously sends updates to the client as changes occur in the database.
 
 Clients can subscribe to the changes feed by making a GET request to the `_changes` endpoint.  
 
 The feed=continuous parameter indicates that the client wants to receive changes continuously.
 
-The `_changes` endpoint supports various options to filter and customize the changes feed.  
+The `_changes` endpoint supports various options to filter and customise the changes feed.  
 
 You can specify a `since` parameter to start the feed from a particular sequence number or a `filter` parameter to filter changes based on specific criteria. e.g.  
 
@@ -1633,7 +1612,7 @@ However, you can include the full document bodies in the feed by adding the `inc
 
 <mark style="background: #04FF00A6;">The continuous feed uses long-polling:</mark>
 - The server holds the connection open until a change occurs or a timeout is reached.  
-- If a change occurs within the timeout period, the server immediately sends the change to the client.  
+- If a change occurs within the timeout period, the server immediately sends the change to the client.
 - If no changes occur, the server sends an empty response after the timeout, and the client can then open a new connection to continue listening for changes
 
 ![[Pasted image 20251003100452.png]]
@@ -1642,14 +1621,13 @@ However, you can include the full document bodies in the feed by adding the `inc
 
 ### <mark style="background: #04FF00A6;">Database Normalisation:</mark>
 
-<mark style="background: #04FF00A6;">Normalisation is a design technique:</mark> “..a very important ingredient in database design”, Coronel, C., &  
-Morris, S. (2016). Database systems: design, implementation, & management. Cengage Learning
+<mark style="background: #04FF00A6;">Normalisation is a design technique:</mark> “..a very important ingredient in database design”, Coronel, C., & Morris, S. (2016). Database systems: design, implementation, & management. Cengage Learning
 
 <mark style="background: #04FF00A6;">Objectives:</mark>
-- Eliminate redundant data (storing the same data in more than one  table)  
-- Ensure data dependencies make sense (only storing related data in  a table)  
+- Eliminate redundant data (storing the same data in more than one table)  
+- Ensure data dependencies make sense (only storing related data in a table)  
 
-<mark style="background: #04FF00A6;">Focus:</mark> Correct assignment of attributes to tables:
+<mark style="background: #04FF00A6;">Focus:</mark> Correct assignment of attributes to tables
   
 <mark style="background: #04FF00A6;">How:</mark> 
 - Considering the rules of the real world  
@@ -1682,7 +1660,7 @@ We have two rows for employee Rick as he works in two departments of the company
 
 If we want to update Rick’s address, then we must update two rows in the employee table or the data will become inconsistent.  
 
-If somehow, the correct address gets updated for one department but not the other then as far as the database is concerned Rick has two different addresses this is not correct or consistent with the real world we are modelling
+If somehow, the correct address gets updated for one department but not the other then as far as the database is concerned Rick has two different addresses this is not correct or consistent with the real world we are modelling.
 
 ![[Pasted image 20251009164244.png]]
 
@@ -1707,7 +1685,7 @@ Can you think of an insert, update and delete anomaly?
 
 ### <mark style="background: #04FF00A6;">Database Tables and Normalisation</mark>
 
-Normalisation works through a series of stages called normal forms:  
+<mark style="background: #04FF00A6;">Normalisation works through a series of stages called normal forms:</mark>
 - 1NF (First Normal Form)  
 - 2NF (Second Normal Form)  
 - 3NF (Third Normal Form)  
@@ -1723,6 +1701,7 @@ The higher levels of normalisation are not always advisable.
 - Each column contains only one type of data.  
 - There are no repeating groups of columns.
 ![[Pasted image 20251009164530.png]]
+
 The data is in 1NF because each field contains atomic values (e.g., only one patient name per row, one appointment date, etc.).
 
 <mark style="background: #04FF00A6;">2NF (Second Normal Form) requires that:</mark>
@@ -1791,7 +1770,7 @@ A normalised database helps a lot with this.
 - Normalised relational models assume centralised data.  
 - In distributed databases, joins across nodes are slow or impossible.  
 - Denormalisation allows each node to serve complete queries locally, improving availability and latency.  
-- <mark style="background: #04FF00A6;">Example:</mark> Global services like Netflix or Instagram duplicate user data across data centers to keep performance consistent worldwide.  
+- <mark style="background: #04FF00A6;">Example:</mark> Global services like Netflix or Instagram duplicate user data across data centres to keep performance consistent worldwide.  
 
 <mark style="background: #04FF00A6;">Analytics and caching:</mark>
 - Analytical workloads benefit from precomputed or flattened tables. 
@@ -1803,19 +1782,17 @@ Normalised (decomposed) tables require additional processing, reducing system sp
 
 Normalisation purity is often difficult to sustain in the modern database environment.  
 
-The conflict between design efficiency, information requirements, and processing speed are often resolved through compromises that include <mark style="background: #04FF00A6;">Denormalisation</mark>
-
-Primarily a database optimisation technique focused on improving read/query performance.
+The conflict between design efficiency, information requirements, and processing speed are often resolved through compromises that include <mark style="background: #04FF00A6;">Denormalisation</mark> - primarily a database optimisation technique focused on improving read/query performance.
 
 Normalisation minimises redundancy to preserve data integrity and update efficiency.  
 
-Denormalisation intentionally reintroduces redundancy to improve query performance, especially in read-heavy or analytical workloads.
+Denormalisation intentionally re-introduces redundancy to improve query performance, especially in read-heavy or analytical workloads.
 
 <mark style="background: #04FF00A6;">Objective:</mark>
 - To optimise read/query performance of the database 
 - To reduce complexity  
 - To improve query performance  
-- To support analytics and reporting  
+- To support analytics and reporting
 
 <mark style="background: #04FF00A6;">How:</mark> By systematically adding precomputed redundant data to a database  
 
@@ -1913,7 +1890,7 @@ If users of an email messaging service want to access messages by category, keep
 - Updates may be postponed when stale data is acceptable  
 
 <mark style="background: #04FF00A6;">Disadvantages:</mark>
-- Extra DML needed to update original non-denormalized column  
+- Extra DML needed to update original non-denormalised column  
 - Extra column and possibly larger indices require more working space and disk space
 
 ### <mark style="background: #04FF00A6;">Storing Derivable Values</mark>
@@ -1955,9 +1932,9 @@ When the ``users_received_count`` equals zero, the actual message can be deleted
 
 ### <mark style="background: #04FF00A6;">Using Hardcoded Values</mark>
 
-If there is a table with constant records, you can hardcode them into your application to avoid joining tables when these values are needed.  
+If there is a table with constant records, you can hardcode them into your application to avoid joining tables when these values are needed.
 
-Create a check constraint to validate values against reference values  
+Create a check constraint to validate values against reference values.
 
 This must be rewritten each time a new reference value is added.
 
@@ -1965,14 +1942,13 @@ This must be rewritten each time a new reference value is added.
 - No need to implement a lookup table  
 - No joins to a lookup table  
 
-<mark style="background: #04FF00A6;">Disadvantages:</mark>
-- Recoding and restating are required if look-up values are altered
+<mark style="background: #04FF00A6;">Disadvantages:</mark> Recoding and restating are required if look-up values are altered
 
 ### <mark style="background: #04FF00A6;">Short Circuit Keys</mark>
 
-If your database design contains three (or more) levels of master detail, and there is a need to query the lowest and highest level records only, consider creating short-circuit keys.  
+If your database design contains three (or more) levels of master detail, and there is a need to query the lowest and highest level records only, consider creating short-circuit keys.
 
-These new foreign key definitions directly link the lowest level detail records to higher level grandparent records.  
+These new foreign key definitions directly link the lowest level detail records to higher level grandparent records.
 
 The result can produce fewer table joins when queries execute
 
@@ -2012,7 +1988,7 @@ If you do this, to find a detail record for a particular date you avoid the need
 
 <mark style="background: #04FF00A6;">When To use?</mark> When queries are needed from tables with long lists or records that are historical and you are interested in the most current record
 
-<mark style="background: #04FF00A6;">Advantages:</mark> Can use the between operator for date selection queries instead of potentially time consuming synchronized subquery  
+<mark style="background: #04FF00A6;">Advantages:</mark> Can use the between operator for date selection queries instead of potentially time consuming synchronised subquery  
 
 <mark style="background: #04FF00A6;">Disadvantages:</mark> Extra code needed to populate
 
@@ -2048,11 +2024,11 @@ Will reduce the number of joins during queries.
 ![[Pasted image 20251009171943.png]]
 
 <mark style="background: #04FF00A6;">If in the email messaging service, we need to limit the maximum amount of storage space allocated to a user:</mark>
-- We need to implement restraints in our email messaging service − one for messages and another for files.  
+- We need to implement restraints in our email messaging service − one for messages and another for files. 
 - Since the amount of allowed storage space for each of these restraints is different, we need to track each restraint individually.  
-- In a normalized relational database, we could simply introduce two different tables − Storage_types and Storage_restraints − that would store records for each user.  
+- In a normalised relational database, we could simply introduce two different tables − Storage_types and Storage_restraints − that would store records for each user.  
 
-<mark style="background: #04FF00A6;">We can go a different way and add denormalized columns to the Users table:</mark>
+<mark style="background: #04FF00A6;">We can go a different way and add denormalised columns to the Users table:</mark>
 - ``message_space_allocated``  
 - ``message_space_available``  
 - ``file_space_allocated``  
@@ -2061,7 +2037,7 @@ Will reduce the number of joins during queries.
 
 ![[Pasted image 20251009172113.png]]
 
-<mark style="background: #04FF00A6;">When To use?</mark>
+<mark style="background: #04FF00A6;">When to use?</mark>
 - When the number of detail records for all masters is fixed and static  
 - When the number of detail records multiplied by the number of columns of the detail is small, say less than 30  
 
@@ -2090,7 +2066,7 @@ Most messages are sent either without an attachment or with a single attachment.
 
 Some messages have several attachments.  
 
-By denormalizing the Messages table and adding the first_attachment_name column we have an improvement for messages with 0 or 1 attachment.  
+By denormalising the Messages table and adding the first_attachment_name column we have an improvement for messages with 0 or 1 attachment.  
 
 If a message contains more than one attachment, only the first attachment will be taken from the Messages table.  
 
@@ -2112,13 +2088,13 @@ But this would be helpful for the majority of cases in our messaging system.
 - Detail value must be repeated, with the possibility of data inconsistencies  
 - Additional code must be written to maintain the duplicated single detail value at the master record.
 
-### <mark style="background: #04FF00A6;">Denormalizing Guidelines</mark>
+### <mark style="background: #04FF00A6;">Denormalising Guidelines</mark>
 
-Always create a conceptual data model that is completely normalized.  
+Always create a conceptual data model that is completely normalised.  
 
-Consider denormalization as the last option to boost performance.  
+Consider denormalisation as the last option to boost performance.  
 
-Never presume denormalization will be required. 
+Never presume denormalisation will be required. 
 
 To meet performance objectives, denormalisation should be done during the database design.  
 
@@ -2142,7 +2118,7 @@ Apache Cassandra is a wide-column NOSQL Database
 
 <mark style="background: #04FF00A6;">Distributed:</mark> Cassandra can run on multiple machines (nodes) while appearing to users as a unified whole.  
 
-<mark style="background: #04FF00A6;">Cluster:</mark> Multiple nodes can be organized logically into a cluster, or "ring".  
+<mark style="background: #04FF00A6;">Cluster:</mark> Multiple nodes can be organised logically into a cluster, or "ring".  
 
 <mark style="background: #04FF00A6;">Node:</mark> A node represents a single instance of Cassandra.
 
@@ -2171,7 +2147,7 @@ Apache Cassandra is a wide-column NOSQL Database
 <mark style="background: #04FF00A6;">Concept:</mark> 
 - Design for your needs not for your writes  
 - Design tables based on queries, not on normalisation.  
-- Data access patterns and application queries determine the structure and organization of data -> design of the tables  
+- Data access patterns and application queries determine the structure and organisation of data -> design of the tables  
 - Each query is backed by a table
 
 <mark style="background: #04FF00A6;">Example:</mark>
@@ -2180,7 +2156,7 @@ Apache Cassandra is a wide-column NOSQL Database
 
 ### <mark style="background: #04FF00A6;">Normalisation Driven Modelling:</mark>
 
-Design tables based on avoiding data duplication.  
+Design tables based on avoiding data duplication.
 
 <mark style="background: #04FF00A6;">Example:</mark>  
 - Relational: student + subject + enrollment (joins)  
@@ -2199,8 +2175,8 @@ JOIN subject sub ON e.subject_id = sub.subject_id;
 
 Design tables based on queries/data access needed, not on normalisation (duplication is ok).  
 
-Example:  
-- Cassandra: student_subject_results (all in one row)  
+<mark style="background: #04FF00A6;">Example:</mark>
+- Cassandra: ``student_subject_results`` (all in one row)  
 - To find a student’s results:  
 
 ```sql
@@ -2213,9 +2189,9 @@ student_id = 1;
 
 ### <mark style="background: #04FF00A6;">Query Driven Modelling v Normalisation Driven Modelling</mark>  
 
-<mark style="background: #04FF00A6;">Query Driven:</mark> More writes (denormalization) → fewer joins or lookups during reads → faster reads.  
+<mark style="background: #04FF00A6;">Query Driven:</mark> More writes (denormalisation) → fewer joins or lookups during reads → faster reads.  
 
-<mark style="background: #04FF00A6;">Normalisation Driven:</mark> Fewer writes (normalized schema) → more complex reads → slower performance
+<mark style="background: #04FF00A6;">Normalisation Driven:</mark> Fewer writes (normalised schema) → more complex reads → slower performance
 
 ### <mark style="background: #04FF00A6;">Cassandra Query Driven Modelling</mark>  
 
@@ -2227,12 +2203,11 @@ student_id = 1;
 
 Cassandra data model consists of <mark style="background: #04FF00A6;">Keyspaces</mark> at the highest level.  
 
-<mark style="background: #04FF00A6;">Keyspaces are the containers of data:</mark> Similar in concept to the schema or database in a relational database.  
+<mark style="background: #04FF00A6;">Keyspaces are the containers of data:</mark> Similar in concept to the schema or database in a relational database.
 
 Typically, keyspaces contain many tables.
 
 ![[Pasted image 20251010104646.png]]
-
 
 <mark style="background: #04FF00A6;">Columns</mark> define the structure of data in a table.  
 
@@ -2247,10 +2222,10 @@ Each column has an associated type - E.g. integer, text, double, and Boolean.
 
 ### <mark style="background: #04FF00A6;">Cassandra Data Model Primary Key</mark>
 
-Consists of one or more PARTITION keys PLUS zero or more CLUSTERING KEY components  
+Consists of one or more PARTITION keys PLUS zero or more CLUSTERING KEY components
 
 <mark style="background: #04FF00A6;">Partition key:</mark>
-- Goal of a partition key is to distribute the data evenly across a cluster and query the data efficiently  
+- Goal of a partition key is to distribute the data evenly across a cluster and query the data efficiently
 - A partition key determines where to place the data and uniquely identifies the data  
 - It is always the first value in the primary key definition.  
 
@@ -2293,7 +2268,6 @@ Cassandra will use a consistent hashing technique to generate the hash value of 
 - Node1, Node2, and Node3, respectively
 
 ![[Pasted image 20251010114739.png]]
-
 
 ### <mark style="background: #04FF00A6;">Cassandra Data model – Retrieval</mark>  
 
@@ -2389,7 +2363,7 @@ Store data in the way you expect to read it — even if that means writing it mu
 - Writes are cheap  
 - Data is first written to an in-memory structure (the memtable) and an append-only commit log, so inserts and updates are very fast.  
 - Reads can be expensive if data is spread across many partitions or tables.  
-- Optimize your data read performance by maximizing the number of data writes.  
+- Optimise your data read performance by maximising the number of data writes.  
 
 <mark style="background: #04FF00A6;">Summary:</mark>  
 - To make reads fast, you design your tables for each query pattern 
@@ -2398,7 +2372,7 @@ Store data in the way you expect to read it — even if that means writing it mu
 Keep the rules in mind when modelling your data.  
 
 <mark style="background: #04FF00A6;">Maximise data duplication:</mark>
-- Data denormalization and data duplication are defacto of Cassandra.  
+- Data denormalisation and data duplication are defacto of Cassandra.  
 - Disk space is not more expensive than memory, CPU processing and IOs operation.  
 - Cassandra is a distributed database, so data duplication provides instant data availability and no single point of failure.
 
@@ -2417,7 +2391,7 @@ Keep the rules in mind when modelling your data.
 - orders_by_customer  
 - orders_by_product  
 
-Each stores the same data but organized differently. When you query, Cassandra reads from exactly one partition -very fast.
+Each stores the same data but organised differently. When you query, Cassandra reads from exactly one partition -very fast.
 
 ### <mark style="background: #04FF00A6;">Cassandra Data Model – Summary</mark>
 
@@ -2443,7 +2417,7 @@ Create keyspace KeyspaceName with replicat on={'class':strategy name, 'replicati
 
 <mark style="background: #04FF00A6;">Replication Factor:</mark>
 - The number of replicas of data placed on different nodes.  
-- A replication factor more 2 is good to attain no single point of failure.  
+- A replication factor of more than 2 is good to attain no single point of failure.  
 - 3 is good replication factor  
 
 ```sql
@@ -2453,7 +2427,7 @@ y', 'replication_factor' : 3};
 ```
 
 <mark style="background: #04FF00A6;">Strategy:</mark>
-- There are two types of strategy declaration in Cassandra syntax:  
+- There are two types of strategy declaration in Cassandra syntax
 - <mark style="background: #04FF00A6;">Simple Strategy:</mark> Used in the case of one data centre. In this strategy, the first replica is placed on the selected node and the remaining nodes are placed in clockwise direction in the ring without considering rack or node location.  
 - <mark style="background: #04FF00A6;">Network Topology Strategy:</mark> Used in the case of more than one data centres. In this strategy, you have to provide replication factor for each data centre separately.
 
@@ -2500,7 +2474,6 @@ SELECT student_id, student_name FROM
 student;  
 SELECT * FROM student WHERE student_id=2;
 ```
-
 
 ### <mark style="background: #04FF00A6;">Updating Data</mark>
 
@@ -2557,7 +2530,7 @@ WHERE student_id=3;
 - To avoid checking every SSTable data file for the partition being requested, Cassandra employs a data structure known as a Bloom filter.
 
 <mark style="background: #04FF00A6;">Bloom Filter:</mark>
-- A probabilistic data structure that allows Cassandra to determine one of two possible states: - 
+- A probabilistic data structure that allows Cassandra to determine one of two possible states:
 - The data definitely does not exist in the given file, or  
 - The data probably exists in the given file.
 
@@ -2599,7 +2572,7 @@ It also provides <mark style="background: #04FF00A6;">cqlsh - a command-line she
 
 You will see that as part of the service configuration you set the ``MAX_HEAP_SIZE`` and ``HEAP_NEWSIZE`` parameters.  
 
-These control the Java Virtual Machine (JVM) memory allocation for Cassandra, which is written in Java. These parameters help optimize memory usage and performance.  
+These control the Java Virtual Machine (JVM) memory allocation for Cassandra, which is written in Java. These parameters help optimise memory usage and performance.  
 
 The heap is the portion of memory where Java objects are allocated.  
 
@@ -2679,7 +2652,7 @@ Off-heap use improves performance by reducing garbage collection pressure.
 - To get total sales per region, you’d need to join: orders → order_items → customers → regions → products and aggregate across millions of rows. That’s <mark style="background: #04FF00A6;">slow, CPU-heavy, and blocks transactions</mark>
 
 <mark style="background: #04FF00A6;">OLAP:</mark>
-- <mark style="background: #04FF00A6;">Denormalised:</mark> one central data table (e.g., ``sales_events``) that stores measurable transactions — linked to several context tables such as date, product, customer, and region. 
+- <mark style="background: #04FF00A6;">Denormalised:</mark> one central data table (e.g., ``sales_events``) that stores measurable transactions - linked to several context tables such as date, product, customer, and region. 
 - <mark style="background: #04FF00A6;">Example:</mark> Aim is understanding sales trends 
 - <mark style="background: #04FF00A6;">Typical operation:</mark> “What was our average order value per region, per quarter, over the last 3 years?”
 - Data has been pre-aggregated by ``Region``, ``Quarter``, and ``ProductCategory``.  
@@ -2724,7 +2697,7 @@ Off-heap use improves performance by reducing garbage collection pressure.
 		<td>Analysts, managers, and data scientists</td>
 	</tr>
 	<tr>
-		<th>Time Horizon</th>
+		<th>Time horizon</th>
 		<td>Current and recent data</td>
 		<td>Historical and time-variant data</td>
 	</tr>
@@ -2797,14 +2770,14 @@ Designed to support <mark style="background: #04FF00A6;">querying, reporting, an
 
 Enables businesses to <mark style="background: #04FF00A6;">make informed decisions</mark> based on historical data.  
 
-The data is organized in a way that facilitates fast, efficient querying and supports <mark style="background: #04FF00A6;">business intelligence (BI)</mark> processes.
+The data is organised in a way that facilitates fast, efficient querying and supports <mark style="background: #04FF00A6;">business intelligence (BI)</mark> processes.
 
 ![[Pasted image 20251017113025.png]]
 
 ### <mark style="background: #04FF00A6;">Why Data Warehouses?</mark>
 
 <mark style="background: #04FF00A6;">Organisations need to analyse data so that it can:</mark>
-- <mark style="background: #04FF00A6;">Understand trends:</mark>  Turn “What happened?” into “What’s been happening — and why?”  
+- <mark style="background: #04FF00A6;">Understand trends:</mark>  Turn “What happened?” into “What’s been happening - and why?”  
 - <mark style="background: #04FF00A6;">Predict future behaviour and needs Goal:</mark> Move from reactive decisions to proactive planning.  
 - <mark style="background: #04FF00A6;">Personalise contact with customers/clients/users:</mark> Use insight to tailor communication and improve experience.  
 - <mark style="background: #04FF00A6;">Be competitive:</mark> Compete on insight — not just on operations.
@@ -2854,7 +2827,9 @@ ETL is a core data integration process used in the creation of data warehouses.
 
 <mark style="background: #04FF00A6;">Transform:</mark> The data is cleaned, formatted, and integrated to ensure consistency across different sources.  
 
-<mark style="background: #04FF00A6;">Load:</mark> The transformed data is loaded into the data warehouse for querying and analysis.
+<mark style="background: #04FF00A6;">Load:</mark> The transformed data is loaded into the data warehouse for querying and  analysis.
+
+![[Pasted image 20251017114409.png]]
 
 ![[Pasted image 20251017114409.png]]
 
@@ -2862,21 +2837,21 @@ ETL is a core data integration process used in the creation of data warehouses.
 
 <mark style="background: #04FF00A6;">Fundamentally, it is a database:</mark>
 - A structured system for storing and querying data.  
-- It can be built using a relational database platform such as Oracle, PostgreSQL, or SQL Server.  
+- It can be built using a relational database platform such as Oracle, PostgreSQL, or SQL Server.
 
 <mark style="background: #04FF00A6;">It is not a live or transactional system:</mark>
-- Daily updates, inserts, and operational transactions occur elsewhere.  
+- Daily updates, inserts, and operational transactions occur elsewhere.
 - Day-to-day transactions are captured by operational databases (OLTP systems) that are fully normalised for efficiency and accuracy.
 
 The warehouse collects, cleans, integrates, and stores selected data from those operational sources, often on a scheduled basis (daily, weekly, or monthly).  
 
-Its design is read-oriented, optimized for queries, summaries, and analysis rather than updates.  
+Its design is read-oriented, optimised for queries, summaries, and analysis rather than updates.
 
 It holds historical and time-stamped data, so users can see how things change over time.
 
-It supports decision-making and analytics, providing the foundation for dashboards, reports, forecasting, and trend analysis.  
+It supports decision-making and analytics, providing the foundation for dashboards, reports, forecasting, and trend analysis.
 
-It brings together information from multiple business systems - finance, sales, HR, student records, etc. - into a single, consistent view of the organisation.  
+It brings together information from multiple business systems - finance, sales, HR, student records, etc. - into a single, consistent view of the organisation.
 
 Access is typically read-only for analysts, managers, and data scientists, rather than everyday operational users.
 
@@ -2899,7 +2874,7 @@ The “yellow” box (= the <mark style="background: #04FF00A6;">staging area</m
 Contains data from different systems  
 
 <mark style="background: #04FF00A6;">Imports data from different systems on a regular basis:</mark> 
-- Detailed data and summarized data  
+- Detailed data and summarised data  
 - Historic data  
 - Metadata  
 
@@ -2911,7 +2886,7 @@ OLTP applications remain, DWH is a completely new system
 
 <mark style="background: #04FF00A6;">Ralph Kimball:</mark> A data warehouse is a copy of transaction data specifically structured for querying and reporting
 
-<mark style="background: #04FF00A6;">William Marshall, Bill Inmon:</mark> A data warehouse is a subject oriented , integrated , time variant , non-volatile collection of data in support of management’s decision making process
+<mark style="background: #04FF00A6;">William Marshall, Bill Inmon:</mark> A data warehouse is a subject oriented , integrated , time variant , non-volatile collection of data in support of management’s decision making process.
 
 ### <mark style="background: #04FF00A6;">Data Warehouse - Key characteristics</mark>
 
@@ -3022,9 +2997,9 @@ Choosing the process is important because it defines a specific design target an
 - <mark style="background: #04FF00A6;">Monthly summary:</mark> one row per region per month (highly summarised)  
 
 <mark style="background: #04FF00A6;">In a university context:</mark>
-- <mark style="background: #04FF00A6;">Exam event level:</mark> one row per student per exam  
-- <mark style="background: #04FF00A6;">Module level:</mark> one row per student per module per semester  
-- <mark style="background: #04FF00A6;">Programme level:</mark> one row per student per academic year  
+- <mark style="background: #04FF00A6;">Exam event level:</mark> one row per student per exam
+- <mark style="background: #04FF00A6;">Module level:</mark> one row per student per module per semester
+- <mark style="background: #04FF00A6;">Programme level:</mark> one row per student per academic year
 
 Each of these choices produces a different dataset, suitable for different analytical purposes
 
@@ -3184,13 +3159,13 @@ These columns uniquely identify each record, so adding a surrogate key is not st
 
 <mark style="background: #04FF00A6;">Transaction Entities:</mark>
 - These are your potential sources of facts
-- Store details of business proceedings (e.g., orders, shipments, payments, insurance claims, bank transactions, hotel bookings, airline reservations, and hospital admissions).  
-- Most models will be related to events like these and applications built based on them will aim to sport trends and patterns or opportunities within the data.  
-- Another type of transaction entity is a ‘snapshot’ entity which record the state of an entity at a point in time (e.g. account balance, inventory level for a product). These relate to the condition of an entity.  
+- Store details of business proceedings (e.g., orders, shipments, payments, insurance claims, bank transactions, hotel bookings, airline reservations, and hospital admissions).
+- Most models will be related to events like these and applications built based on them will aim to sport trends and patterns or opportunities within the data.
+- Another type of transaction entity is a ‘snapshot’ entity which record the state of an entity at a point in time (e.g. account balance, inventory level for a product). These relate to the condition of an entity.
 
 <mark style="background: #04FF00A6;">Component Entities:</mark>
-- Linked to a transaction entity by a one-to-many relationship
-- Store data associated with the business event, and answer “who,” “what”, “where”, “how”, and “why” questions  
+- Linked to a transaction entity by a one-to-many relationship.
+- Store data associated with the business event, and answer “who,” “what”, “where”, “how”, and “why” questions.
 
 <mark style="background: #04FF00A6;">Classification Entities:</mark>
 - Associated with component entities by chains of one-to-many relationships
@@ -3229,9 +3204,9 @@ The organisation wants to analyse sales performance.
 - Quantity and total revenue summed over all orders that day  
 
 <mark style="background: #04FF00A6;">Use case:</mark>
-- Ideal for high-level dashboards such as:  
+- Ideal for high-level dashboards such as:
 - “Daily total sales by product and region.”  
-- “Weekly revenue trends.”  
+- “Weekly revenue trends.”
 
 <mark style="background: #04FF00A6;">Storage:</mark> Smaller, faster to query
 
@@ -3259,10 +3234,10 @@ How, Where, Who
 ### <mark style="background: #04FF00A6;">Design the Fact table</mark>
 
 <mark style="background: #04FF00A6;">Define the Key:</mark> 
-- This will be a composite key consisting of all the keys of all dimension tables. This key is not minimal unlike of relational databases.  
+- This will be a composite key consisting of all the keys of all dimension tables. This key is not minimal unlike of relational databases. 
 
 <mark style="background: #04FF00A6;">Define the Fact:</mark>
-- The non-key attributes of the fact table are measures (fact) that can be analysed using numerical functions.  
+- The non-key attributes of the fact table are measures (fact) that can be analysed using numerical functions.
 - What facts are defined depends on the event information collected by operational systems (attributes that are stored in transaction entities).
 
 ### <mark style="background: #04FF00A6;">Design the Dimension tables:</mark> 
@@ -3284,12 +3259,12 @@ How, Where, Who
 - An <mark style="background: #04FF00A6;">aggregation pipeline</mark> consists of one or more stages to process documents.  
 - In CouchDB this is done using map/reduce.
 
-### <mark style="background: #04FF00A6;">Single document collection</mark>  
+### <mark style="background: #04FF00A6;">Single document collection</mark>
 
-All documents are grouped together in a single collection.  
+All documents are grouped together in a single collection.
 
 <mark style="background: #04FF00A6;">Ideally should share a similar structure:</mark>
-- No pre-defined schema.  
+- No pre-defined schema.
 - Documents can have different field.  
 - Documents can evolve independently of each other.  
 - Good for horizontal scalability.  
@@ -3366,7 +3341,7 @@ You want to record the results of exams undertaken in a range of modules.
 ### <mark style="background: #04FF00A6;">View Collation in CouchDB:</mark>
 
 <mark style="background: #04FF00A6;">Collation:</mark>
-- Assembling.  
+- Assembling.
 - The way in which keys are ordered in the index of a view.  
 
 <mark style="background: #04FF00A6;">View functions:</mark>
@@ -3375,9 +3350,9 @@ You want to record the results of exams undertaken in a range of modules.
 
 CouchDB uses a specific collation algorithm for ordering keys. The collation order is determined by comparing the individual components of the key.
 
-CouchDB uses Unicode collation for sorting keys.  
+CouchDB uses Unicode collation for sorting keys.
 
-Keys are sorted according to the Unicode code points of their characters. The sorting order is case-sensitive and follows the Unicode code point order for characters.  
+Keys are sorted according to the Unicode code points of their characters. The sorting order is case-sensitive and follows the Unicode code point order for characters.
 
 Keys in CouchDB can have multiple components. A key could be an array of values.  
 
@@ -3435,7 +3410,7 @@ CouchDB doesn’t use SQL joins or stored procedures.
 
 <mark style="background: #04FF00A6;">Instead, it uses MapReduce — a functional model where:</mark> 
 - <mark style="background: #04FF00A6;">Map:</mark> emits key–value pairs for indexing.  
-- <mark style="background: #04FF00A6;">Reduce</mark>: aggregates or summarizes those pairs.  
+- <mark style="background: #04FF00A6;">Reduce</mark>: aggregates or summarises those pairs.  
 
 This is defined in <mark style="background: #04FF00A6;">design documents</mark> using JavaScript functions.
 
@@ -3654,7 +3629,6 @@ return {total: 170, numexams: 2};
 - Not the raw map values anymore.
 
 <mark style="background: #04FF00A6;">Example:</mark>
-
 ```js
 // First stage reductions:  
 [{total: 170, numexams: 2}, {total: 260, numexams:3}]  
@@ -3703,7 +3677,7 @@ return {
 	</tr>
 	<tr>
 		<th>Reduce</th>
-		<td>Think of it like GROUP BY — summarize or aggregate that data.</td>
+		<td>Think of it like GROUP BY — summarise or aggregate that data.</td>
 	</tr>
 	<tr>
 		<th>rereduce</th>
@@ -3725,8 +3699,7 @@ function (doc) {
 }
 ```  
 
-``doc.type === "exam_result"`` → ensures only  
-result documents are processed.  
+``doc.type === "exam_result"`` → ensures only result documents are processed.  
 
 ``&&doc.student && doc.score`` → ensures both fields exist.  
 
@@ -3760,9 +3733,9 @@ function (keys, values, rereduce) {
 }
 ```
 
-<mark style="background: #04FF00A6;">Initial Reduce:</mark> (rereduce = false) Summarises raw emitted values {score, count} from the map stage.  
+<mark style="background: #04FF00A6;">Initial Reduce:</mark> (rereduce = false) Summarises raw emitted values {score, count} from the map stage.
 
-<mark style="background: #04FF00A6;">Re-reduce:</mark> (rereduce = true) Aggregates partial reduce outputs ``{total, numexams}`` into a final combined result.  
+<mark style="background: #04FF00A6;">Re-reduce:</mark> (rereduce = true) Aggregates partial reduce outputs ``{total, numexams}`` into a final combined result.
 
 <mark style="background: #04FF00A6;">Output Fields</mark> ``numexams`` → number of exam results; total → total score; ``examavg`` → computed average score.
 
@@ -3776,13 +3749,13 @@ function (keys, values, rereduce) {
 
 ### <mark style="background: #04FF00A6;">Data Warehouse v Data Mart</mark>
   
-A <mark style="background: #04FF00A6;">data warehouse</mark> is a large centralised repository of data that contains information from many sources within an organisation.  
+A <mark style="background: #04FF00A6;">data warehouse</mark> is a large centralised repository of data that contains information from many sources within an organisation.
 
 The collated data is used to guide business decisions through analysis, reporting, and data mining tools.
 
 A <mark style="background: #04FF00A6;">data mart</mark> is a subset of a data warehouse oriented to a specific business process.  
 
-Marts contain repositories of summarized data collected for analysis on a specific section or unit within an organisation, for example, the sales department.
+Marts contain repositories of summarised data collected for analysis on a specific section or unit within an organisation, for example, the sales department.
 
 ### <mark style="background: #04FF00A6;">Data Mart</mark>
 
@@ -3798,9 +3771,9 @@ Or <mark style="background: #04FF00A6;">independent</mark> (sourced directly fro
 
 ### <mark style="background: #04FF00A6;">Data Warehouse v Data Lake</mark>
 
-<mark style="background: #04FF00A6;">A data warehouse is a centralised repository:</mark> It stores data that has been treated and transformed with a specific purpose in mind, which can then be used to source analytic or operational reporting (determined in advance).  
+<mark style="background: #04FF00A6;">A data warehouse is a centralised repository:</mark> It stores data that has been treated and transformed with a specific purpose in mind, which can then be used to source analytic or operational reporting (determined in advance).
 
-<mark style="background: #04FF00A6;">A data lake is a centralised repository:</mark> It stores large volumes of data in its original form. The data can then be processed and used as a basis for a variety of analytic needs (determined by the user as needed)
+<mark style="background: #04FF00A6;">A data lake is a centralised repository:</mark> It stores large volumes of data in its original form. The data can then be processed and used as a basis for a variety of analytic needs (determined by the user as needed).
 
 ### <mark style="background: #04FF00A6;">Data Cube</mark>
 
@@ -3810,7 +3783,7 @@ A data cube contains aggregates of measure values, on various combinations of di
 
 ![[Pasted image 20251023094435.png]]
 
-A <mark style="background: #04FF00A6;">data cube</mark> is about how you analyse data  
+A <mark style="background: #04FF00A6;">data cube</mark> is about how you analyse data.
 
 The <mark style="background: #04FF00A6;">data cube</mark> is the <mark style="background: #04FF00A6;">logical or conceptual representation</mark> of the data warehouse.  
 
@@ -3880,7 +3853,6 @@ By structuring dimensions hierarchically, you can navigate from simple summaries
 ![[Pasted image 20251023100129.png]]
 
 ```SQL
-
 SELECT  
 	v.VendorName,  
 	e.EventType,  
@@ -4046,20 +4018,17 @@ FROM crosstab(
 ```
 
 ### <mark style="background: #04FF00A6;">Fact Tables</mark>
-
-<mark style="background: #04FF00A6;">Contain related measures:</mark> Store quantifiable business data (such as sales, expenses, and inventory)  
-
-Usually the largest tables in our schema  
-
-Usually appended to Can contain detail or summary data 
-
-Measures are usually additive
+- <mark style="background: #04FF00A6;">Contain related measures:</mark> Store quantifiable business data (such as sales, expenses, and inventory)  
+- Usually the largest tables in our schema  
+- Usually appended to 
+- Can contain detail or summary data 
+- Measures are usually additive
 
 ### <mark style="background: #04FF00A6;">Data Cube v Fact Table</mark>
 
 The <mark style="background: #04FF00A6;">data cube</mark> is the conceptual heart of the <mark style="background: #04FF00A6;">data warehouse</mark>:  
 - How users view and analyse the data.  
-- All possible combinations of dimensions relevant to the analysis the user wants to undertake.  
+- All possible combinations of dimensions relevant to the analysis the user wants to undertake.
 
 The <mark style="background: #04FF00A6;">fact and dimension tables</mark> are the physical heart of the <mark style="background: #04FF00A6;">data warehouse</mark>.  
 - How the data is actually stored.  
@@ -4094,13 +4063,13 @@ It’s what you get when you think of the fact table and its linked dimensions a
 
 The most useful facts in a fact table are <mark style="background: #04FF00A6;">numeric</mark> and <mark style="background: #04FF00A6;">additive</mark>: 
 
-<mark style="background: #04FF00A6;">Additive:</mark> facts that can be summed up across any dimension without losing meaning or accuracy  
+<mark style="background: #04FF00A6;">Additive:</mark> facts that can be summed up across any dimension without losing meaning or accuracy.
 
-Additivity is crucial because data warehouse applications almost never retrieve a single fact table record  
+Additivity is crucial because data warehouse applications almost never retrieve a single fact table record.
 
 Rather, they fetch back hundreds, thousands, or even millions of these records at a time, and often the most useful thing to do with so many records is to add them up.  
 
-<mark style="background: #04FF00A6;">Type of additivity:</mark>Determines how aggregation can be done across different dimensions
+<mark style="background: #04FF00A6;">Type of additivity:</mark> Determines how aggregation can be done across different dimensions
 
 ### <mark style="background: #04FF00A6;">Additive</mark>
 
@@ -4119,7 +4088,7 @@ across some dimensions but not all and not across time:</mark>
 
 <mark style="background: #04FF00A6;">Often require special handling:</mark> 
 - E.g. using snapshot techniques (capturing data at specific points in time)  
-- OR average calculations for time-based dimensions  Require more care in the dimensional modelling.  
+- OR average calculations for time-based dimensions. Require more care in the dimensional modelling.
 
 <mark style="background: #04FF00A6;">Examples:</mark>
 
@@ -4138,7 +4107,7 @@ Summing across different dates is not (would incorrectly represent the inventory
 
 <mark style="background: #04FF00A6;">Non-additive</mark> measures <mark style="background: #04FF00A6;">cannot be aggregated across any dimension</mark>. 
 
-Any attempt to sum, average, or perform similar operations will not yield meaningful results.  
+Any attempt to sum, average, or perform similar operations will not yield meaningful results.
 
 Often require custom aggregation techniques or calculated measures in reporting tools, where the correct formula is applied based on the dimensions being analysed.  
 
@@ -4152,7 +4121,7 @@ Understanding the difference between these types is crucial in <mark style="back
 
 Affects how fact tables are designed, how data is loaded and queried, and how <mark style="background: #04FF00A6;">business intelligence</mark> tools are configured for correct aggregation.  
 - <mark style="background: #04FF00A6;">Additive measures</mark> are straightforward to aggregate using standard techniques. 
-- <mark style="background: #04FF00A6;">Semi-additive measures</mark> may require specialized modelling techniques like snapshot facts or custom aggregations.  
+- <mark style="background: #04FF00A6;">Semi-additive measures</mark> may require specialised modelling techniques like snapshot facts or custom aggregations.  
 - <mark style="background: #04FF00A6;">Non-additive measures</mark> typically need <mark style="background: #04FF00A6;">calculated fields</mark> or <mark style="background: #04FF00A6;">derived</mark> measures to represent meaningful aggregates.
 
 ### <mark style="background: #04FF00A6;">Data Warehouse - Requirements</mark>
@@ -4171,8 +4140,8 @@ Affects how fact tables are designed, how data is loaded and queried, and how <m
 
 <mark style="background: #04FF00A6;">Adaptive and Resilient:</mark>
 - Tolerant to business changes (which are inevitable)  
-- Warehouse changes should be graceful and should not invalidate existing data or applications  
-- New case or busines cases should not disrupt existing applications  
+- Warehouse changes should be graceful and should not invalidate existing data or applications
+- New case or business cases should not disrupt existing applications  
 - If changes to descriptive data cannot be avoided, appropriate measures must be in place to account for these changes
 
 <mark style="background: #04FF00A6;">Secure:</mark>
@@ -4210,8 +4179,8 @@ When dimension attributes change <mark style="background: #04FF00A6;">slowly and
 <mark style="background: #04FF00A6;">Type 2</mark> is the most widely used approach when historical data must be preserved.  
 
 <mark style="background: #04FF00A6;">Each change creates a new record with:</mark>  
-- A new surrogate key,  
-- Valid-from / valid-to dates (or a current flag), and  
+- A new surrogate key,
+- Valid-from / valid-to dates (or a current flag), and
 - Links back to the fact table, ensuring reports can show what was true at that time.
 
 <table>
@@ -4415,7 +4384,7 @@ The <mark style="background: #04FF00A6;">Storage Manager</mark> decides where th
 - If yes → read directly from memory (faster).  
 - If no → fetch from disk, store it in a buffer for reuse.  
 
-Client → Parser → Rewriter → Optimizer → Executor  
+Client → Parser → Rewriter → Optimiser → Executor  
 ↓  
 Catalog Manager / Transaction Manager  
 ↓  
@@ -4444,7 +4413,7 @@ Disk
 	<tr>
 		<th>Optimisation</th>  
 		<td>Chooses the lowest-cost query plan using estimated I/O and CPU costs. </td>
-		<td>Cost-based optimizer determines join order and scan type. EXPLAIN. </td>
+		<td>Cost-based optimiser determines join order and scan type. EXPLAIN. </td>
 	</tr>
 	<tr>
 		<th>Execution</th>
@@ -4628,14 +4597,12 @@ Execution Time: 0.044 ms
 	</tr>
 </table>
 
-
 ### <mark style="background: #04FF00A6;">The Life of a Query Shared Components</mark>
 
-<mark style="background: #04FF00A6;">Catalog Manager and Memory Manager:</mark> Invoked as utilities during any transaction  
-
-Catalog is used by the query processor during authentication, parsing, and query optimisation 
-
-Memory manager is used throughout the DBMS whenever memory needs to be dynamically allocated or deallocated  
+<mark style="background: #04FF00A6;">Catalog Manager and Memory Manager:</mark> 
+- Invoked as utilities during any transaction  
+- Catalog is used by the query processor during authentication, parsing, and query optimisation 
+- Memory manager is used throughout the DBMS whenever memory needs to be dynamically allocated or deallocated  
 
 Administration, Monitoring and Utilities 
 
@@ -4669,7 +4636,7 @@ What is happening with the buffers? Is it reading from disk/cache?
 - Hash Join  
 - Hash Cond: (factmarks.degree_sk = dimdegree.degree_sk)  
 
-PostgreSQL is using hash-based equality joins — it builds an in-memory hash table of the smaller (dimension) table and probes it using rows from the larger (fact) table.  
+PostgreSQL is using hash-based equality joins - it builds an in-memory hash table of the smaller (dimension) table and probes it using rows from the larger (fact) table.  
 
 <mark style="background: #04FF00A6;">This is efficient when:</mark>
 - The join condition uses =  
@@ -4710,7 +4677,7 @@ This is a <mark style="background: #04FF00A6;">warm cache</mark> case.
 - Buffers: shared read= . . .
 - indicating data blocks were read from disk into memory.
 
-### <mark style="background: #04FF00A6;">Explain Analyse Buffers</mark>  
+### <mark style="background: #04FF00A6;">Explain Analyze Buffers</mark>  
 
 This is a schema for a small data warehouse.  
 
@@ -4751,7 +4718,7 @@ Build hash tables for the small (dimension) inputs
 
 <mark style="background: #04FF00A6;">Second join: (fact⟗student) ⟗ dimcourse (Hash Join)</mark>
 - <mark style="background: #04FF00A6;">Hash Cond:</mark> (factmarks.course_sk = dimcourse.course_sk)  
-- Build course hash (done in step 2), then probe it with the 6 rows from the previous join.  
+- Build course hash (done in step 2), then probe it with the 6 rows from the previous join. 
 - Still 6 rows after this join (all matched). 
 - <mark style="background: #04FF00A6;">Buffers:</mark> shared hit=3.
 
@@ -4777,7 +4744,7 @@ Process of converting high level queries to low level expressions to extract the
 <mark style="background: #04FF00A6;">A relational query processor:</mark>
 - Takes in a declarative SQL statement  
 - Validates it 
-- Optimizes it into a procedural dataflow execution plan  
+- Optimises it into a procedural dataflow execution plan  
 - Executes that dataflow program on behalf of a client program (subject to admission control)
 
 ### <mark style="background: #04FF00A6;">Query Parsing</mark>
@@ -4800,15 +4767,13 @@ The parser first considers each of the tables referenced in the FROM clause.
 - Form used is ``server.database.schema.table`` (called four part name)  
 - If you are not spanning multiple servers the form ``database.schema.table`` is used
 
-The query processor then invokes the catalog manager to check that the table is registered in the system catalog  
+The query processor then invokes the catalog manager to check that the table is registered in the system catalog.
 
 It then uses the catalog to ensure that attribute references are correct.
 
 The data types of attributes are used to drive the disambiguation logic for overloaded functional expressions, comparison operators, and constant expressions  
 
-<mark style="background: #04FF00A6;">For example:</mark>  
-- Suppose we include the expression (EMP.salary * 1.15) < 75000 in our query  
-- Here decisions need to be made about  
+<mark style="background: #04FF00A6;">For example:</mark>  Suppose we include the expression (EMP.salary * 1.15) < 75000 in our query. Here decisions need to be made about:
 - the code for the multiplication function and comparison operator  
 - the assumed data type and internal format of the strings “1.15” and “75000”  
 - These decisions depend on the data type of the EMP.salary attribute.  
@@ -4822,7 +4787,7 @@ The data types of attributes are used to drive the disambiguation logic for over
 
 ### <mark style="background: #04FF00A6;">Query Rewrite</mark>
 
-Simplifies and normalizes the query without changing its semantics  
+Simplifies and normalises the query without changing its semantics  
 
 Can only use the query and the metadata in the catalog. Cannot use the data in the tables  
 
@@ -4833,7 +4798,6 @@ So what does it do?
 <mark style="background: #04FF00A6;">It rewrites the query</mark>
 - Substituting any references with column references to tables used in the view  
 - This process is applied recursively until the query is expressed exclusively over tables and includes no views
-
 
 ### <mark style="background: #04FF00A6;">Query Rewrite - Logical Rewriting of Predicates</mark>  
 
@@ -4847,13 +4811,13 @@ Applied based on the predicates and constants in the WHERE clause
 
 Transitivity of predicates is used to produce new predicates e.g. R.x < 10 AND R.x = S.y Could become R.x < 10 AND S.y < 10.  
 
-Adding these transitive predicates increases the ability of the optimizer to choose plans that filter data early in execution, especially through the use of index-based access methods
+Adding these transitive predicates increases the ability of the optimiser to choose plans that filter data early in execution, especially through the use of index-based access methods
 
 ### <mark style="background: #04FF00A6;">Query Rewrite - Semantic Optimisation</mark> 
 
-Integrity constraints on the schema are stored in the catalog and can be used to help rewrite some queries.  
+Integrity constraints on the schema are stored in the catalog and can be used to help rewrite some queries.
 
-Can lead to redundant join elimination.  
+Can lead to redundant join elimination.
 
 ```sql
 SELECT E.Lname, M.Lname  
@@ -4864,8 +4828,7 @@ M.Salary
 
 Suppose we had implemented a constraint that an employee can never earn more than their manager?  
 
-If the semantic query optimizer checks for the existence of this constraint then it will know the result of this query will be zero so it doesn’t have to run it at all
-
+If the semantic query optimiser checks for the existence of this constraint then it will know the result of this query will be zero so it doesn’t have to run it at all
 
 ### <mark style="background: #04FF00A6;">Query Optimiser</mark>  
 
@@ -4873,7 +4836,7 @@ If the semantic query optimizer checks for the existence of this constraint then
 - A SQL query entered by a user describes what the user wants  
 - The query is then parsed and rewritten into an internal query representation  
 
-The query optimizer transforms an internal query representation into an efficient query plan for executing the query  
+The query optimiser transforms an internal query representation into an efficient query plan for executing the query  
 
 Query plan is a list of instructions that the DBMS needs to follow in order to execute a query on the data. Can be thought of (and depicted) as a dataflow diagram that pipes table data through a graph of query operators.
 
@@ -4883,13 +4846,13 @@ For a given query, find a correct execution plan that has the lowest “cost”.
 
 This is the part of a DBMS that is the hardest to implement well (proven to be NP-Complete).  
 
-The query optimizer tries to determine the most efficient way to execute a given query by considering the possible query plans  
+The query optimiser tries to determine the most efficient way to execute a given query by considering the possible query plans  
 
 <mark style="background: #04FF00A6;">No optimiser truly produces the “optimal” plan:</mark>
 - Use estimation techniques to guess real plan cost.  
 - Use heuristics to limit the search space.
 
-### <mark style="background: #04FF00A6;">Query Optimiser:</mark>
+### <mark style="background: #04FF00A6;">Query Optimiser</mark>
 
 <mark style="background: #04FF00A6;">Three components:</mark>
 1. Search space  
@@ -4899,10 +4862,10 @@ The query optimizer tries to determine the most efficient way to execute a given
 ### <mark style="background: #04FF00A6;">Search space</mark>  
 
 <mark style="background: #04FF00A6;">Two ways to optimise:</mark>
-- <mark style="background: #04FF00A6;">Analyse and transform equivalent relational expressions:</mark> Attempting to minimize the tuple and column counts of the intermediate and final query processes  
+- <mark style="background: #04FF00A6;">Analyse and transform equivalent relational expressions:</mark> Attempting to minimise the tuple and column counts of the intermediate and final query processes  
 - <mark style="background: #04FF00A6;">Using different algorithms for each operation:</mark> Underlying algorithms determine how tuples are accessed from the data structures they are stored in, indexing, hashing, data retrieval and hence influence the number of disk and block accesses
 
-### <mark style="background: #04FF00A6;">Relational Algebra:</mark>
+### <mark style="background: #04FF00A6;">Relational Algebra</mark>
 
 A formal representation of queries based on mathematical sets  
 
@@ -4923,7 +4886,7 @@ WHERE R.A > 5: -- Filters the rows where the value in column A is greater than 5
 PROJECT(A, B) [ SELECT(A > 5) [ R ] ]
 ```  
 
-In relational algebra, the process of querying data is done through a sequence of operations:  
+<mark style="background: #04FF00A6;">In relational algebra, the process of querying data is done through a sequence of operations:</mark>
 - Selection (also called "σ" or "select") (SELECT(A > 5)): 
 - Filters the table R based on the condition A > 5. 
 - Projection (also called "π" or "project") (PROJECT(A, B)): Retrieves only the specific columns A and B from the filtered data.
@@ -4935,7 +4898,7 @@ We can describe query operators using set theory
 <mark style="background: #04FF00A6;">The query language is called relational algebra:</mark>
 - Every query can be converted to relational algebra  
 - <mark style="background: #04FF00A6;">Operands:</mark> variables or values from which new values can be constructed  
-- <mark style="background: #04FF00A6;">Operators:</mark> symbols denoting procedures that construct new values from given values  
+- <mark style="background: #04FF00A6;">Operators:</mark> symbols denoting procedures that construct new values from given values
 - Expressions can be constructed by applying operators to atomic operands and/or other expressions  
 
 Relational algebra can be converted to tree with joins as branches 
@@ -4946,11 +4909,11 @@ Operators can also be applied in different order
 
 <mark style="background: #04FF00A6;">Form:</mark> An operator takes as input a relation (or two in the case of joins and unions) and produces another relation as output  
 
-A series of operators can therefore be chained together, each consuming the output of the operator that precedes it, right down to the source  
+<mark style="background: #04FF00A6;">A series of operators can therefore be chained together, each consuming the output of the operator that precedes it, right down to the source:</mark>
 - You imagine the data as streams of information.  
 - You channel these streams through operators that filter out unneeded data, join it with other streams of information or process some kind of aggregate function like ``sum()`` or ``count()``.  
 
-The appropriate operators applied in the appropriate order materializes the query’s results  
+The appropriate operators applied in the appropriate order materialises the query’s results 
 
 <mark style="background: #04FF00A6;">We can model the chain of operators as a tree:</mark>
 - The leaves of the tree are the raw tables.  
@@ -4992,14 +4955,14 @@ On completion, a few operators are typically added to the top of each query bloc
 - ``AppearIn( star_name,title, year),``  
 - ``Movies( title, year, length, type, studio_name)``
 
-Most Efficient Plan (Can be found by the optimiser)  
-
+<mark style="background: #04FF00A6;">Most Efficient Plan (Can be found by the optimiser):</mark>
 ```
 πname,length(Stars ⋈  
 πname,length(AppearIn ⋈  
 (πtitle,year,length σyear=2014(Movies)))
 ```  
-Start with the Movies table
+
+<mark style="background: #04FF00A6;">Start with the Movies table:</mark>
 - Select only the movies where year = 2014.  
 - σyear=2014(Movies) = “all movies released in 2014”. 
 - Project (keep only) the columns title, year, and length.  
@@ -5020,14 +4983,13 @@ Start with the Movies table
 - Stratified Search  
 - Unified Search
 
-Query optimization ≠ changing results — it changes <mark style="background: #04FF00A6;">how</mark> the result is produced.  
+Query optimisation ≠ changing results - it changes <mark style="background: #04FF00A6;">how</mark> the result is produced.  
 
 PostgreSQL picks a plan based on estimated <mark style="background: #04FF00A6;">cost</mark> and <mark style="background: #04FF00A6;">statistics</mark>.  
 
 Always confirm with EXPLAIN ANALYZE BUFFERS.  
 
 Understanding node types = understanding performance
-
 
 ### <mark style="background: #04FF00A6;">How do we know what is happening?</mark>  
 
@@ -5039,7 +5001,7 @@ PostgreSQL
 - Takes as a parameter a SQL statement  
 - Returns the estimated plan and cost, in plain text by default (you can request a different format)  
 
-<mark style="background: #04FF00A6;">ANALYSE:</mark>
+<mark style="background: #04FF00A6;">ANALYZE:</mark>
 - Takes as a parameter a SQL statement  
 - Will actually run the query (so be careful with updates or deletes and transactions)  
 
@@ -5064,7 +5026,7 @@ This is efficient for small tables or queries retrieving most rows — but costl
 
 <mark style="background: #04FF00A6;">Sequential scans occur when:</mark>
 - No suitable index exists for the query predicate.  
-- The optimizer estimates (based on outdated statistics) that scanning the entire table is cheaper than using an index.  
+- The optimiser estimates (based on outdated statistics) that scanning the entire table is cheaper than using an index.  
 
 <mark style="background: #04FF00A6;">Example:</mark>  
 - ``SELECT * FROM sales WHERE region_id = 5;``  
@@ -5092,7 +5054,7 @@ The planner will avoid using an index if it believes the index scan won’t redu
 
 ### <mark style="background: #04FF00A6;">Poor Join Order or Missing Filters</mark>  
 
-PostgreSQL’s optimizer must choose which tables to join first and how (e.g. nested loop, hash join, merge join).  
+PostgreSQL’s optimiser must choose which tables to join first and how (e.g. nested loop, hash join, merge join).  
 - A suboptimal join order can dramatically increase the size of intermediate results — millions of rows might be joined unnecessarily.  
 - Missing filters (e.g. WHERE clauses not pushed down early) cause the same issue by preventing early row elimination.  
 
@@ -5106,7 +5068,6 @@ JOIN dim_date d ON f.date_id = d.date_id;
 If the filter ``WHERE d.year = 2024`` is applied <mark style="background: #04FF00A6;">after</mark> the joins, all rows across all years are joined first — massive overhead.  
 
 Always apply selective filters as early as possible to reduce join size and cost
-
 
 ### <mark style="background: #04FF00A6;">Cold cache after restart</mark>  
 
@@ -5158,12 +5119,12 @@ With large data, you’ll see “``Disk: ... kB``” under ``Sort`` or ``HashAgg
 
 <mark style="background: #04FF00A6;">Mitigation:</mark>  
 - Increase ``work_mem`` for analytical queries.  
-- Use materialized views or summary tables for repeated aggregations
+- Use materialised views or summary tables for repeated aggregations
 
 ### <mark style="background: #04FF00A6;">Diagnostic Tools</mark>
 
 <mark style="background: #04FF00A6;">EXPLAIN (ANALYZE, BUFFERS)</mark>
-- Used to <mark style="background: #04FF00A6;">analyze and visualize how PostgreSQL executes a query</mark> - showing the actual execution plan, timing, and I/O activity.  
+- Used to <mark style="background: #04FF00A6;">analyze and visualise how PostgreSQL executes a query</mark> - showing the actual execution plan, timing, and I/O activity.  
 
 <mark style="background: #04FF00A6;">Key features:</mark>
 - ``EXPLAIN`` → shows the estimated plan and cost.  
@@ -5255,7 +5216,7 @@ Happens when in-memory work areas (e.g. work_mem) are too small for sorting, joi
 
 Repeatedly high values suggest <mark style="background: #04FF00A6;">I/O-bound queries</mark>.  
 
-Tune by increasing work_mem or optimizing queries to reduce intermediate result sizes.
+Tune by increasing work_mem or optimising queries to reduce intermediate result sizes.
 
 <table>
 	<tr>
@@ -5332,7 +5293,7 @@ Increasing values over time highlight <mark style="background: #04FF00A6;">disk-
 		<td>Data lost after crash or restart.</td>
 	</tr>  
 	<tr>
-		<th>Materialized Views</th>
+		<th>Materialised Views</th>
 		<td>Stores results of complex queries for reuse.</td>
 		<td>When queries are repeated often and data changes infrequently.</td>
 		<td>Must be manually refreshed; uses disk space.</td>
@@ -5361,9 +5322,7 @@ SELECT pg_prewarm('factmarks');
 ◦ Restarted server before analytics jobs.  
 ◦ Large fact tables queried repeatedly
 
-<mark style="background: #04FF00A6;">Note: Write-Ahead Log (WAL)</mark>  
-
-PostgreSQL’s mechanism for ensuring <mark style="background: #04FF00A6;">data integrity and crash recovery</mark>.  
+<mark style="background: #04FF00A6;">Note: Write-Ahead Log (WAL)</mark>   PostgreSQL’s mechanism for ensuring <mark style="background: #04FF00A6;">data integrity and crash recovery</mark>.  
 
 Every time data is modified (INSERT, UPDATE, DELETE), PostgreSQL:  
 ◦ <mark style="background: #04FF00A6;">First writes</mark> the change to the WAL file on disk.  
@@ -5432,7 +5391,7 @@ SELECT * FROM raw_import;
 	<tr>
 		<th>Type</th>
 		<th>Load Time</th>
-		<th>WAL Size</th>
+		<th>WAL size</th>
 	</tr>
 	<tr>
 		<th>Logged</th>
@@ -5455,7 +5414,7 @@ SELECT * FROM raw_import;
 
 <mark style="background: #04FF00A6;">When:</mark> Query results don’t change frequently.  
 
-<mark style="background: #04FF00A6;">Trade -off:</mark> 
+<mark style="background: #04FF00A6;">Trade-off:</mark> 
 - You gain performance but lose immediate freshness — the view shows data as of the last refresh, not live updates.  
 - Requires refreshing.  
 
@@ -5464,12 +5423,12 @@ SELECT * FROM raw_import;
 <mark style="background: #04FF00A6;">Data freshness trade-off:</mark> Choose refresh interval based on SLA — e.g., daily for dashboards, hourly for near-real-time reporting.  
 
 ```plSQL
-CREATE MATERIALIZED VIEW mv_degree_summary AS  
+CREATE MATERIALISED VIEW mv_degree_summary AS  
 SELECT degree_name, AVG(pass)  
 FROM factmarks JOIN dimdegree USING (degree_sk)  
 GROUP BY degree_name;  
 -- Refresh when new data loaded  
-REFRESH MATERIALIZED VIEW mv_degree_summary;
+REFRESH MATERIALISED VIEW mv_degree_summary;
 ```
 
 ### <mark style="background: #04FF00A6;">Parallel Query Execution</mark>
@@ -5477,7 +5436,7 @@ REFRESH MATERIALIZED VIEW mv_degree_summary;
 <mark style="background: #04FF00A6;">Purpose:</mark>  
 - PostgreSQL can split certain operations - such as large aggregations, scans, or joins - across multiple CPU cores using parallel workers.  
 - Instead of one process doing all the work, PostgreSQL launches several worker processes that each handle a portion of the data.  
-- The results from each worker are then combined by a Gather node in the final query plan  
+- The results from each worker are then combined by a Gather node in the final query plan
 
 <mark style="background: #04FF00A6;">Key settings:</mark>  
 ```plsql
@@ -5540,7 +5499,7 @@ EXPLAIN ANALYZE SELECT COUNT(*) FROM factmarks;
 ### <mark style="background: #04FF00A6;">Common Pitfalls</mark>
 - Over-indexing → slow writes.  
 - Using temp tables without indexes → slower joins.  
-- Forgetting to refresh materialized views.  
+- Forgetting to refresh materialised views.  
 - Parallel queries disabled by high cost thresholds.  
 - Misinterpreting EXPLAIN output (cost ≠ time exactly).
 
@@ -5573,7 +5532,7 @@ EXPLAIN ANALYZE SELECT COUNT(*) FROM factmarks;
 	<tr>
 		<th>I/O pressure during aggregation</th>
 		<td>Increase work_mem</td>
-		<td>Materialize summary tables; automate refresh schedules</td>
+		<td>Materialise summary tables; automate refresh schedules</td>
 	</tr>
 </table>
 
@@ -5603,10 +5562,10 @@ PostgreSQL automatically updates indexes when data changes.
 
 ```plsql
 CREATE TABLE examresultsdw.factmarks (  
-student_id INT,  
-degree_sk INT,  
-examdate DATE,  
-pass BOOLEAN  
+	student_id INT,  
+	degree_sk INT,  
+	examdate DATE,  
+	pass BOOLEAN  
 );  
 CREATE INDEX idx_pass ON examresultsdw.factmarks(pass);
 ```  
@@ -5623,10 +5582,7 @@ If ``examdate`` has one value per day across several years, → each date covers
 
 <mark style="background: #04FF00A6;">Checking index selectivity using the pg_stats table:</mark>
 ```plsql
-SELECT  
-attname AS column,  
-n_distinct,  
-reltuples  
+SELECT attname AS column, n_distinct, reltuples  
 FROM pg_stats  
 WHERE tablename = 'factmarks’;
 ```  
@@ -5664,13 +5620,12 @@ data)
 <mark style="background: #04FF00A6;">Compare Plans:</mark>
 ```plsql
 EXPLAIN (ANALYZE, BUFFERS)  
-SELECT * FROM  
-examresultsdw.factmarks WHERE  
-pass = true;  
+SELECT * FROM examresultsdw.factmarks 
+WHERE pass = true;
+  
 EXPLAIN (ANALYZE, BUFFERS)  
-SELECT * FROM  
-examresultsdw.factmarks WHERE  
-pass = false;
+SELECT * FROM examresultsdw.factmarks 
+WHERE pass = false;
 ```
 
 <table>
@@ -5693,6 +5648,7 @@ pass = false;
 
 ### <mark style="background: #04FF00A6;">General Index Types</mark>
 
+<div style="overflow-x: scroll;">
 <table>
 	<tr>
 		<th>Index Type</th>
@@ -5755,15 +5711,18 @@ pass = false;
 		<td>Large ordered tables where memory is limited</td>
 	</tr>
 </table>
+</div>
 
 ### <mark style="background: #04FF00A6;">Index Types (PostgreSQL)</mark>
 
+<div style="overflow-x: scroll;">
 <table>
 	<tr>
 		<th>Index Type</th>
 		<th>Best For</th>
 		<th>Supported Operations</th>
-		<th>When to Use Advantages</th>
+		<th>When to Use</th>
+		<th>Advantages</th>
 		<th>Limitations / Trade-offs</th>
 		<th>Example</th>
 	</tr>
@@ -5813,6 +5772,7 @@ pass = false;
 		<td>CREATE INDEX idx_examdate_brin ON factmarks USING brin(examdate);</td>
 	</tr>
 </table>
+</div>
 
 ### <mark style="background: #04FF00A6;">Index Types</mark>
   
@@ -5879,7 +5839,8 @@ pass = false;
 	</tr>
 	<tr>
 		<th>GiST index</th>  
-		<td>Good for geometric, full-text, range queries Complex tuning; higher insert cost</td>
+		<td>Good for geometric, full-text, range queries</td>
+		<td>Complex tuning; higher insert cost</td>
 	</tr>
 	<tr>
 		<th>BRIN index</th>  
@@ -5892,7 +5853,7 @@ pass = false;
 
 Over-indexing increases storage and slows writes.  
 
-Plan periodic index usage audits via pg_stat_user_indexes.  
+Plan periodic index usage audits via ``pg_stat_user_indexes``.  
 
 Choose index type based on query access patterns and data growth trend, not short-term query speed alone.
 
@@ -5931,7 +5892,7 @@ Choose index type based on query access patterns and data growth trend, not shor
 	</tr>
 	<tr>
 		<th>Materialised Views</th>  
-		<td>Pre-compute and store complex aggregations for recurring analytical queries. Automate REFRESH MATERIALIZED VIEW after ETL.</td>  
+		<td>Pre-compute and store complex aggregations for recurring analytical queries. Automate REFRESH MATERIALISED VIEW after ETL.</td>  
 		<td>Near-instant query response; offloads heavy aggregations from live tables.</td>  
 		<td>Data freshness trade-off—results only as current as last refresh; maintenance cost for scheduling refresh jobs</td>
 	</tr>
@@ -5954,7 +5915,7 @@ No index = full database scan
 
 ### <mark style="background: #04FF00A6;">Indexing Overview (Primary vs Secondary)</mark>  
 
-<mark style="background: #04FF00A6;">Primary index:</mark> B-tree on _id (document key)  
+<mark style="background: #04FF00A6;">Primary index:</mark> B-tree on \_id (document key)  
 
 <mark style="background: #04FF00A6;">Secondary indexes:</mark>  
 
@@ -5990,8 +5951,8 @@ POST /events_d22125081/_index
 ```json
 POST /events_d22125081/_find  
 {  
-"selector": {"eventType": "Wedding"},  
-"use_index": "eventtype_idx"  
+	"selector": {"eventType": "Wedding"},  
+	"use_index": "eventtype_idx"  
 }
 ``` 
 
@@ -6008,7 +5969,7 @@ Generally, you don’t execute ad hoc queries
 Most come from views you add ahead of time  
 
 <mark style="background: #04FF00A6;">Map Reduce Views:</mark>  
-- Predefined functions for aggregation and summarization.  
+- Predefined functions for aggregation and summarisation.  
 - The most important part of the view is the emit function  
 - emit (key, value)  
 - key – a value you provide to describe the documents you want  
@@ -6065,7 +6026,6 @@ You need <mark style="background: #04FF00A6;">range queries</mark> on structured
 
 You’re <mark style="background: #04FF00A6;">working with large datasets</mark> where you can’t afford to re-scan documents dynamically.
 
-
 ### <mark style="background: #04FF00A6;">Mango v View Comparison</mark>  
 
 <table>
@@ -6101,9 +6061,9 @@ You’re <mark style="background: #04FF00A6;">working with large datasets</mark>
 	  </tr>
 </table>
 
+Use <mark style="background: #04FF00A6;">Mango</mark> for convenience and simplicity.
 
-Use <mark style="background: #04FF00A6;">Mango</mark> for convenience and simplicity.  
-Use <mark style="background: #04FF00A6;">Views</mark> for power, performance, and complex analytics.  
+Use <mark style="background: #04FF00A6;">Views</mark> for power, performance, and complex analytics.
 
 <table>
 	<tr>
@@ -6240,7 +6200,6 @@ If the "index" field is "special": "\_all_docs", CouchDB is scanning all documen
 }
 ```
 
-
 ### <mark style="background: #04FF00A6;">Understanding / _info in CouchDB</mark>  
 
 <mark style="background: #04FF00A6;">For Map Reduce View:</mark> You can’t use ``_explain``. ``_info`` shows metadata about the view index  
@@ -6262,7 +6221,7 @@ curl -X GET http://yourusername:yourpassword@127.0.0.1:5984/events_d22125081/_de
 		"waiting_clients": 0,  
 		"updater_running": false,  
 		"update_seq": 8,  
-		"sizes": {  
+		"sises": {  
 			"file": 16672,  
 			"external": 114,  
 			"active": 336  
@@ -6306,18 +6265,18 @@ curl -X GET http://yourusername:yourpassword@127.0.0.1:5984/events_d22125081/_de
 		<td>Normal after index build.</td>
 	</tr>
 	<tr>
-		<td>sizes.file</td>
+		<td> sizes.file</td>
 		<td>Total bytes occupied on disk by the view index file (≈ old disk_size).</td>
 		<td>Use this to measure index growth or reduction after compaction.</td>
 	</tr>
 	<tr>
-		<td>sizes.active</td>
+		<td> sizes.active</td>
 		<td>Active portion of the file (≈ old data_size).</td>
 		<td> Represents usable data inside the index.</td>
 	</tr>
 	<tr>
-		<td>sizes.external</td>
-		<td>Size of the original emitted key/value data from map functions.</td>
+		<td> sizes.external</td>
+		<td>Sise of the original emitted key/value data from map functions.</td>
 		<td>Useful for understanding emitted result volume.</td>
 	</tr>
 	<tr>
@@ -6358,8 +6317,7 @@ curl -X GET http://yourusername:yourpassword@127.0.0.1:5984/events_d22125081/_de
 	</tr>
 	<tr>
 		<td>Text Indexes</td>
-		<td>(Lucene – Beyond our scope)</td>
-		<td>Full-text search </td>
+		<td>(Lucene – Beyond our scope) Full-text search </td>
 		<td>"type":"text"</td>
 		<td>Enables keyword search</td>
 		<td>More storage + CPU use</td>
@@ -6380,7 +6338,7 @@ curl -X GET http://yourusername:yourpassword@127.0.0.1:5984/events_d22125081/_de
 
 ### <mark style="background: #04FF00A6;">Optimise Queries</mark>
 
-<mark style="background: #04FF00A6;">Start and End Keys:</mark> When querying views, utilize ``startkey`` and ``endkey`` parameters to limit the amount of data returned, making queries faster and reducing load.  
+<mark style="background: #04FF00A6;">Start and End Keys:</mark> When querying views, utilise ``startkey`` and ``endkey`` parameters to limit the amount of data returned, making queries faster and reducing load.  
 
 <mark style="background: #04FF00A6;">Limit Results:</mark> Use the limit parameter in your queries to restrict the number of returned documents, which can speed up response times.
 
@@ -6470,7 +6428,7 @@ A partition is typically stored across multiple SSTable files
 
 <mark style="background: #04FF00A6;">Bloom filter:</mark> ``(Filter.db)`` A structure stored in memory that checks if row data exists in the memtable before accessing SSTables on disk  
 
-<mark style="background: #04FF00A6;">SSTable Index Summary:</mark> ``(SUMMARY.db)`` A sample of the partition index stored in memory  
+<mark style="background: #04FF00A6;">SSTable Index Summary:</mark> ``(SUMMARY.db)`` A sample of the partition index stored in memory
 
 <mark style="background: #04FF00A6;">SSTable Table of Contents</mark> ``(TOC.txt)`` A file that stores the list of all components for the SSTable TOC  
 
@@ -6533,15 +6491,11 @@ Reads are fastest when the most in-demand data fits into memory.
 
 ![[Pasted image 20251116212445.png]]
 
-<mark style="background: #04FF00A6;">Row Cache:</mark> can provide some improvement for very read-intensive operations, where read operations are 95% of the load.  
-
-Stores a subset of the partition data stored on disk in the SSTables in memory
+<mark style="background: #04FF00A6;">Row Cache:</mark> can provide some improvement for very read-intensive operations, where read operations are 95% of the load.  Stores a subset of the partition data stored on disk in the SSTables in memory
 
 ![[Pasted image 20251116212508.png]]
 
-Bloom Filter
-
-Cassandra checks the Bloom filter to discover which SSTables are likely to have the request partition data.  
+<mark style="background: #04FF00A6;">Bloom Filter:</mark> Cassandra checks the Bloom filter to discover which SSTables are likely to have the request partition data.  
 
 <mark style="background: #04FF00A6;">Each SSTable has a Bloom filter associated with it:</mark>
 - Can establish that a SSTable does not contain certain partition data.
@@ -6589,7 +6543,7 @@ Read repair requests ensure that the requested row is made consistent on all rep
 
 <mark style="background: #04FF00A6;">During writes:</mark>  
 - When Cassandra writes data to an SSTable, it also updates a Bloom filter for that SSTable.
-- Each row key is passed through multiple hash functions, and the resulting bit positions are set to 1 in a fixed-size bit array.
+- Each row key is passed through multiple hash functions, and the resulting bit positions are set to 1 in a fixed-sise bit array.
 
 ### <mark style="background: #04FF00A6;">How the Bloom Filter Works</mark>
 
@@ -6684,7 +6638,7 @@ Cassandra uses Bloom filters to <mark style="background: #04FF00A6;">minimise di
 	</tr>
 </table>
 
-A special column used to store a number that this changed increments.  
+A special column used to store a number that is changed in increments.  
 
 <mark style="background: #04FF00A6;">Restriction on the counter column:</mark>
 - Counter column cannot index, delete or re-add a counter column.
@@ -6732,13 +6686,11 @@ CREATE TABLE college_student(
 	PRIMARY KEY(Snumber),  
 	EMAIL LIST<text>  
 );  
-INSERT INTO college_student (Snumber, NAME,  
-EMAIL) 
+INSERT INTO college_student (Snumber, NAME, EMAIL) 
 VALUES(001,'Ayush',['ayush@gmail.com', 'AY@mail.com']);  
 
 INSERT INTO college_student (Snumber, NAME, EMAIL)  
-VALUES(002,'Aarav',['aarav@ymail.com',  
-'AR@mail.com']);  
+VALUES(002,'Aarav',['aarav@ymail.com', 'AR@mail.com']);  
 
 INSERT INTO college_student (Snumber, NAME, EMAIL)  
 VALUES(003,'Kabir',p'kabir@hotmail.com']);  
@@ -6748,7 +6700,7 @@ Update college_student set email = email + ['data science'] where Name='Ayush';
 
 ### <mark style="background: #04FF00A6;">Cassandra Collections - Set</mark>
 
-The elements in the set returns in a sorted order after execution.  
+The elements in the set returns in a sorted order after execution.
 
 ```cql
 CREATE TABLE<table name> (  
@@ -6923,11 +6875,11 @@ This is because, in the background, it starts full-table scans across all nodes 
 
 ### <mark style="background: #04FF00A6;">Cassandra Secondary Indexing</mark> 
 
-Provides a means to access data in Cassandra using attributes other than the partition key.  
+Provides a means to access data in Cassandra using attributes other than the partition key.
 
 Improves speed and efficiency of data lookup when matching a given condition.  
 
-The index indexes column values in a separate, hidden table from the one that contains the values being indexed.  
+The index indexes column values in a separate, hidden table from the one that contains the values being indexed.
 
 Indexes can be used for collections, collection columns, and any other columns except counter columns and static columns.
 
@@ -6961,7 +6913,7 @@ When executing a search query using the secondary index, Cassandra reads the ind
 
 If our cluster has many nodes, this can lead to increased data transfer and high latency.
 
-When data is written to (insert into) a table with a secondary index attached:  
+<mark style="background: #04FF00A6;">When data is written to (insert into) a table with a secondary index attached:</mark>
 - Cassandra writes to both the index and the base Memtable.
 - Both are flushed to the SSTables simultaneously.
 - The index data will have a separate lifecycle than the source data.  
@@ -6978,8 +6930,7 @@ TRACING ON;
 SELECT * FROM employee WHERE city='Cork';  
 TRACING OFF;  
 -- Retrieve trace summary  
-SELECT session_id, duration, coordinator, request,  
-started_at  
+SELECT session_id, duration, coordinator, request, started_at  
 FROM system_traces.sessions  
 WHERE session_id = <your trace id>;  
 -- Retrieve detailed event breakdown  
@@ -7044,9 +6995,9 @@ Has been pre-parsed and validated by the database.
 
 Can be executed once concrete values have been provided for the bind variables (to make a bound statement).  
 
-Also allows you to define default values for properties such as the Consistency level or tracing.  
+Also allows you to define default values for properties such as the Consistency level or tracing.
 
-These default values are used in any bound statement created from the prepared statement.  
+These default values are used in any bound statement created from the prepared statement.
 
 <mark style="background: #04FF00A6;">Note:</mark> Can’t do this directly in ``CQLSh`` you need to use a driver and usually do this programmatically
 
@@ -7054,7 +7005,7 @@ These default values are used in any bound statement created from the prepared s
 
 ### <mark style="background: #04FF00A6;">Prepared Statements Benefits</mark>
 
-Remove compilation overhead when the query is executed -compiled once not every time.  
+Remove compilation overhead when the query is executed - compiled once, not every time.
 
 <mark style="background: #04FF00A6;">Reduces Network Traffic:</mark>
 - Reduces the amount of data that needs to be sent
@@ -7074,7 +7025,7 @@ Remove compilation overhead when the query is executed -compiled once not every 
 - Parameters are treated as data not as executable parts of the query reducing the risk of injection attack.
 
 <mark style="background: #04FF00A6;">Consistency in Query Execution:</mark>  
-- The use of parameterized queries helps in standardizing the structure of queries
+- The use of parameterised queries helps in standardising the structure of queries
 - Reduces the likelihood of syntax errors and ensuring that queries are executed in a consistent manner.
 
 ### <mark style="background: #04FF00A6;">Nodetool</mark>
@@ -7119,8 +7070,15 @@ How to execute e.g.
 	</tr>
 	<tr>
 		<th>Write Latency Time</th>
-		<td>to persist a write nodetool tablestats Disk I/O, replication delay</td>
-		<td>Read Latency Time to retrieve data nodetool tablestats Too many SSTables, cache misses</td>
+		<td>to persist a write</td>
+		<td>nodetool tablestats</td>
+		<td>Disk I/O, replication delay</td>
+	</tr>
+	<tr>
+		<th>Read Latency Time</th>
+		<td>to retrieve data</td>
+		<td>nodetool tablestats</td>
+		<td>Too many SSTables, cache misses</td>
 	</tr>
 	<tr>
 		<th>Query Latency</th>
@@ -7142,11 +7100,11 @@ How to execute e.g.
 
 Ability of to handle increasing amounts of data, numbers of users, and types of requests without sacrificing performance or availability.  
 
-A scalable data solution tackles adapts to growing demands by either adding resources such as hardware or software, by optimising its design and configuration, or by undertaking some combined strategy.  
+A scalable data solution tackles adapts to growing demands by either adding resources such as hardware or software, by optimising its design and configuration, or by undertaking some combined strategy.
 
 <mark style="background: #04FF00A6;">Vertical scalability:</mark> Adding more processing power and memory to a single server.  
 
-<mark style="background: #04FF00A6;">Horizontal database:</mark> Adding more servers (i.e., database nodes) to distribute the workload
+<mark style="background: #04FF00A6;">horizontal database:</mark> Adding more servers (i.e., database nodes) to distribute the workload
 
 ![[Pasted image 20251121102950.png]]
 
@@ -7160,17 +7118,18 @@ A scalable data solution tackles adapts to growing demands by either adding reso
 ### <mark style="background: #04FF00A6;">Partitioning v Distribution</mark>  
 
 <mark style="background: #04FF00A6;">Partitioning:</mark> How the data is split.  
-<mark style="background: #04FF00A6;">Distribution:</mark> Where the data is placed.  
+
+<mark style="background: #04FF00A6;">Distribution:</mark> Where the data is placed.
 
 Partitioning <mark style="background: #04FF00A6;">does not</mark> require multiple machines. 
 
 Distribution <mark style="background: #04FF00A6;">does</mark>.
 
-### <mark style="background: #04FF00A6;">Vertical v Horizontal Partitioning</mark>  
+### <mark style="background: #04FF00A6;">Vertical v horizontal Partitioning</mark>  
 
-Vertical Partitioning stores tables and/or columns in a separate database or tables.  
+<mark style="background: #04FF00A6;">Vertical Partitioning</mark> stores tables and/or columns in a separate database or tables.  
 
-Horizontal Partitioning stores rows of a table in multiple database clusters.  
+<mark style="background: #04FF00A6;">Horizontal Partitioning</mark> stores rows of a table in multiple database clusters.  
 
 <mark style="background: #04FF00A6;">When do we decide physical Design? It depends on:</mark>  
 - Expected access patterns  
@@ -7199,7 +7158,7 @@ Horizontal Partitioning stores rows of a table in multiple database clusters.
 
 ### <mark style="background: #04FF00A6;">Vertical Partitioning</mark>
 
-Splits a table by <mark style="background: #04FF00A6;">columns</mark>, storing different groups of attributes in separate tables or storage units.  
+Splits a table by <mark style="background: #04FF00A6;">columns</mark>, storing different groups of attributes in separate tables or storage units.
 
 Useful when different sets of columns are accessed at different times or have different performance needs.  
 
@@ -7210,15 +7169,15 @@ Useful when different sets of columns are accessed at different times or have di
 
 ### <mark style="background: #04FF00A6;">Horizontal Partitioning</mark>  
 
-Splits a table by <mark style="background: #04FF00A6;">rows</mark>, distributing subsets of rows across multiple partitions or nodes.  
+Splits a table by <mark style="background: #04FF00A6;">rows</mark>, distributing subsets of rows across multiple partitions or nodes.
 
-Used to scale out large datasets, distribute load, and improve parallelism.  
+Used to scale out large datasets, distribute load, and improve parallelism.
 
-Each partition is a separate data store, but all partitions have the same schema.  
+Each partition is a separate data store, but all partitions have the same schema.
 
-Each partition holds a specific subset of the data, such as all the orders for a specific set of customers.  
+Each partition holds a specific subset of the data, such as all the orders for a specific set of customers.
 
-Tables, indexes and materialized views to be partitioned into disjoint sets of rows that are physically stored and accessed separately.
+Tables, indexes and materialised views to be partitioned into disjointed sets of rows that are physically stored and accessed separately.
 
 ![[Pasted image 20251121103939.png]]
 
@@ -7254,8 +7213,8 @@ All sharding is partitioning, but not all partitioning is sharding.
 ### <mark style="background: #04FF00A6;">Why partition data?</mark> 
 
 <mark style="background: #04FF00A6;">Improve scalability:</mark> 
-- When you scale up a single database system, it will eventually reach a physical hardware limit
-- If you divide data across multiple partitions, each hosted on a separate server, you can scale out the system almost indefinitely.  
+- When you scale up a single database system, it will eventually reach a physical hardware limit.
+- If you divide data across multiple partitions, each hosted on a separate server, you can scale out the system almost indefinitely.
 
 <mark style="background: #04FF00A6;">Improve performance:</mark>
 - Data access operations on each partition take place over a smaller volume of data.  
@@ -7267,11 +7226,11 @@ All sharding is partitioning, but not all partitioning is sharding.
 
 ### <mark style="background: #04FF00A6;">Why partition?</mark>
 
-<mark style="background: #04FF00A6;">Provide operational flexibility:</mark> You can define different strategies for management, monitoring, backup and restore, and other administrative tasks based on the importance of the data in each partition.  
+<mark style="background: #04FF00A6;">Provide operational flexibility:</mark> You can define different strategies for management, monitoring, backup and restore, and other administrative tasks based on the importance of the data in each partition.
 
 <mark style="background: #04FF00A6;">Improve availability:</mark>
-- Separating data across multiple servers avoids a single point of failure.  
-- If one instance fails, only the data in that partition is unavailable operations on other partitions can continue
+- Separating data across multiple servers avoids a single point of failure.
+- If one instance fails, only the data in that partition is unavailable operations on other partitions can continue.
 
 ### <mark style="background: #04FF00A6;">Data Latency</mark>  
 
@@ -7288,20 +7247,20 @@ This is something we need to work on to try to improve performance
 Occurs when one partition, one key, or one node receives a <mark style="background: #04FF00A6;">disproportionately high amount of traffic</mark> (reads, writes, or both).  
 
 <mark style="background: #04FF00A6;">This creates an imbalance in load, causing:</mark>  
-- slower queries  
-- increased latency  
-- uneven resource usage  
-- potential node overload  
-- reduced overall throughput  
+- slower queries
+- increased latency
+- uneven resource usage
+- potential node overload
+- reduced overall throughput
 
 Arise when <mark style="background: #04FF00A6;">partitioning is uneven</mark> - that is, when some partitions get far more data or queries than others
 
 <mark style="background: #04FF00A6;">Problems caused by Hotspots</mark>
 - Overloaded nodes
-- Poor query performance 
+- Poor query performance
 - High latency
 - Reduced availability
-- Unbalanced scaling (adding nodes doesn’t fix it)  
+- Unbalanced scaling (adding nodes doesn’t fix it)
 
 Hotspots <mark style="background: #04FF00A6;">negate</mark> the benefits of distributed databases
 
@@ -7315,24 +7274,24 @@ Hotspots <mark style="background: #04FF00A6;">negate</mark> the benefits of dist
 
 <mark style="background: #04FF00A6;">Cassandra:</mark> 
 - A partition key like ``server_id`` when one server generates most logs → one partition grows unbounded.
-- Time-series using only date as partition key → all writes go to “today’s” partition.  
+- Time-series using only date as partition key → all writes go to “today’s” partition.
 
-<mark style="background: #04FF00A6;">CouchDB:</mark> Partition prefix IE: has 10× more documents than other prefixes → the IE shard is overloaded.  
+<mark style="background: #04FF00A6;">CouchDB:</mark> Partition prefix IE: has 10× more documents than other prefixes → the IE shard is overloaded.
 
 <mark style="background: #04FF00A6;">PostgreSQL:</mark> Range partitioning by month → the “current month” partition receives all writes.
 
 ### <mark style="background: #04FF00A6;">How to Avoid Hotspots</mark> 
 
-<mark style="background: #04FF00A6;">Use composite partition keys:</mark> Add a second key to break up heavy partitions: e.g., (device_id, date_hour) instead of (device_id). 
+<mark style="background: #04FF00A6;">Use composite partition keys:</mark> Add a second key to break up heavy partitions: e.g., (device_id, date_hour) instead of (device_id).
 
 <mark style="background: #04FF00A6;">Use hashing:</mark>
 - Hash a high-cardinality key to spread load
 - Cassandra uses hashing automatically
-- CouchDB can hash partition prefixes manually  
+- CouchDB can hash partition prefixes manually
 
 <mark style="background: #04FF00A6;">Use bucketing:</mark> Split large partitions into fixed “buckets”: e.g., ``user_id % 16``  
 
-<mark style="background: #04FF00A6;">Avoid unbounded partitions:</mark> Especially in time-series scenarios.  
+<mark style="background: #04FF00A6;">Avoid unbounded partitions:</mark> Especially in time-series scenarios. 
 
 <mark style="background: #04FF00A6;">Monitor partition sizes use:</mark>  
 - ``nodetool tablestats in Cassandra``  
@@ -7341,7 +7300,7 @@ Hotspots <mark style="background: #04FF00A6;">negate</mark> the benefits of dist
 
 ### <mark style="background: #04FF00A6;">Important!</mark>
 
-Partitioning is successful only if the partition key matches the query access pattern.  
+Partitioning is successful only if the partition key matches the query access pattern.
 
 <mark style="background: #04FF00A6;">Cassandra:</mark>  
 - <mark style="background: #04FF00A6;">Good:</mark> ``WHERE device_id = ? AND timestamp > ?`` 
@@ -7368,7 +7327,7 @@ Partitioning is successful only if the partition key matches the query access pa
 
 <mark style="background: #04FF00A6;">How to prevent skew:</mark>  
 - Use composite partition keys  
-- Use hashing (CouchDB)  
+- Use hashing (CouchDB)
 - Use bucketing (Cassandra)
 
 ### <mark style="background: #04FF00A6;">Impact on Secondary Indexes</mark>
@@ -7411,11 +7370,10 @@ Partitioning is successful only if the partition key matches the query access pa
 - Splitting the data into separate partitions and then creating multiple replicas for each partition.  
 - The replicas for each partition coordinate with each other  
 
-Improves fault tolerance  
-
-Improves scalability  
-
-Improves availability
+<mark style="background: #04FF00A6;">Benefits:</mark>
+- Improves fault tolerance  
+- Improves scalability  
+- Improves availability
 
 <table>
 	<tr>
@@ -7520,8 +7478,8 @@ Each partition is essentially a separate table that stores a subset of the origi
 - <mark style="background: #04FF00A6;">Cost-Effective Storage:</mark> Allows you to store older or less frequently accessed data on cheaper storage media, while keeping frequently accessed data on faster storage devices
 
 <mark style="background: #04FF00A6;">Methods:</mark>
-- Range Partitioning  
-- List Partitioning  
+- Range Partitioning
+- List Partitioning
 - Hash Partitioning
 
 ### <mark style="background: #04FF00A6;">Range Partitioning</mark> 
@@ -7543,9 +7501,9 @@ Data is divided into partitions based on specific values in a column.
 
 Allows you to define specific values for each partition.  
 
-Useful when data can be categorized into distinct, non-overlapping sets.  
+Useful when data can be categorised into distinct, non-overlapping sets.  
 
-<mark style="background: #04FF00A6;">Note:</mark> When you partition a table in PostgreSQL, the primary key (or any unique constraint) must include all the columns that are part of the partitioning key
+<mark style="background: #04FF00A6;">Note:</mark> When you partition a table in PostgreSQL, the primary key (or any unique constraint) must include all the columns that are part of the partitioning key.
 
 <mark style="background: #04FF00A6;">Example:</mark> LISTPARTITIONING.SQL
 ![[Pasted image 20251121120807.png]]
@@ -7579,7 +7537,7 @@ Secondary indexes can be significantly more efficient when locating matching doc
 
 ### <mark style="background: #04FF00A6;">Working with partitions</mark>
 
-To create a partitioned database we simply set the parameter when we create the database  
+To create a partitioned database we simply set the parameter when we create the database
 
 ```bash
 curl -X PUT  
@@ -7729,13 +7687,13 @@ Data is divided into partitions based on the hash value of a specified column.
 
 Uses a hash function to distribute data uniformly across partitions.  
 
-Useful when you want to evenly distribute data across partitions to achieve load balancing.  
+Useful when you want to evenly distribute data across partitions to achieve load balancing.
 
 <mark style="background: #04FF00A6;">Note:</mark> When you partition a table in PostgreSQL, the primary key (or any unique constraint) must include all the columns that are part of the partitioning key
 
 ### <mark style="background: #04FF00A6;">Hash Partitioning in CouchDB</mark>
 
-CouchDB does not hash documents by itself, but you can hash the partition key in your ID scheme:  
+CouchDB does not hash documents by itself, but you can hash the partition key in your ID scheme
 
 <mark style="background: #04FF00A6;">Example:</mark>  
 - hash(user_id)%16:doc  
@@ -7747,7 +7705,7 @@ CouchDB does not hash documents by itself, but you can hash the partition key in
 
 <mark style="background: #04FF00A6;">Pros:</mark>  
 - Excellent balanced distribution  
-- Avoids skew and oversized partitions  
+- Avoids skew and oversised partitions  
 - Good for high-write workloads  
 
 <mark style="background: #04FF00A6;">Risk:</mark> Harder to run partition-level analytics (e.g., “all users from Ireland” are now spread across 16 hashed partitions)
@@ -7808,7 +7766,7 @@ With the replication of data across the distributed system, achieving data consi
 
 Cassandra prefers availability over consistency.  
 
-It doesn't optimize for consistency.  
+It doesn't optimise for consistency.  
 
 Instead, it provides the flexibility to tune the consistency depending on your use case.  
 
@@ -7856,8 +7814,7 @@ Specifies how many replica nodes must respond with the latest consistent data be
 
 A primary key represents a unique data partition and data arrangement within a partition.  
 
-The optional clustering columns handle the data arrangement  
-part.  
+The optional clustering columns handle the data arrangement part.  
 
 A unique partition key represents a set of rows in a table  which are managed within a server (including all servers managing its replicas).  
 
@@ -7891,11 +7848,9 @@ nodetool tablestats keyspace_name.table_name
 docker –exec –it cassandra1 nodetool tablestats hotel.guest_interactions
 ``` 
 
-This will allow you to check the number of  
-partitions that exist.
+This will allow you to check the number of partitions that exist.
 
-Read and write operations are performed using a partition  
-key on a table.  
+Read and write operations are performed using a partition key on a table.  
 
 Cassandra uses ‘tokens’ (a long value out of range -2^63 to +2^63 -1) for data distribution and indexing.  
 
@@ -7929,7 +7884,7 @@ The data is then indexed on each node with the help of the partition key
 
 ### <mark style="background: #04FF00A6;">Example</mark>
 
-The company table is split into partitions using the partition key company_name and distributed across the nodes.  
+The company table is split into partitions using the partition key ``company_name`` and distributed across the nodes.  
 
 Notice that Cassandra groups the rows with the same ``company_name`` value and stores them on the same physical partition on the disk.  
 
@@ -7996,16 +7951,15 @@ SELECT * FROM sensor_data WHERE timestamp > '2025-01-01';
 
 ### <mark style="background: #04FF00A6;">CAP Theorem</mark>  
 
-About the trade -offs inherent in designing a distributed solution for storing data.
+About the trade-offs inherent in designing a distributed solution for storing data.
 
 <mark style="background: #04FF00A6;">Consistency:</mark>
 - Sequential consistency (a data item behaves as if there is one copy) – similar to the A in ACID
 - All clients connected to a data store see the same data.
 
 <mark style="background: #04FF00A6;">Availability:</mark>  
-Node failures do not prevent survivors from continuing to operate. 
-
-Clients are able to access and update data rapidly.
+- Node failures do not prevent survivors from continuing to operate. 
+- Clients are able to access and update data rapidly.
 
 <mark style="background: #04FF00A6;">Partition-tolerance:</mark>  
 - Partition=Break
@@ -8052,7 +8006,7 @@ The network makes message delivery unreliable.
 
 A request/response could be delayed arbitrarily, or completely dropped.  
 
-If for example a network cable is out of action, there will be no communication along that link  
+If, for example, a network cable is out of action, there will be no communication along that link  
 
 If a client doesn’t receive a response to a message, then it has no choice but to wait and try the request again. It could wait a very long time.
 
@@ -8088,7 +8042,8 @@ Simple logic for managing these caches locally at each client:
 
 There are a variety of <mark style="background: #04FF00A6;">Consistency models</mark> that can be implemented. They adjust how and when caches are updated, and whether clients can continue to operate during a partition.
 
-Consistency 
+### <mark style="background: #04FF00A6;">Consistency</mark>
+
 <mark style="background: #04FF00A6;">Strong Consistency:</mark> Once an update is complete, all clients will see that new value.  
 
 <mark style="background: #04FF00A6;">Causal Consistency:</mark> If process A tells B that it has updated X, then B will see the latest value of X.  
@@ -8129,7 +8084,7 @@ To update an item, a client must write W of the replicas upfront. (The remainder
 
 To read an item, a client must read R of the replicas, in order to decide whether the most recent value has been read. (If the values differ, assume you can tell which one is the newest.)
 
-Suppose we have two replicas which are networkpartitioned (unable to communicate due to a network failure)  
+Suppose we have two replicas which are network partitioned (unable to communicate due to a network failure)  
 
 If we allow writes on either replica we will end up with inconsistent data  
 
@@ -8137,11 +8092,11 @@ If we force the replicas to wait to synchronise we lose availability
 
 If we never have a network failure then we lose partition tolerance
 
-N=2, W=2, R=1 is a strongly consistent system: a writer must update both replicas, and a reader can read either one of them.  
+<mark style="background: #04FF00A6;">N=2, W=2, R=1 is a strongly consistent system:</mark> a writer must update both replicas, and a reader can read either one of them.  
 
-N=2, W=1, R=2 is also a strongly consistent system: a writer can update either replica, and a reader must read both to obtain the latest.  
+<mark style="background: #04FF00A6;">N=2, W=1, R=2 is also a strongly consistent system:</mark> a writer can update either replica, and a reader must read both to obtain the latest.  
 
-N=2, W=1, R=1 is an eventually consistent system: the writer can update either replica, and the reader can read either replica, so you may not see consistent results
+<mark style="background: #04FF00A6;">N=2, W=1, R=1 is an eventually consistent system:</mark> the writer can update either replica, and the reader can read either replica, so you may not see consistent results
 
 (W + R) > N is strongly consistent  
 
@@ -8151,9 +8106,9 @@ W < (N+1)/2 means write conflicts can occur
 
 ### <mark style="background: #04FF00A6;">Modern architectures:</mark>
 
-General belief is that for wide -area systems you can’t forfeit P or partitions.  
+General belief is that for wide-area systems you can’t forfeit P or partitions.  
 
-You can’t choose to not have partitions .  
+You can’t choose to not have partitions.
 
 Therefore, you must balance consistency and availability.  
 
@@ -8169,13 +8124,13 @@ ACID good fit for businesses which deal with online transaction processing (e.g.
 
 BASE more flexible and fluid.  
 
-Organisations where growth, expansion, change in data structures is likely should favour BASE.
+Organisations with growth, expansion and change in data structures, likely should favour BASE.
 
 ### <mark style="background: #04FF00A6;">SQL V NoSQL</mark>
 
 SQL primarily vertically scalable – NoSQL horizontally scalable  
 
-SQL table based, schema required –  NoSQL column, row, key -value based, flexible schema  
+SQL table based, schema required -  NoSQL column, row, key-value based, flexible schema 
 
 SQL better fit for heavy transaction loads and complex queries 
 
@@ -8204,17 +8159,17 @@ Latency - performance
 
 ### <mark style="background: #04FF00A6;">Example:</mark>
 
-Imagine you are working on a real -time analytics application that tracks stock market prices and updates client portfolios in real time.
+Imagine you are working on a real-time analytics application that tracks stock market prices and updates client portfolios in real time.
 
 This system uses a distributed database to store and process data across multiple nodes to handle large amounts of data and provide fast response times to users.
 
 <mark style="background: #04FF00A6;">During a network partition, the system needs to choose between Availability (A) and Consistency (C):</mark>
-- If the application values availability over consistency (PA), it can still serve data to clients, but this data may not be fully up -to-date across all nodes.  
-- If consistency is prioritized (PC), it might restrict access until the partition resolves, ensuring that all clients get accurate and consistent data
+- If the application values availability over consistency (PA), it can still serve data to clients, but this data may not be fully up-to-date across all nodes.  
+- If consistency is prioritised (PC), it might restrict access until the partition resolves, ensuring that all clients get accurate and consistent data
 
 <mark style="background: #04FF00A6;">When the system is not partitioned, there is a trade-off between Latency (L) and Consistency (C):</mark>  
 - If the database prioritises low latency (EL), users get rapid responses with potentially slight inconsistencies in recent stock prices.  
-- If it prioritizes consistency (EC), it might increase response time, ensuring the displayed portfolio is fully synchronised with the latest transactions across all nodes.
+- If it prioritises consistency (EC), it might increase response time, ensuring the displayed portfolio is fully synchronised with the latest transactions across all nodes.
 
 ### <mark style="background: #04FF00A6;">How CAP Applies to Our Databases</mark>
 
@@ -8237,8 +8192,8 @@ This system uses a distributed database to store and process data across multipl
 - Prioritises availability and low latency; resolves conflicts later
 
 <mark style="background: #04FF00A6;">PostgreSQL (Single-node) - PC / EC (strictly speaking):</mark>
-- During partition (P): PostgreSQL cannot continue if the database node is isolated → it prioritizes Consistency over Availability.
-- Else (no partition): prioritizes Consistency over Latency.
+- During partition (P): PostgreSQL cannot continue if the database node is isolated → it prioritises Consistency over Availability.
+- Else (no partition): prioritises Consistency over Latency.
 - PostgreSQL is always consistent-first. Latency is never traded to relax consistency.
 
 <mark style="background: #04FF00A6;">PostgreSQL (Synchronous replication enabled) - Still PC / EC, but even more clearly:</mark>
@@ -8249,3 +8204,241 @@ This system uses a distributed database to store and process data across multipl
 - Allows writes even if standby lags (higher availability), but:
 - Reads from replicas may be stale → but PostgreSQL itself remains consistent at the primary.
 - It never sacrifices consistency for latency inside a single node.
+
+# <mark style="background: #04FF00A6;">EXAM PREP</mark>
+
+### <mark style="background: #04FF00A6;">Learning Outcomes</mark> 
+
+<mark style="background: #04FF00A6;">Design, create, and query:</mark>
+- A data warehouse  
+- Assessed via CA  
+
+<mark style="background: #04FF00A6;">Design, create, and query:</mark> 
+- A distributed database  
+- Assessed via CA  
+
+<mark style="background: #04FF00A6;">Design, create, and query:</mark>
+- A document-oriented database  
+- Assessed via CA  
+
+<mark style="background: #04FF00A6;">Critically compare:</mark>
+- The strengths and limitations of different database technologies used in contemporary enterprise applications  
+- Assessed in Exam (Informed by CA)  
+
+<mark style="background: #04FF00A6;">Discuss:</mark>
+- Recent developments and emerging trends in database technologies and their use in contemporary enterprise applications  
+- Assessed in Exam (Informed by CA)
+
+<mark style="background: #04FF00A6;">Discuss</mark>
+- Challenges of, and discriminate between approaches to, database modelling – conceptual, logical, and physical design  
+- Assessed in Exam (partially CA)  
+
+<mark style="background: #04FF00A6;">Discuss</mark>  
+- Database considerations for data integrity, integration, security, query optimisation, performance tuning and concurrency control in contemporary enterprise applications  
+- Assessed in Exam (partially CA)  
+
+<mark style="background: #04FF00A6;">Apply:</mark>
+- Techniques for data integrity, security, data optimisation, performance tuning and concurrency control  
+- Assessed in CA (partially CA)  
+
+<mark style="background: #04FF00A6;">Understand and apply:</mark>
+- Different approaches to data integration, both semantic and physical  
+- Understand Assessed in Exam/Apply assessed in CA  
+
+<mark style="background: #04FF00A6;">Understand and apply:</mark>
+- Data modelling techniques for logical and physical design to support contemporary enterprise applications  
+- Understand Assessed in Exam/Apply assessed in CA
+
+### <mark style="background: #04FF00A6;">Key Point – What the exam IS NOT</mark>  
+
+It is not based on recall and application  
+
+Memorizing text from lecture notes and reproducing these will get you zero marks.  
+
+<mark style="background: #04FF00A6;">You will not be required to:</mark>
+- Write code.  
+- Interpret/correct code.  
+- Build/interpret/correct data models
+
+### <mark style="background: #04FF00A6;">Key Point - What the exam IS</mark>
+
+It is based on synthesis and evaluation  
+
+You will be expected to demonstrate knowledge and understanding  
+
+This will require you to explain your understanding of concepts/issues IN YOUR OWN WORDS.  
+
+<mark style="background: #04FF00A6;">You will be expected to be able to apply that knowledge and understanding:</mark>
+- to discuss questions posed/ideas suggested  
+- to make decisions about issues/scenarios/applications  
+- to provide advice/guidance about issues/scenarios/applications  
+- to justify opinions/decisions/choices/advice
+
+<mark style="background: #04FF00A6;">You will be expected to be able to apply that knowledge and understanding:</mark>
+- to discussion of questions posed/ideas suggested  
+- to make decisions about issues/scenarios/applications  
+- to provide advice/guidance about issues/scenarios/applications  
+- to justify opinions/decisions/choices/advice
+
+### <mark style="background: #04FF00A6;">The exam paper</mark>
+
+Includes parts of questions where you are asked to explain.  
+
+Even if you answer all of these correctly, you will not get much more than a pass mark.  
+
+You must be able to demonstrate that you can synthesise your knowledge and use it to evaluate/make judgments or decision/support your opinions.
+
+<mark style="background: #04FF00A6;">Broad topics Covered:</mark> Refer to CMPU4003 – Revision Guide.pdf
+
+### <mark style="background: #04FF00A6;">Tackling the Exam Paper:</mark>
+
+Answer 3 of 4 questions  
+
+All questions are worth 33 marks (there is 1 free mark)  
+
+You have 2 hours to tackle this exam paper – 120 mins.  
+
+Use your time strategically  
+
+<mark style="background: #04FF00A6;">Attempt 3 Questions:</mark>
+- If you only attempt 2 the max marks available are 67  
+- Most of the questions have some parts at the start where you can gain easy marks 
+- Maximise the available marks
+
+<mark style="background: #04FF00A6;">How long should I spend on each question?</mark>
++ A general heuristic is to spend the same number of minutes answering a question as there are marks allocated.  
++ This includes thinking as well as writing  
++ For the Advanced Databases exam there will be a good bit of thinking needed before you do the writing  
+
+For Advanced Databases you have to answer 3 questions.  
+
+Each is worth 33 marks so a general guide would be to spend 33 minutes answering each (this includes thinking time).  
+
+If we round that up to 35 marks per question. That works out at 105 minutes total.
+
+When you reach 35 mins for a question stop and move on to another question.  
+
+<mark style="background: #04FF00A6;">Why?</mark> The more questions you answer the better chance you have of gaining marks.  
+
+<mark style="background: #04FF00A6;">E.g.</mark>
+- If you answer two full questions that is a total of 67 marks available.  
++ If you do really well you may get 90% of those marks which will give you a result of 60.3% for the exam.
++ If you answer three questions there will be 100 marks available.  
++ If you answer 66% of each question then this is a better result.
+
+<mark style="background: #04FF00A6;">How should I tackle answering a question?</mark>
+- <mark style="background: #04FF00A6;">Read the question:</mark> pay attention to the marks per part 
+- <mark style="background: #04FF00A6;">Decide your answer:</mark> make notes 
+- <mark style="background: #04FF00A6;">Write your answer:</mark> Start each question on a New Page in the Answer Book. 
+- <mark style="background: #04FF00A6;">Read your answer:</mark> Make any adjustments/additions
+
+<mark style="background: #04FF00A6;">What should I do with the rest of the time?</mark> If you follow the heuristic, you are left with 15 mins.  
+
+A suggestion would be to use this time as follows:  
+
+At the start of the exam spend 5 mins reading the paper. Read every question and decide which questions you are going to answer.  
+
+When you are finished answering all the questions, revisit each question in turn  
+
+If you have left parts of the question unfinished quickly try to finish the ones that you think will be doable.  
+
+If you have finished answering all the questions read the questions again and make sure you have answered all parts of each question.  
+
+Max 10 mins
+
+### <mark style="background: #04FF00A6;">Key Areas to Address (Not Exhaustive)</mark>
+
+<mark style="background: #04FF00A6;">PostgreSQL Performance, Warehousing, and Query Optimisation:</mark>
+- Understanding how bottlenecks occur and how to identify related issues  
+- Performance optimisation techniques (know concept + how + trade-off)  
+- Evaluating improvements (testing, EXPLAIN ANALYZE BUFFERS)  
+- Long-term optimisation approaches  
+
+<mark style="background: #04FF00A6;">Denormalisation, Migration and ETL (SQL to NoSQL):</mark>
+- Denormalisation: what, why, when (to CouchDB and Cassandra)  
+- Importance when migrating from RDBMS → NoSQL  
+- Benefits, Risks/Trade-offs  
+- ETL challenges and ways to mitigate  
+
+<mark style="background: #04FF00A6;">Performance comparison:</mark>
+- PostgreSQL joins vs. CouchDB map-reduce  
+- Index behaviour in both systems  
+- Impact of eventual consistency
+
+<mark style="background: #04FF00A6;">Distributed Systems, Replication Models, and Availability:</mark>  
+- Replication models (compare + advantages + risks)  
+- Types (Leader -> Follower, Leader -> Leader, Leaderless)  
+- Synchronous/Asynchronous  
+- How writes propagate  
+- Availability vs. consistency differences  
+- Latency implications  
+- Handling Failure  
+- Advantages and risk for each model  
+
+<mark style="background: #04FF00A6;">Architecture for reducing downtime + data loss:</mark>
+- read/write quorum tuning  
+- durable writes  
+- backup/restore strategy  
+- failover mechanisms  
+- local-region synchronous replication + cross-region async
+
+<mark style="background: #04FF00A6;">Partitioning and Sharding (Relational, Document, Wide-Column):</mark> 
+- Concept of sharding / partitioning  
+- Know how it differs  
+- in relational (range, list, hash, table inheritance, native partitioning)  
+- document DBs (shard keys, prefix partitioning)  
+- wide-column (Cassandra token ring, partition key hashing)  
+- Compare range, list, hash partitioning implementation in relational, document and wide column  
+- Cassandra partition key choice (impact on partitioning)  
+
+<mark style="background: #04FF00A6;">CAP and PACELC:</mark>
+- What each letter means  
+- How partition behaviour differs vs. normal behaviour
+
+### <mark style="background: #04FF00A6;">What You Must Be Able to DO</mark>
+
+1. <mark style="background: #04FF00A6;">Diagnose warehouse performance issues:</mark> (how to, typical issues)  
+2. <mark style="background: #04FF00A6;">Apply and justify optimisation techniques:</mark> (for issues identified)
+3. <mark style="background: #04FF00A6;">Understand data migration to NoSQL:</mark> (denormalisation, ETL, benefits, challenges document/wide column modelling)  
+4. <mark style="background: #04FF00A6;">Techniques to address challenges:</mark> (in CouchDB and Cassandra)  
+5. <mark style="background: #04FF00A6;">Explain distributed replication models with trade-offs</mark>  
+6. <mark style="background: #04FF00A6;">Recommend approaches for scenarios</mark> (discuss options for minimising downtime)  
+7. <mark style="background: #04FF00A6;">Describe partitioning approaches</mark> (range/list/hash)  
+8. <mark style="background: #04FF00A6;">Recommend partitioning and database models for scenarios:</mark>(range/list/hash; relational/doc/wide-column  
+9. <mark style="background: #04FF00A6;">Explain CAP and PACELC:</mark> (C. A, P, E, L. C - discuss practical implications)  
+10. <mark style="background: #04FF00A6;">Recommend approach in practical contexts:</mark> (CAP: CP or AP, PACELC: PC/EC, PC/EL, PA/EC, PA/EL)
+
+<mark style="background: #04FF00A6;">Data Models and JSONB in PostgreSQL:</mark> 
+- Relational vs NoSQL models  
+- JSON vs JSONB  
+- JSONB operators  
+- JSONPath querying  
+- GIN indexing & generated columns  
+- Partial indexes & constraints  
+- Modelling patterns: attribute bag, event log  
+- Found in: L1a, L2a  
+
+<mark style="background: #04FF00A6;">CouchDB Fundamentals:</mark>  
+- Document structure, _id, _rev  
+- Single vs separate collections  
+- Embedding vs linking  
+- Mango queries vs Views  
+- View collation and complex keys  
+- Partitioned DBs and partition-local queries  
+- Found in: L2b, L5b, L8c, L10c  
+
+<mark style="background: #04FF00A6;">Cassandra Fundamentals:</mark>
+- Wide-column store  
+- Primary key = partition + clustering  
+- Clustering order  
+- Collections: list, set, map  
+- Query-driven design  
+- Found in: L4b, L9  
+
+<mark style="background: #04FF00A6;">Data Warehousing:</mark>
+- OLTP vs OLAP  
+- Fact and dimension tables  
+- Grain definition  
+- Dimensional modelling steps  
+- Data cubes: slice, dice, roll-up, drill-down  
+- Found in: L5a, 6a

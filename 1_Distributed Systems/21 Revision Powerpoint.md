@@ -16,8 +16,8 @@ Computers are connected by a network, and exchange information
 - Started with parallel computing  
 - Distributed shared memory systems  
 - Cluster computing - a group of high-end systems connected through a LAN  
-- Grid computing  
-- Cloud computing  
+- Grid computing
+- Cloud computing
 
 <mark style="background: #FFF503A6;">Distributed information systems:</mark> Integrating applications  
 
@@ -26,8 +26,8 @@ Distributed systems for pervasive computing
 ### <mark style="background: #FFF503A6;">Middleware and distributed systems</mark>
 
 <mark style="background: #FFF503A6;">Middleware - the OS of distributed systems:</mark>
-- middleware is the same to a distributed system as what an operating system is to a computer  
-- a manager of resources offering its applications to efficiently share and deploy those resources across a network.  
+- middleware is to a distributed system what an operating system is to a computer  
+- a manager of resources offering its applications to efficiently share and deploy those resources across a network.
 
 <mark style="background: #FFF503A6;">What does it contain?</mark>
 - Commonly used components and functions that need not be implemented by applications separately.
@@ -42,10 +42,9 @@ Distributed systems for pervasive computing
 
 <mark style="background: #FFF503A6;">Lack of global clocks:</mark>  
 - Each node is autonomous and will thus have its own notion of time: there is no global clock.  
-- Leads to fundamental synchronization and coordination problems.  
+- Leads to fundamental synchronisation and coordination problems.  
 
-<mark style="background: #FFF503A6;">Heterogeneity:</mark>
-- Hardware/software (programs, data) variations in component systems
+<mark style="background: #FFF503A6;">Heterogeneity:</mark> Hardware/software (programs, data) variations in component systems
 
 ### <mark style="background: #FFF503A6;">DS Characteristics</mark>
 
@@ -60,7 +59,7 @@ Distributed systems for pervasive computing
 ### <mark style="background: #FFF503A6;">Scalability: more performance</mark>
 
 <mark style="background: #FFF503A6;">Our computing needs exceed CPU advances:</mark>
-- Movie rendering  
+- Movie rendering
 - Google search queries (99,000 search queries every second (approximately). Uses hundreds of thousands of servers to do this)
 
 <mark style="background: #FFF503A6;">What if we need more performance than a single CPU?</mark>  
@@ -91,7 +90,7 @@ B can never be perfectly up to date about the status of A
 
 ### <mark style="background: #FFF503A6;">Practical Challenges</mark> 
 
-<mark style="background: #FFF503A6;">Communication is costly:</mark> It is not practical to transmit everything from A to B all the time  
+<mark style="background: #FFF503A6;">Communication is costly:</mark> It is not practical to transmit everything from A to B all the time 
 
 <mark style="background: #FFF503A6;">There are many nodes:</mark> Transmitting updates to all nodes and receiving updates from all nodes are even more impractical
 
@@ -110,7 +109,7 @@ B can never be perfectly up to date about the status of A
 
 <mark style="background: #FFF503A6;">Mobile code:</mark>
 - The code that can be sent from one computer to another and run at the destination.  
-- Machine code suitable for running on one type of computer hardware is not suitable for running on another  
+- Machine code suitable for running on one type of computer hardware is not suitable for running on another
 - Virtual machines approach provides a way of making code executable on any hardware: the compiler for a particular language generates code for a virtual machine instead of a particular hardware order code.
 
 ### <mark style="background: #FFF503A6;">DS Challenges - Openness</mark> 
@@ -141,11 +140,11 @@ Focuses on how to ensure authorised access to resources.
 <mark style="background: #FFF503A6;">Three main issues:</mark>
 - <mark style="background: #FFF503A6;">Confidentially:</mark> protection against unauthorised information disclosure  
 - <mark style="background: #FFF503A6;">Integrity:</mark> protection against unauthorised information modification  
-- <mark style="background: #FFF503A6;">Availability:</mark> protection against unauthorized denial of use - interference with the means to access the resources
+- <mark style="background: #FFF503A6;">Availability:</mark> protection against unauthorised denial of use - interference with the means to access the resources
 
 ### <mark style="background: #FFF503A6;">DS Challenges - Scalability</mark>
 
-A system is scalable if it will remain effective if there is a significant increase in the number of resources and the number of users  
+A system is scalable if it will remain effective during a significant increase in the number of resources and the number of users  
 
 <mark style="background: #FFF503A6;">Control cost of physical resources:</mark>
 - For a system with n users to be scalable, the quantity of physical resources required to support them should be at most O(n) - that is, proportional to n.
@@ -166,8 +165,8 @@ A system is scalable if it will remain effective if there is a significant incre
 - <mark style="background: #FFF503A6;">Problem:</mark> not every application fits this model
   
 <mark style="background: #FFF503A6;">Partition data and computations across multiple machines:</mark> 
-- Move computations to clients (scripts)  
-- Decentralised naming services (DNS)  
+- Move computations to clients (scripts)
+- Decentralised naming services (DNS)
 - Decentralised information systems (WWW)
 
 <mark style="background: #FFF503A6;">Replication and caching:</mark>
@@ -187,9 +186,9 @@ Failures in distributed systems are mostly partial failures which can make failu
 - retransmission  
 - duplicate files
 
-<mark style="background: #FFF503A6;">Tolerating failures:</mark> Web pages (informing users about failure)  
+<mark style="background: #FFF503A6;">Tolerating failures:</mark> Web pages (informing users about failure)
 
-<mark style="background: #FFF503A6;">Recovery:</mark> permanent data ‘rolled back’  
+<mark style="background: #FFF503A6;">Recovery:</mark> permanent data ‘rolled back’
 
 <mark style="background: #FFF503A6;">Redundancy (use of redundant components)</mark>
 - Duplication in routes, hardware,  
@@ -204,7 +203,7 @@ DS provide a high degree of availability regarding hardware faults.
 
 Resources can be shared by clients in a distributed system - several clients may access a shared resource at the same time  
 
-Not acceptable that each request be processed in turn - must be able to process requests concurrently  
+Not acceptable that each request be processed in turn - must be able to process requests concurrently
 
 <mark style="background: #FFF503A6;">Data consistency:</mark> For each ‘object’ that represents a shared resource, its operations must be synchronised in such a way that its data remains consistent
 
@@ -247,12 +246,11 @@ Hide distribution from users and from software
 	  </tr>
 </table>
 
-
 ### <mark style="background: #FFF503A6;">DS Challenges - Transparency</mark>
 
 <mark style="background: #FFF503A6;">Access transparency:</mark>
 - Enables local and remote resources to be accessed using identical operations.  
-- A GUI with folders, which is the same whether the files are local or remote.  
+- E.g. A GUI with folders, which is the same whether the files are local or remote.  
 
 <mark style="background: #FFF503A6;">Location transparency:</mark>
 - Enables resources to be accessed without knowledge of their location  
@@ -265,10 +263,10 @@ Hide distribution from users and from software
 - E.g. communication between mobile phones - people walking, moving  
 
 <mark style="background: #FFF503A6;">Replication transparency:</mark>
-- enables multiple instances of resources to be used; e.g. one can take over when another fails.  
+- enables multiple instances of resources to be used; e.g. one can take over when another fails.
 - increases reliability and performance without knowledge of the replicas by users or application programmers
 
-<mark style="background: #FFF503A6;">Concurrency transparency:</mark> Enables several processes to operate concurrently using shared resources without interference between them.  
+<mark style="background: #FFF503A6;">Concurrency transparency:</mark> Enables several processes to operate concurrently using shared resources without interference between them.
 
 <mark style="background: #FFF503A6;">Failure transparency:</mark> 
 - enables the concealment of faults, allowing users and application programs to complete their tasks despite the failure of hardware or software components.  
@@ -280,12 +278,12 @@ Hide distribution from users and from software
 - the basis for any distributed system  
 - protocols developed for the Internet  
 
-An adapted network layering scheme:
+<mark style="background: #FFF503A6;">An adapted network layering scheme:</mark>
 ![[Pasted image 20251204094328.png]]
 
 ### <mark style="background: #FFF503A6;">Interprocess communication</mark>
 
-At the heart of all distributed systems  
+At the heart of all distributed systems
 
 <mark style="background: #FFF503A6;">To communicate:</mark>
 - one process sends a message (a sequence of bytes) to a destination  
@@ -347,7 +345,7 @@ One-to-many or many-to-many distribution
 
 ### <mark style="background: #FFF503A6;">IP Multicast Protocol</mark>
 
-Built on top the Internet Protocol  
+Built on top of the Internet Protocol  
 
 An implementation of multicast communication  
 
@@ -362,13 +360,13 @@ Designed to span multiple physical networks.
 No central coordinator and no restriction on the number of hosts that can be in a group  
 
 <mark style="background: #FFF503A6;">Provides network efficiency:</mark>
-- Packets in a multicast stream only need to be replicated when a router needs to send them to multiple network links.  
+- Packets in a multicast stream only need to be replicated when a router needs to send them to multiple network links.
 - Only one stream of packets is needed on any network segment regardless of the number of receivers.
 
 <mark style="background: #FFF503A6;">At the application programming level:</mark> 
 - IP multicast is available only via UDP.  
 - An application program performs multicasts by sending UDP datagrams with multicast addresses and ordinary port numbers.  
-- It can join a multicast group by making its socket join the group, enabling it to receive messages to the group  
+- It can join a multicast group by making its socket join the group, enabling it to receive messages to the group
 
 <mark style="background: #FFF503A6;">At the IP level:</mark>
 - A computer belongs to a multicast group when one or more of its processes has sockets that belong to that group.  
@@ -383,22 +381,22 @@ Narrower and more targeted than broadcast communication.
 Sends data from one host to many different hosts, but not to everyone; The data only goes to clients that have expressed an interest by joining a particular multicast group.  
 
 <mark style="background: #FFF503A6;">Used for ‘public meetings’ on the Internet:</mark>
-- a multicast socket sends a copy of the data to a location close to the parties that have declared an interest in the data;  
-- the data is duplicated only when it reaches the local network serving the interested clients;  
-- the data crosses the Internet only once.)
+- a multicast socket sends a copy of the data to a location close to the parties that have declared an interest in the data;
+- the data is duplicated only when it reaches the local network serving the interested clients;
+- the data crosses the Internet only once.
 
 ### <mark style="background: #FFF503A6;">IP Multicast Use</mark> 
 
 <mark style="background: #FFF503A6;">Initially:</mark> Internet radio, NASA shuttle missions, collaborative gaming  
 
 <mark style="background: #FFF503A6;">IPTV (Internet Protocol Television):</mark>
-- Cable TV networks are moving to IP delivery  
-- Multicast allows one stream of data to be sent to multiple subscribers using a single address  
+- Cable TV networks are moving to IP delivery
+- Multicast allows one stream of data to be sent to multiple subscribers using a single address
 - <mark style="background: #FFF503A6;">Reduces:</mark> number of servers and number of duplicate network streams
 
 ### <mark style="background: #FFF503A6;">Concurrency in distributed systems</mark>
 
-Fundamental to distributed systems is the concurrency and collaboration among multiple processes.  
+Fundamental to distributed systems is the concurrency and collaboration among multiple processes.
 
 <mark style="background: #FFF503A6;">Concurrency in distributed systems:</mark>  
 - Concurrent requests to its resources  
@@ -418,7 +416,7 @@ To prevent that such concurrent accesses corrupt the resource, or make it incons
 
 ### <mark style="background: #FFF503A6;">Mutual exclusion examples:</mark>  
 
-Update a fields in database tables  
+Update a field in a database's tables  
 
 Modify a shared file  
 
@@ -453,10 +451,10 @@ Allows maintaining multiple logical connections at the same time.
 <mark style="background: #FFF503A6;">Improve performance:</mark>
 - Starting a thread is cheaper than starting a new process.  
 - Having a single-threaded server prohibits simple scale-up to a multiprocessor system.  
-- As with clients: hide network latency by reacting to next request while previous one is being replied.  
+- As with clients: hide network latency by reacting to next request while previous one is being replied to.  
 
 <mark style="background: #FFF503A6;">Better structure:</mark>
-- Most servers have high I/O demands. Using simple, well- understood blocking calls simplifies the overall structure.  
+- Most servers have high I/O demands. Using simple, well-understood blocking calls simplifies the overall structure.  
 - Multithreaded programs tend to be smaller and easier to understand due to simplified flow of control.
 
 ### <mark style="background: #FFF503A6;">Architectural styles</mark>
@@ -487,7 +485,7 @@ In most real-world distributed systems, many styles are combined.
 
 ### <mark style="background: #FFF503A6;">Layered architecture</mark>
 
-Components are organized in a <mark style="background: #FFF503A6;">layered fashion</mark>  
+Components are organised in a <mark style="background: #FFF503A6;">layered fashion</mark>  
 
 It is such a universal principle that it is generally combined with most other architectural styles  
 
@@ -516,7 +514,7 @@ Example: Wikipedia, the web-based publicly editable encyclopaedia, adopts a mult
 
 ### <mark style="background: #FFF503A6;">Service-Oriented Architectures (SOAs)</mark>  
 
-An architectural style reflecting a more loose organization of a collection of separate, independent entities.  
+An architectural style reflecting a more loose organisation of a collection of separate, independent entities.  
 
 Each entity encapsulates a service.  
 
@@ -624,10 +622,12 @@ Web proxy servers provide a shared cache of web resources for the client machine
 
 Both code and associated data are migrated to a number of computers to carry out specified functions/tasks, and eventually returning results. A variant of the C-S model.
 
-
 It tends to minimise delays due to communication (vis-à-vis static clients making multiple requests to servers)
 
-E.g., a software installation-agent installing applications on different computers for given hardware-configs; or price compare-agent checking variations in prices for a commodity; or a worm agent that looks for idle CPU cycles in cluster-computing.  
+<mark style="background: #FFF503A6;">Examples:</mark> 
+- a software installation-agent installing applications on different computers for given hardware-configs;
+- price compare-agent checking variations in prices for a commodity; 
+- or a worm agent that looks for idle CPU cycles in cluster-computing.  
 
 <mark style="background: #FFF503A6;">Caution:</mark> security threat due to potential ‘Trojan Horse’ problem in migrated code, incomplete exec or ‘hanging’ of agents.  
 
@@ -683,18 +683,18 @@ They can be designed to offer a limited degree of anonymity to the providers and
 
 <mark style="background: #FFF503A6;">Security - extra issues including:</mark>
 - nodes being able to trust other nodes,  
-- preventing malicious nodes from doing corrupting the P2P network or the individual nodes,  
+- preventing malicious nodes from corrupting the P2P network or the individual nodes,  
 - being able to send and receive data anonymously, etc.
 
 ### <mark style="background: #FFF503A6;">P2P generations</mark> 
 
 Three generations of peer-to-peer system and application development can be identified:  
 
-The first generation was launched by the Napster music exchange service  
+The <mark style="background: #FFF503A6;">first</mark> generation was launched by the Napster music exchange service  
 
-A second generation of files sharing applications offering greater scalability, anonymity and fault tolerance followed: Freenet, Gnutella, Kazaa and BitTorrent  
+A <mark style="background: #FFF503A6;">second</mark> generation of files sharing applications offering greater scalability, anonymity and fault tolerance followed: Freenet, Gnutella, Kazaa and BitTorrent  
 
-The third generation - middleware layers for the application- independent management of distributed resources on a global scale.  
+The <mark style="background: #FFF503A6;">third</mark> generation - middleware layers for the application - independent management of distributed resources on a global scale.  
 - Designed to place resources (data objects, files) on a set of computers that are widely distributed throughout the Internet and to route messages to them on behalf of clients,  
 - relieving clients of any need to make decisions about placing resources and to hold information about the whereabouts of the resources they require.  
 - Examples include: Pastry, Tapestry, CAN, Chord and Kademlia
@@ -704,7 +704,7 @@ The third generation - middleware layers for the application- independent manage
 <mark style="background: #FFF503A6;">Make a distinction between four layers:</mark>
 - <mark style="background: #FFF503A6;">Hardware:</mark> Processors, routers, power and cooling systems. Customers normally never get to see these.  
 - <mark style="background: #FFF503A6;">Infrastructure:</mark> Deploys virtualisation techniques. Evolves around allocating and managing virtual storage devices and virtual servers.  
-- <mark style="background: #FFF503A6;">Platform:</mark> Provides higher-level abstractions for storage and such. Example: Amazon S3 storage system offers an API for (locally created) files to be organized and stored in so-called buckets.  
+- <mark style="background: #FFF503A6;">Platform:</mark> Provides higher-level abstractions for storage and such. Example: Amazon S3 storage system offers an API for (locally created) files to be organised and stored in so-called buckets.  
 - <mark style="background: #FFF503A6;">Application:</mark> Actual applications, such as office suites (text processors, spreadsheet applications, presentation applications). Comparable to the suite of apps shipped with OSes.
 
 ![[Pasted image 20251204103041.png]]
@@ -730,13 +730,13 @@ The representation of floating-point numbers also differs between architectures.
 
 ### <mark style="background: #FFF503A6;">Marshalling and Unmarshalling</mark>
 
-<mark style="background: #FFF503A6;">Marshalling</mark> is the process of taking a collection of data items and assembling them into a form suitable for transmission in a message.  
+<mark style="background: #FFF503A6;">Marshalling</mark> 
+- The process of taking a collection of data items and assembling them into a form suitable for transmission in a message.  
+- It consists of the translation of structured data items and primitive values into an external data representation.  
 
-<mark style="background: #FFF503A6;">Marshalling</mark> consists of the translation of structured data items and primitive values into an external data representation.  
-
-<mark style="background: #FFF503A6;">Unmarshalling</mark> is the process of disassembling them on arrival to produce an equivalent collection of data items at the destination.  
-
-<mark style="background: #FFF503A6;">Unmarshalling</mark> consists of the generation of primitive values from their external data representation and the rebuilding of the data structures.
+<mark style="background: #FFF503A6;">Unmarshalling</mark>
+- The process of disassembling them on arrival to produce an equivalent collection of data items at the destination.  
+- It consists of the generation of primitive values from their external data representation and the rebuilding of the data structures.
 
 ### <mark style="background: #FFF503A6;">External data representation and marshalling</mark>
 
@@ -758,7 +758,7 @@ The representation of floating-point numbers also differs between architectures.
 
 <mark style="background: #FFF503A6;">Protocol buffers:</mark>
 - Google uses an approach called protocol buffers (aka ``protobuf``) to capture representations of both stored and transmitted data  
-- offers a common serialization format for Google, including the serialization of requests and replies in remote invocation  
+- offers a common serialisation format for Google, including the serialisation of requests and replies in remote invocation  
 
 <mark style="background: #FFF503A6;">JSON (JavaScript Object Notation):</mark> an approach to external data representation [www.json.org].  
 
@@ -800,14 +800,13 @@ A mechanism for serialising structured data
 
 Is in fact an IDL (Interface Definition Language)
 
-
 ### <mark style="background: #FFF503A6;">Remote Invocation</mark>
 
 Based on a two-way exchange between communicating entities in a distributed system - resulting in the calling of a remote operation, procedure or method.  
 
 <mark style="background: #FFF503A6;">Remote Procedure Calls (RPC):</mark> allow programs to call <mark style="background: #FFF503A6;">procedures</mark> located on other machines.  
 
-<mark style="background: #FFF503A6;">Remote method invocation (RMI):</mark> Essentially the same as an RPC, except that it operates on <mark style="background: #FFF503A6;">objects</mark> instead of functions.
+<mark style="background: #FFF503A6;">Remote method invocation (RMI):</mark> allow programs to call methods on <mark style="background: #FFF503A6;">objects</mark> located on other machines.
 
 ### <mark style="background: #FFF503A6;">Basic RPC operation</mark>
 
@@ -827,8 +826,7 @@ Supports client-server computing with servers offering a set of operations throu
 
 A calling object can invoke a method in a remote object.  
 
-Communication among distributed objects via RMI  
-- Recipients of remote invocations are remote objects, which implement remote interfaces for communication  
+<mark style="background: #FFF503A6;">Communication among distributed objects via RMI:</mark> Recipients of remote invocations are remote objects, which implement remote interfaces for communication  
 
 <mark style="background: #FFF503A6;">Reliability:</mark> Either one or both the invoker and invoked can fail, and status of communication is supported by the interface. e.g.,  
 - notification on failures,  
@@ -849,13 +847,13 @@ B and F must have remote interfaces (of their accessible methods)
 
 ### <mark style="background: #FFF503A6;">Distributed Garbage Collection</mark>
 
-Where any process includes remote objects, then it is equipped with both  
+<mark style="background: #FFF503A6;">Where any process includes remote objects, then it is equipped with both:</mark>
 - Local garbage collector  
 - Distributed garbage collector  
 
 For any remote object O - ``O.holders`` is a list of all the processes that have a remote reference to that object i.e. got a stub for it  
 
-When a client C receives a remote reference for O it makes an addRef call to O’s garbage collector resulting in its being added to O.holders  
+When a client C receives a remote reference for O it makes an ``addRef`` call to O’s garbage collector resulting in its being added to ``O.holders``  
 
 When C’s local garbage collector attempts to delete the stub object for O, it calls ``removeRef`` on O’s garbage collector, resulting in its being removed from ``O.holders``  
 
@@ -864,8 +862,7 @@ When ``O.holders`` is empty, O can be deleted
 ### <mark style="background: #FFF503A6;">RPC Invocation Semantics</mark> 
 
 In RPC call semantics, there is a two way interaction between the client and the server with the client sending a request  
-- The server executing the (remote) procedure and the server  
-sending a reply back to the client.  
+- The server executing the (remote) procedure and the server sending a reply back to the client.  
 - The semantics are defined over this complete path and not just the delivery of the initial message (the request)  
 
 <mark style="background: #FFF503A6;">Unreliable network:</mark> For all request- reply protocols, messages may get lost  
@@ -877,9 +874,9 @@ sending a reply back to the client.
 
 ### <mark style="background: #FFF503A6;">Invocation Semantics</mark> 
 
-Remote procedure calls provide a range of invocation  semantics  
+Remote procedure calls provide a range of invocation semantics  
 
-<mark style="background: #FFF503A6;">In local systems:</mark> all methods are invoked exactly once per request- guaranteed - unless whole process fails  
+<mark style="background: #FFF503A6;">In local systems:</mark> all methods are invoked exactly once per request - guaranteed - unless whole process fails  
 
 In distributed system, we need to know what has happened if we do not hear result from remote object/procedure i.e. did the request go missing, did the response go missing  
 
@@ -912,8 +909,8 @@ In distributed system, we need to know what has happened if we do not hear resul
 
 <mark style="background: #FFF503A6;">At-least-once:</mark>
 - the client gets a result (and the method was executed at least once) or an exception (no result)  
-- arbitrary failures. If the invocation message is retransmitted, the remote object may execute the method more than once, possibly causing wrong values to be stored or returned.  
-- if idempotent operations are used, arbitrary failures will not occur  
+- arbitrary failures. If the invocation message is retransmitted, the remote object may execute the method more than once, possibly causing wrong values to be stored or returned.
+- if idempotent operations are used, arbitrary failures will not occur.
 
 <mark style="background: #FFF503A6;">At-most-once:</mark> the client gets a result (and the method was executed exactly once) or an exception (instead of a result, in which case, the method was executed once or not at all)
 
@@ -955,9 +952,9 @@ Represents an abstraction over multicast communication
 
 An important building block for reliable distributed systems  
 
-The reliable dissemination of information to potentially large numbers of clients,  
-
-E.g. in the financial industry, where institutions require accurate and up-to date access to a wide variety of information sources;  
+<mark style="background: #FFF503A6;">Group Communication:</mark>
+- The reliable dissemination of information to potentially large numbers of clients,  
+- E.g. in the financial industry, where institutions require accurate and up-to date access to a wide variety of information sources;  
 
 <mark style="background: #FFF503A6;">Support for collaborative applications:</mark>
 -  where events must be disseminated to multiple users to preserve a common user view. 
@@ -997,9 +994,9 @@ Similar to unicast communication
 ### <mark style="background: #FFF503A6;">Implementation issues: Group membership management</mark> 
 
 <mark style="background: #FFF503A6;">Group membership management - four main tasks:</mark>  
-- Providing an interface for group membership changes  
-- Failure detection  
-- Notifying members of group membership changes  
+- Providing an interface for group membership changes
+- Failure detection
+- Notifying members of group membership changes
 - Performing group address expansion - can coordinate multicast delivery with membership changes by controlling address expansion.
 
 ### <mark style="background: #FFF503A6;">Publish-Subscribe Systems</mark>
@@ -1008,8 +1005,7 @@ Similar to unicast communication
 
 <mark style="background: #FFF503A6;">A publish-subscribe system is a system where:</mark>
 - publishers publish structured events to an event service and  
-- subscribers express interest in particular events through  
-- subscriptions which can be arbitrary patterns over the structured events.  
+- subscribers express interest in particular events through subscriptions which can be arbitrary patterns over the structured events.  
 
 For example, a subscriber could express an interest in all events related to a book, such as the availability of a new edition or updates to the related web site.  
 
@@ -1017,7 +1013,7 @@ The task of the publish subscribe system is to match subscriptions against publi
 
 A given event will be delivered to potentially many subscribers, and hence publish-subscribe is fundamentally a one-to-many communications paradigm.
 
-Used in a wide variety of application domains, particularly those related to the large-scale dissemination of events.  
+Used in a wide variety of application domains, particularly those related to the large-scale dissemination of events.
 
 <mark style="background: #FFF503A6;">Examples:</mark>  
 - financial information systems;  
@@ -1048,7 +1044,7 @@ Publish-subscribe is also a key component of Google’s infrastructure, includin
 
 ### <mark style="background: #FFF503A6;">Examples of roles:</mark>
 
-<mark style="background: #FFF503A6;">Forwarding:</mark> A forwarding observer may carry out all the work of sending notifications to subscribers on behalf of one or more objects of interest.  
+<mark style="background: #FFF503A6;">Forwarding:</mark> A forwarding observer may carry out all the work of sending notifications to subscribers on behalf of one or more objects of interest.
 
 <mark style="background: #FFF503A6;">Filtering of notifications:</mark> 
 - Filters may be applied by an observer so as to reduce the number of notifications received according to some predicate on the contents of each notification.
@@ -1091,7 +1087,7 @@ They are also extensively used as the basis for commercial transaction processin
 <mark style="background: #FFF503A6;">MQ systems have been developed in part to allow legacy applications to interoperate:</mark>
 - When it comes to operations between different message-queuing systems, we often hit a wall.  
 - Message-queuing solutions are in large part proprietary solutions.  
-- A working group was formed to change this situation,  resulted in the specification of the Advanced Message-Queuing Protocol (AMQP)  
+- A working group was formed to change this situation, resulted in the specification of the Advanced Message-Queuing Protocol (AMQP)  
 
 <mark style="background: #FFF503A6;">Advanced Message-Queuing Protocol (AMQP):</mark>
 - Intended to play the same role as, for example, TCP in networks  
@@ -1112,7 +1108,7 @@ They are also extensively used as the basis for commercial transaction processin
 
 <mark style="background: #FFF503A6;">location transparency:</mark>  
 - <mark style="background: #FFF503A6;">RPC:</mark> the client that calls a procedure cannot tell whether the procedure runs in the same process or in a different process, different computer.  
-- <mark style="background: #FFF503A6;">RMI:</mark> object making the invocation cannot tell whether the object it invokes is local or not;  
+- <mark style="background: #FFF503A6;">RMI:</mark> object making the invocation cannot tell whether the object it invokes is local or not;
 - <mark style="background: #FFF503A6;">EBP:</mark> the generating/receiving - not aware of one another's locations
 
 <mark style="background: #FFF503A6;">protocol abstraction:</mark> independent of underlying transport protocols
@@ -1160,9 +1156,9 @@ No agreed classification
 - CORBA
 
 <mark style="background: #FFF503A6;">Message-Oriented Middleware (MOM):</mark>
-- Jakarta Messaging  
+- Jakarta Messaging
 - IBM MQ (https://www.ibm.com/products/mq)  
-- Web Services  
+- Web Services
 
 <mark style="background: #FFF503A6;">Publish/Subscribe Middleware:</mark> IBM Event Streams, an event-streaming platform built on open-source Apache Kafka technology (https://www.ibm.com/cloud/event-streams)  
 
@@ -1189,8 +1185,8 @@ Based on message passing
 - neither sender nor receiver required to be active during transmission  
 
 <mark style="background: #FFF503A6;">Not a new idea:</mark>
-- it is how networks work  
-- for example, Unix sockets  
+- it is how networks work
+- for example, Unix sockets
 
 Messages can be large (time in minutes) as opposed to sockets, where seconds
 
@@ -1296,7 +1292,7 @@ It must enable clients to locate and communicate with any individual resource ma
 <mark style="background: #FFF503A6;">Non-functional requirements of peer-to-peer middleware:</mark>  
 - Global scalability  
 - Load balancing  
-- Optimization for local interactions between neighbouring peers  
+- Optimisation for local interactions between neighbouring peers  
 - Accommodating to highly dynamic host availability  
 - Security of data in an environment with heterogeneous trust  
 - Anonymity, deniability and resistance to censorship
@@ -1307,7 +1303,7 @@ Set of protocols by which services can be published, discovered, and used in a t
 
 Provide a basis where a client program in one organisation may interact with a server in another organisation - without human supervision.  
 
-Based on the ability to use an HTTP request to cause the execution of a program. A result is produced by called program and then returned.
+Based on the ability to use a HTTP request to cause the execution of a program. A result is produced by called program and then returned.
 
 <mark style="background: #FFF503A6;">General principles:</mark> 
 - <mark style="background: #FFF503A6;">Payloads are text (XML or JSON):</mark> Technology-neutral  
@@ -1359,8 +1355,7 @@ A web service generally provides a service <mark style="background: #FFF503A6;">
 		<td>Interface design is the key. Data structures just package data</td>  
 	</tr>
 	<tr>
-		<td>Stateless computing. State is contained within the  
-documents that are exchanged (e.g., customer ID)</td>  
+		<td>Stateless computing. State is contained within the documents that are exchanged (e.g., customer ID)</td>  
 		<td>Stateful computing. Remote object maintains state</td>  
 	</tr>
 </table>
@@ -1395,7 +1390,7 @@ Many implementations/frameworks for web services but common technologies.
 - they rely on a lookup service to map them onto the URLs of resources.
 
 ### <mark style="background: #FFF503A6;">Technologies in the Process</mark>
-1. client queries UDDI registry for a service - by name, category, identifier or some other criteria stored by registry  
+1. client queries UDDI registry for a service - by name, category, identifier or some other criteria stored by registry
 2. client then obtains information about location of WSDL doc from UDDI registry  
 3. WSDL doc contains info about how to contact service and format of request msg  
 4. client creates SOAP msg in accordance with WSDL and sends request to host where service is  
@@ -1413,7 +1408,7 @@ Java Remote Interfaces ~= IDL ~= WSDL
 - Describe operations, a set of services  
 - Name, operations, parameters, where to send requests  
 - Provide URI, Identify Transport Protocol  
-- Organizations exchange WSDL documents  
+- Organisations exchange WSDL documents  
 
 <mark style="background: #FFF503A6;">Describes either:</mark>
 - Types of messages it can receive  
@@ -1435,7 +1430,7 @@ Java Remote Interfaces ~= IDL ~= WSDL
 
 ### <mark style="background: #FFF503A6;">Representational State Transfer (REST)</mark>
 
-The key characteristic of most web services is that they can process XML formatted SOAP messages - An alternative is the REST approach  
+The key characteristic of most web services is that they can process XML formatted SOAP messages - An alternative is the REST approach
 
 <mark style="background: #FFF503A6;">REST is a web standards based architecture:</mark>  
 - Uses HTTP Protocol for data communication  
@@ -1451,7 +1446,7 @@ When a new resource is created, it has a new URL by which it can be accessed or 
 
 Clients are supplied with the entire state of a resource instead of calling an operation to get some part of it.  
 
-The Amazon web services may be accessed either by SOAP or by REST
+Amazon web services may be accessed either by SOAP or by REST
 
 ### <mark style="background: #FFF503A6;">REST</mark>
 
@@ -1468,6 +1463,7 @@ The Amazon web services may be accessed either by SOAP or by REST
 Everything is a resource  
 
 Any interaction of a RESTful API is an interaction with a resource.  
+
 <mark style="background: #FFF503A6;">Resources are sources of information:</mark>
 - typically documents or services, or  
 - Users (e.g. as a URL of their GitHub)
@@ -1486,7 +1482,7 @@ Any interaction of a RESTful API is an interaction with a resource.
 ### <mark style="background: #FFF503A6;">SOAP vs RESTful Web Services</mark>
 
 <mark style="background: #FFF503A6;">SOAP</mark>
-- <mark style="background: #FFF503A6;">A protocol:</mark> comes with strict rules and advanced security features such as built-in ACID compliance and authorization.  
+- <mark style="background: #FFF503A6;">A protocol:</mark> comes with strict rules and advanced security features such as built-in ACID compliance and authorisation.  
 - Permits XML data format only 
 - SOAP can't use REST 
 - Has higher complexity, and requires more bandwidth and resources, which can lead to slower page load times.  
@@ -1504,7 +1500,7 @@ Any interaction of a RESTful API is an interaction with a resource.
 - API calls cannot be cached  
 - Only XML  
 - Requires more bandwidth and computing power  
-- Better security, built-in extensibility, standardized  
+- Better security, built-in extensibility, standardised  
 - <mark style="background: #FFF503A6;">Usage:</mark> Banks or payment gateways, PayPal  
 
 <mark style="background: #FFF503A6;">REST:</mark>
@@ -1568,7 +1564,7 @@ Compensate for delays
 
 Network Time Protocol (NTP)  
 
-Provide a service enabling clients across the Internet to be synchronised accurately to UTC  
+Provide a service enabling clients across the Internet to be synchronised accurately to UTC
 
 NTP employs statistical techniques for the filtering of timing data and it discriminates between the quality of timing data from different servers to offset delays encountered in Internet communication  
 
@@ -1583,7 +1579,7 @@ Internet Standard
 - Provides redundant paths, redundant servers  
 
 <mark style="background: #FFF503A6;">Scalable:</mark>
-- Large numbers of clients can synchronize frequently  
+- Large numbers of clients can synchronise frequently  
 - Offsets effects of clock drift  
 
 <mark style="background: #FFF503A6;">Authenticates source of data:</mark>
@@ -1707,17 +1703,16 @@ Each process keeps its own vector clock, Vi , which it uses to timestamp local e
 
 Processes piggyback vector timestamps on the messages they send to one another
 
-A vector is a logical clock that guarantees  
-that if two operations can be ordered by their logical timestamps, then one must have happened before the other.  
+A vector is a logical clock that guarantees that if two operations can be ordered by their logical timestamps, then one must have happened before the other.  
 
 Implemented with an array of counters, one for each process in the system.
- 
+
 A way of identifying which events are causally related  
 
 Guaranteed to get the sequencing correct  
 
 <mark style="background: #FFF503A6;">The problem:</mark>  
-- The size of the vector increases with more actors, the entire vector must be stored with the data  
+- The size of the vector increases with more actors, the entire vector must be stored with the data
 - Comparison takes more time than comparing two numbers  
 - If messages are concurrent, the application will have to decide how to handle conflicts
 
@@ -1727,12 +1722,12 @@ Keep systems, programs, and data secure
 
 <mark style="background: #FFF503A6;">Three areas:</mark>  
 - <mark style="background: #FFF503A6;">Confidentiality:</mark> Keeping data & resources hidden  
-- <mark style="background: #FFF503A6;">Integrity:</mark> Protecting against unauthorized changes to the data or resources  
+- <mark style="background: #FFF503A6;">Integrity:</mark> Protecting against unauthorised changes to the data or resources  
 - <mark style="background: #FFF503A6;">Availability:</mark> Ensuring that a system is accessible and capable of working to required performance specifications
 
 ### <mark style="background: #FFF503A6;">Security in distributed systems</mark>
 
-<mark style="background: #FFF503A6;">Two specific concerns that centralized systems do not have:</mark> 
+<mark style="background: #FFF503A6;">Two specific concerns that centralised systems do not have:</mark> 
 - <mark style="background: #FFF503A6;">use of a network:</mark> contents may be seen by other, possibly malicious, parties  
 - <mark style="background: #FFF503A6;">use of servers:</mark> That authenticate the client and control access to services
 - physical access to the system and the security controls - unknown to the client
@@ -1751,7 +1746,7 @@ Once a security policy has been laid down, it becomes possible to concentrate on
 
 ### <mark style="background: #FFF503A6;">Security mechanisms</mark>
 
-<mark style="background: #FFF503A6;">Encryption:</mark> Transform data to something an attacker cannot understand, or that can be checked for modifications  
+<mark style="background: #FFF503A6;">Encryption:</mark> Transform data to something an attacker cannot understand, or that can be checked for modifications
 
 <mark style="background: #FFF503A6;">Authentication:</mark> Verify a claimed identity  
 
@@ -1869,7 +1864,7 @@ One of the more difficult parts in key management is the actual distribution of 
 
 Public Key Infrastructure (PKI) is a term used for a framework that enables secure exchange of information based on public key cryptography.  
 
-It allows identities (of people, organizations, etc.) to be bound to digital certificates and provides a means of verifying the authenticity of certificates.  
+It allows identities (of people, organisations, etc.) to be bound to digital certificates and provides a means of verifying the authenticity of certificates.  
 
 <mark style="background: #FFF503A6;">PKI encompasses:</mark>
 -  Keys  
@@ -1938,7 +1933,7 @@ It is assumed that an underlying request-reply protocol removes corrupt and dupl
 
 One coordinator and multiple participants  
 
-<mark style="background: #FFF503A6;">One-phase:</mark> the coordinator to communicate the commit or abort request to all of the participants in the transaction and to keep on repeating the request until all of them have acknowledged that they have carried it out.  
+<mark style="background: #FFF503A6;">One-phase:</mark> the coordinator communicates the commit or abort request to all of the participants in the transaction and keeps on repeating the request until all of them have acknowledged that they have carried it out.  
 
 <mark style="background: #FFF503A6;">Two-phase:</mark> 
 - designed to allow any participant to abort its part of a transaction
@@ -1953,7 +1948,7 @@ One coordinator and multiple participants
 
 During the progress of a transaction, the only communication between coordinator and participant is the join request  
 
-The client request to commit or abort goes to the coordinator  
+<mark style="background: #FFF503A6;">The client request to commit or abort goes to the coordinator:</mark>
 - if client or participant request abort, the coordinator informs the participants immediately
 - if the client asks to commit, the 2PC comes into use  
 
@@ -1963,33 +1958,31 @@ The client request to commit or abort goes to the coordinator
 - the next slide shows the operations used in carrying out the protocol
 
 <mark style="background: #FFF503A6;">Phase 1 (voting phase):</mark>
-1. The coordinator sends a canCommit? request to each of the participants in the transaction.  
-2. When a participant receives a canCommit? request it replies with its vote (Yes or No) to the coordinator. Before voting Yes, it prepares to commit by saving objects in permanent storage. If the vote is No the participant aborts immediately.  
+1. The coordinator sends a ``canCommit?`` request to each of the participants in the transaction.  
+2. When a participant receives a ``canCommit?`` request it replies with its vote (Yes or No) to the coordinator. Before voting Yes, it prepares to commit by saving objects in permanent storage. If the vote is No the participant aborts immediately.  
 
 <mark style="background: #FFF503A6;">Phase 2 (completion according to outcome of vote):</mark>  
 3. The coordinator collects the votes (including its own).  
-	- (a) If there are no failures and all the votes are Yes the coordinator decides to commit the transaction and sends a doCommit request to each of the participants.  
+	- (a) If there are no failures and all the votes are Yes the coordinator decides to commit the transaction and sends a ``doCommit`` request to each of the participants.  
 	- (b) Otherwise the coordinator decides to abort the transaction and sends ``doAbort`` requests to all participants that voted Yes.  
 4. Participants that voted Yes are waiting for a ``doCommit`` or ``doAbort`` request from the coordinator. When a participant receives one of these messages it acts accordingly and in the case of commit, makes a ``haveCommitted`` call as confirmation to the coordinator.
 
 ### <mark style="background: #FFF503A6;">Performance of the two-phase commit protocol</mark>  
 
-If there are no failures, the 2PC involving N participants requires - N ``canCommit``? messages and replies, followed by N  
-``doCommit ``messages.  
+If there are no failures, the 2PC involving N participants requires - N ``canCommit``? messages and replies, followed by N  ``doCommit ``messages.  
 - the cost in messages is proportional to 3N, and the cost in time is three rounds of messages. 
 - The ``haveCommitted`` messages are not counted  
 
-There may be arbitrarily many server and communication failures  
-2PC is guaranteed to complete eventually, but it is not possible to specify a time limit within which it will be complete  
+There may be arbitrarily many server and communication failures. 2PC is guaranteed to complete eventually, but it is not possible to specify a time limit within which it will be complete  
 - delays to participants in uncertain state  
 - some 3PCs designed to alleviate such delays. They require more messages and more rounds for the normal case
 
 ### <mark style="background: #FFF503A6;">Three-phase commit (3PC) protocol: Phase 1</mark>  
 
 <mark style="background: #FFF503A6;">Phase 1: Voting phase</mark>  
-- The coordinator sends a canCommit? request to each of the participants in the transaction. 
+- The coordinator sends a ``canCommit?`` request to each of the participants in the transaction. 
 - <mark style="background: #FFF503A6;">Purpose:</mark> Find out if everyone agrees to commit  
-- It the coordinator gets a timeout from any participant, or any NO replies are received - Send an abort to all participants  
+- If the coordinator gets a timeout from any participant, or any NO replies are received - Send an abort to all participants  
 - If a participant times out waiting for a request from the coordinator. It aborts itself (assume coordinator crashed)  
 - Else continue to phase 2
 
@@ -2130,11 +2123,11 @@ Either all of the operations must be completed successfully or they must have no
 <mark style="background: #FFF503A6;">Consistency:</mark> 
 - A transaction takes the system from one consistent state to another consistent state. 
 - A transaction cannot leave the database in an inconsistent state.
-- E.g., total amount of money in all accounts must be the same before and after a transfer funds’ transaction  
+- E.g., total amount of money in all accounts must be the same before and after a transfer funds’ transaction
 
 <mark style="background: #FFF503A6;">Isolated (Serialisable):</mark>  
 - Each transaction must be performed without interference from other transactions - there must be no observation by other transactions of a transaction's intermediate effects.  
-- If transactions run at the same time, the final result must be the same as if they executed in some serial order.  
+- If transactions run at the same time, the final result must be the same as if they executed in some serial order.
 
 <mark style="background: #FFF503A6;">Durability:</mark> After a transaction has completed successfully, all its effects are saved in permanent storage.
 
@@ -2226,7 +2219,7 @@ Two problems associated with aborted transactions:
 <mark style="background: #FFF503A6;">‘Dirty reads’:</mark>
 - A transaction observes a write from a transaction that has not completed yet.  
 - An interaction between a read operation in one transaction and an earlier write operation on the same object by a transaction that then aborts  
-- A transaction that committed with a ‘dirty read’ is not recoverable  
+- A transaction committed with a ‘dirty read’ is not recoverable  
 
 <mark style="background: #FFF503A6;">‘Premature writes’:</mark> interactions between write operations on the same object by different transactions, one of which aborts  
 
@@ -2242,7 +2235,7 @@ Both can occur in serially equivalent executions of transactions
 
 ### <mark style="background: #FFF503A6;">Premature writes and Strict executions</mark> 
 
-<mark style="background: #FFF503A6;">Premature writes:</mark> a problem related to the interaction between write operations on the same object belonging to different transactions.  
+<mark style="background: #FFF503A6;">Premature writes:</mark> a problem related to the interaction between write operations on the same object belonging to different transactions.
 
 <mark style="background: #FFF503A6;">Strict executions of transactions:</mark> The service delays both read and write operations on an object until all transactions that previously wrote that object have either committed or aborted. Enforces <mark style="background: #FFF503A6;">isolation</mark>
 
@@ -2263,9 +2256,9 @@ Transactions must be scheduled so that their effect on shared data is serially e
 
 A server can achieve <mark style="background: #FFF503A6;">serial equivalence</mark> of transactions by serialising access to the objects.  
 
-Serial equivalence requires that all of a transaction’s accesses to a particular object be serialized with respect to accesses by other transactions.  
+Serial equivalence requires that all of a transaction’s accesses to a particular object be serialised with respect to accesses by other transactions.  
 
-Example of a serializing mechanism is the use of - exclusive locks
+Example of a serialising mechanism is the use of exclusive locks
 
 ### <mark style="background: #FFF503A6;">Exclusive locks</mark> 
 
@@ -2333,8 +2326,7 @@ Locks are only released upon commit / abort
 - They must agree to commit or abort
 - “Log locally, commit globally.”  
 
-<mark style="background: #FFF503A6;">The atomicity property of transactions:</mark>
-- when a distributed transaction comes to an end, either all of its operations are carried out or none of them.
+<mark style="background: #FFF503A6;">The atomicity property of transactions:</mark> when a distributed transaction comes to an end, either all of its operations are carried out or none of them.
 
 ### <mark style="background: #FFF503A6;">Distributed commit problem</mark>
 
@@ -2344,7 +2336,7 @@ Locks are only released upon commit / abort
 
 ### <mark style="background: #FFF503A6;">Distributed commit protocols</mark>
 
-<mark style="background: #FFF503A6;">One-phase:</mark> the coordinator to communicate the commit or abort request to all of the participants in the transaction and to keep on repeating the request until all of them have acknowledged that they have carried it out.  
+<mark style="background: #FFF503A6;">One-phase:</mark> the coordinator communicates the commit or abort request to all of the participants in the transaction and keeps on repeating the request until all of them have acknowledged that they have carried it out.  
 
 <mark style="background: #FFF503A6;">Two-phase:</mark>
 - designed to allow any participant to abort its part of a transaction  
