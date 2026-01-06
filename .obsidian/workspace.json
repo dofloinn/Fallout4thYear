@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Advanced Databases/REVISION.md",
+                "file": "1_Distributed Systems/Revision.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "REVISION"
+              "title": "Revision"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5,
-    "collapsed": true
+    "width": 253.5
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -182,22 +181,31 @@
   },
   "active": "b9bb2d8e7b7b59d5",
   "lastOpenFiles": [
-    "images/Pasted image 20260104133405.png",
-    "images/Pasted image 20260104133349.png",
-    "images/Pasted image 20260104133335.png",
-    "images/Pasted image 20260104132526.png",
-    "images/Pasted image 20260104132519.png",
-    "images/Pasted image 20260104132508.png",
-    "images/Pasted image 20260104132501.png",
-    "images/Pasted image 20260104132449.png",
-    "images/Pasted image 20260104132443.png",
-    "images/Pasted image 20260104132417.png",
-    "images/Pasted image 20260104132357.png",
+    "images/Pasted image 20260106190348.png",
+    "images/Pasted image 20260106190327.png",
+    "images/Pasted image 20260106190307.png",
+    "images/Pasted image 20260106190301.png",
+    "images/Pasted image 20260106190237.png",
+    "images/Pasted image 20260106190218.png",
+    "images/Pasted image 20260106190208.png",
+    "images/Pasted image 20260106190128.png",
+    "images/Pasted image 20260106190113.png",
+    "images/Pasted image 20260106190104.png",
+    "images/Pasted image 20260106190048.png",
+    "1_Distributed Systems/12 Clock Synchronisation.md",
+    "1_Distributed Systems/11 Lab Notes Remote Invocation.md",
+    "1_Distributed Systems/22 Exam Prep powerpoint.md",
+    "1_Distributed Systems/20 Web Services.md",
+    "1_Distributed Systems/16 Middleware.md",
+    "1_Distributed Systems/14 Lab Notes Data Encoding.md",
+    "1_Distributed Systems/13 Data Representation.md",
     "1_Distributed Systems/21 Revision Powerpoint.md",
-    "1_Distributed Systems/Untitled.md",
-    "1_Distributed Systems/22 Exam Preop powerpoint.md",
-    "1_Forensics/All Notes.md",
+    "1_Distributed Systems/Revision.md",
+    "1_Advanced Databases/REVISION.md",
+    "1_Advanced Databases/Exam Prep.md",
     "1_Advanced Databases/All Notes.md",
+    "1_Advanced Databases/22 Data Distribution.md",
+    "1_Forensics/All Notes.md",
     "1_Forensics/14 Email Forensics.md",
     "1_Forensics/13 Windows Registry.md",
     "1_Forensics/12 CyberCrime Law.md",
@@ -209,15 +217,6 @@
     "1_Forensics/06 NTFS and MTF.md",
     "1_Forensics/05 Case Management & Report Writing and Tools of the Digital Investigator.md",
     "1_Forensics/04 EXIF and Steganography.md",
-    "1_Forensics/03 Lab 2.md",
-    "1_Forensics/02 Intro to Digital Forensics and Models.md",
-    "1_Forensics/01 Introduction.md",
-    "1_Forensics/00 General.md",
-    "1_Advanced Databases/Exam Prep.md",
-    "1_Advanced Databases/REVISION.md",
-    "1_Advanced Databases/00 General.md",
-    "1_Advanced Databases/22 Data Distribution.md",
-    "1_Advanced Databases/21 Cassandra Partitioning.md",
     "Untitled",
     "images"
   ]
