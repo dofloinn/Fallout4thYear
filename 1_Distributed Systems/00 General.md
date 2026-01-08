@@ -43,5 +43,4 @@ Module also analyses advanced distributed systems issues such as:
 - group communication, remote invocation, message-oriented communication, publish-subscribe systems, web services, peer-to-peer systems, client-server
 - case studies of relevant distributed systems.
 
-<mark style="background: #FFF503A6;">Middleware:</mark> purpose of middleware in distributed systems,
-middleware platforms. 
+<mark style="background: #FFF503A6;">Middleware:</mark> purpose of middleware in distributed systems, middleware platforms. 

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4cff8134bc948e96",
+        "id": "6e5fc9ed0e8570d1",
         "type": "tabs",
         "children": [
           {
-            "id": "b9bb2d8e7b7b59d5",
+            "id": "a21d397968dd859b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "multica",
+                "query": "publish-",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -179,19 +180,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "b9bb2d8e7b7b59d5",
+  "active": "a21d397968dd859b",
   "lastOpenFiles": [
-    "images/Pasted image 20260106190348.png",
-    "images/Pasted image 20260106190327.png",
-    "images/Pasted image 20260106190307.png",
-    "images/Pasted image 20260106190301.png",
-    "images/Pasted image 20260106190237.png",
-    "images/Pasted image 20260106190218.png",
-    "images/Pasted image 20260106190208.png",
-    "images/Pasted image 20260106190128.png",
-    "images/Pasted image 20260106190113.png",
-    "images/Pasted image 20260106190104.png",
-    "images/Pasted image 20260106190048.png",
+    "images/Pasted image 20260108214914.png",
+    "images/Pasted image 20260108214859.png",
+    "images/Pasted image 20260108214843.png",
+    "images/Pasted image 20260108214827.png",
+    "images/Pasted image 20260108214818.png",
+    "images/Pasted image 20260108214801.png",
+    "images/Pasted image 20260108214751.png",
+    "images/Pasted image 20260108214728.png",
+    "images/Pasted image 20260108214719.png",
+    "images/Pasted image 20260108214655.png",
+    "images/Pasted image 20260108214649.png",
+    "1_Distributed Systems/17 Distributed transactions.md",
+    "1_Distributed Systems/21 Revision Powerpoint.md",
+    "1_Distributed Systems/01 Distributed Systems Introduction.md",
+    "1_Distributed Systems/00 General.md",
+    "1_Forensics/15 Mobile Forensics.md",
+    "1_Distributed Systems/Revision.md",
+    "1_Forensics/Revision.md",
+    "1_Forensics/All Notes.md",
+    "1_Forensics/16 Web Forensics and Searching the Network.md",
     "1_Distributed Systems/12 Clock Synchronisation.md",
     "1_Distributed Systems/11 Lab Notes Remote Invocation.md",
     "1_Distributed Systems/22 Exam Prep powerpoint.md",
@@ -199,24 +209,15 @@
     "1_Distributed Systems/16 Middleware.md",
     "1_Distributed Systems/14 Lab Notes Data Encoding.md",
     "1_Distributed Systems/13 Data Representation.md",
-    "1_Distributed Systems/21 Revision Powerpoint.md",
-    "1_Distributed Systems/Revision.md",
     "1_Advanced Databases/REVISION.md",
     "1_Advanced Databases/Exam Prep.md",
     "1_Advanced Databases/All Notes.md",
     "1_Advanced Databases/22 Data Distribution.md",
-    "1_Forensics/All Notes.md",
     "1_Forensics/14 Email Forensics.md",
     "1_Forensics/13 Windows Registry.md",
     "1_Forensics/12 CyberCrime Law.md",
     "1_Forensics/11 OSINT Framework.md",
     "1_Forensics/10 Memory Forensics.md",
-    "1_Forensics/09 Digital Evidence in the courtroom.md",
-    "1_Forensics/08 Incidence Response.md",
-    "1_Forensics/07 CA.md",
-    "1_Forensics/06 NTFS and MTF.md",
-    "1_Forensics/05 Case Management & Report Writing and Tools of the Digital Investigator.md",
-    "1_Forensics/04 EXIF and Steganography.md",
     "Untitled",
     "images"
   ]
