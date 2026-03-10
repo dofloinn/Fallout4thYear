@@ -1,7 +1,7 @@
 ### <mark style="background: #C900FFA6;">Summary of lecture</mark>
 
 <mark style="background: #C900FFA6;">1. Java RMI:</mark>
-- Remote Procedure Call (RPC) executes procedures in different address spaces.
+- <mark style="background: #C900FFA6;">Remote Procedure Call (RPC)</mark> executes procedures in different address spaces.
 - Java RMI is an example of RPC, emphasising client-server structure, distributed systems, and method signatures.
 
 <mark style="background: #C900FFA6;">2. SOAP vs. REST:</mark>
@@ -22,7 +22,7 @@
 
 ### <mark style="background: #C900FFA6;">Java RMI</mark>
 
-RPC: Remote Procedure Call is when a computer program causes a procedure (subroutine) to execute in a different address space  
+<mark style="background: #C900FFA6;">RPC:</mark> Remote Procedure Call is when a computer program causes a procedure (subroutine) to execute in a different address space  
 
 Java RMI (Remote Method Invocation) is an RPC example.  
 
@@ -54,9 +54,9 @@ Java RMI (Remote Method Invocation) is an RPC example.
 
 ### <mark style="background: #C900FFA6;">What are containers?</mark> 
 
-A container's primary aim is to enable an application that operates on one machine to function on another by incorporating its libraries, binaries, and other dependencies.  
+A container's primary aim is to enable an application that operates on one machine to function on another by incorporating its libraries, binaries, and other dependencies.
 
-A container is an autonomous entity that allows code separation from the machine on which it operates.  
+A container is an autonomous entity that allows code separation from the machine on which it operates.
 
 Initially, applications are developed, and subsequently, they can be deployed into production using a container.
 
@@ -86,9 +86,9 @@ Docker containers cannot be directly transported to different operating systems.
 
 ### <mark style="background: #C900FFA6;">Why do we need a container orchestrator?</mark>  
 
-Coordination and planning for all containers.  
+Coordination and planning for all containers.
 
-Update the applications to the latest version without interrupting the service.  
+Update the applications to the latest version without interrupting the service.
 
 Monitor the current status of each application.
 
@@ -102,13 +102,13 @@ Monitor the current status of each application.
 
 ### <mark style="background: #C900FFA6;">What does Kubernetes do?</mark>
 
-Kubernetes compares the desired state (e.g., three copies of app one and four copies of app B) to the actual state, and if they are not the same, it takes steps to rectify the situation. It handles a large volume of containers and users.  
+Kubernetes compares the desired state (e.g., three copies of app one and four copies of app B) to the actual state, and if they are not the same, it takes steps to rectify the situation. It handles a large volume of containers and users.
 
 <mark style="background: #C900FFA6;">Load balancing</mark> replaces chaos with order and efficient resource allocation. It manages service discovery and communication between containers and users.  
 
 <mark style="background: #C900FFA6;">Authentication</mark> and security should be at the infrastructure level (rather than the application level), and consistent policies should be applied across all platforms.  
 
-<mark style="background: #C900FFA6;">Multi-platform deployment</mark> is also supported. Orchestration oversees the complex task of coordinating container operations, microservice availability, and synchronisation in a multi-platform, multi-cloud environment
+<mark style="background: #C900FFA6;">Multi-platform deployment</mark> is also supported. Orchestration oversees the complex task of coordinating container operations, microservice availability, and synchronisation in a multi-platform, multi-cloud environment.
 
 ### <mark style="background: #C900FFA6;">Section 3 – REST Architecture</mark>
 
@@ -145,7 +145,7 @@ SOAP has a <mark style="background: #C900FFA6;">higher complexity</mark> and req
 
 REST was created to address SOAP's problems. Therefore, it has a more <mark style="background: #C900FFA6;">flexible architecture</mark>. It consists of guidelines and lets developers implement them in their way.  
 
-It allows <mark style="background: #C900FFA6;">different messaging formats</mark>, such as HTML, CSV, JSON, XML, and plain text, while SOAP only allows XML.  
+It allows <mark style="background: #C900FFA6;">different messaging formats</mark>, such as HTML, CSV, JSON, XML, and plain text, while SOAP only allows XML.
 
 REST is a more <mark style="background: #C900FFA6;">lightweight architecture</mark>, so RESTful web services perform better.  
 
@@ -159,8 +159,8 @@ Because of that, it has become incredibly popular in the <mark style="background
 		<td>REST</td>
 	</tr>
 	<tr>
-		<td>Function-driven (data available as services, e.g.: " getUser" )</td>
-		<td>Data-driven (data available as resources, e.g. " user" )</td>
+		<td>Function-driven (data available as services, e.g.: "getUser" )</td>
+		<td>Data-driven (data available as resources, e.g. "user" )</td>
 	</tr>
 	<tr>
 		<td>API calls cannot be cached</td>
@@ -179,7 +179,7 @@ Because of that, it has become incredibly popular in the <mark style="background
 		<td>HTTP</td>
 	</tr>
 	<tr>
-		<td> High security, standardised, extensible</td>
+		<td>High security, standardised, extensible</td>
 		<td>Faster, flexible, scalable</td>
 	</tr>
 	<tr>
@@ -210,16 +210,16 @@ Because of that, it has become incredibly popular in the <mark style="background
 
 <mark style="background: #C900FFA6;">Lightweight:</mark> It offers no built-in features like security, session management or encryption. However, these can be added by building on top of HTTP.
 
-<mark style="background: #C900FFA6;">Simplicity:</mark> REST helps you organise even a very complex application into simple resources.  
+<mark style="background: #C900FFA6;">Simplicity:</mark> REST helps you organise even a very complex application into simple resources.
 
-<mark style="background: #C900FFA6;">Portability:</mark> REST makes it easy for new clients to use your application (mobile devices, wearable devices, servers...)  
+<mark style="background: #C900FFA6;">Portability:</mark> REST makes it easy for new clients to use your application (mobile devices, wearable devices, servers...).
 
 <mark style="background: #C900FFA6;">Scalability:</mark> REST helps reduce client/server coupling. It is easy to evolve a REST interface over time without breaking existing clients.
 
 ### <mark style="background: #C900FFA6;">Principal Competitors to REST</mark> 
 
 1. <mark style="background: #C900FFA6;">GraphQL:</mark> Developed internally at Facebook in 2012 and open-sourced in 2015. A declarative query language for APIs using a single endpoint and a strongly typed schema. Clients specify exactly the data required, enabling nested queries and reducing over- and under-fetching. <mark style="background: #C900FFA6;">Competitive advantage:</mark> Efficient data aggregation for complex frontend and mobile applications, fewer round trips than REST.  
-2. <mark style="background: #C900FFA6;">gRPC:</mark> Developed by Google and released as an open-source project in 2015 (successor to Stubby). A high-performance RPC framework built on HTTP/2 using Protocol Buffers for compact binary serialization. Supports strict service contracts and bidirectional streaming. <mark style="background: #C900FFA6;">Competitive advantage:</mark> Superior performance, low latency, and strong typing—well suited to microservices and internal cloud-native architectures.  
+2. <mark style="background: #C900FFA6;">gRPC:</mark> Developed by Google and released as an open-source project in 2015 (successor to Stubby). A high-performance RPC framework built on HTTP/2 using Protocol Buffers for compact binary serialisation. Supports strict service contracts and bidirectional streaming. <mark style="background: #C900FFA6;">Competitive advantage:</mark> Superior performance, low latency, and strong typing—well suited to microservices and internal cloud-native architectures.
 3. <mark style="background: #C900FFA6;">Web Socket:</mark> Standardised by the IETF as RFC 6455 in 2011. A full-duplex protocol establishing a persistent TCP connection after an HTTP handshake, enabling asynchronous bidirectional communication. <mark style="background: #C900FFA6;">Competitive advantage:</mark> Eliminates polling overhead and enables real-time applications such as chat systems, live dashboards, and collaborative platforms.
 
 ### <mark style="background: #C900FFA6;">Section 4 – REST Constraints</mark>
@@ -234,12 +234,20 @@ Complying with these <mark style="background: #C900FFA6;">six constraints</mark>
 
 If a web service violates any other constraint, it cannot strictly be referred to as <mark style="background: #C900FFA6;">RESTful</mark>.
 
+<mark style="background: #C900FFA6;">The six constraints:</mark>
+- Uniform Interface
+- Stateless
+- Cacheable
+- Client-server
+- Layered System
+- Code-on-demand
+
 <mark style="background: #C900FFA6;">1. Uniform Interface:</mark> 
 -  Defines the interface between clients and servers  
--  Simplifies and decouples the architecture, which enables each part to evolve independently. 
-- <mark style="background: #C900FFA6;">A. Resource-Based:</mark> Individual resources are identified in requests using URIs as resource identifiers. The resources are conceptually separate from the representations returned to the client. For example, the server does not send its database record, but rather, some HTML, XML or JSON representing some database records
-- <mark style="background: #C900FFA6;">b. Manipulation of Resources Through Representations:</mark> When a client holds a representation of a resource, including any metadata attached, it has enough information to modify or delete the resource on the server, provided it has permission to do so.
-- <mark style="background: #C900FFA6;">c. Self-descriptive Messages:</mark> Each message includes enough information to describe how it should be processed. For example, an Internet media type (previously known as a MIME type) may specify which parser to invoke. 
+-  Simplifies and decouples the architecture, which enables each part to evolve independently.
+- <mark style="background: #C900FFA6;">A. Resource-Based:</mark> Individual resources are identified in requests using URIs as resource identifiers. The resources are conceptually separate from the representations returned to the client. For example, the server does not send its database record, but rather, some HTML, XML or JSON representing some database records.
+- <mark style="background: #C900FFA6;">B. Manipulation of Resources Through Representations:</mark> When a client holds a representation of a resource, including any metadata attached, it has enough information to modify or delete the resource on the server, provided it has permission to do so.
+- <mark style="background: #C900FFA6;">C. Self-descriptive Messages:</mark> Each message includes enough information to describe how it should be processed. For example, an Internet media type (previously known as a MIME type) may specify which parser to invoke.
 - e.g. Accept Header, Content-Type Header = application/json
 - <mark style="background: #C900FFA6;">d. Hypermedia as the Engine of Application State (HATEOAS)</mark> Clients deliver state via body contents, query-string parameters, request headers and the requested URI (the resource name).  
 - Services deliver state to clients via body content, response codes, and response headers. This is technically referred to as hypermedia. 
@@ -287,9 +295,9 @@ Content-Type: application/json
 ```
 
 <mark style="background: #C900FFA6;">2. Stateless:</mark>  
-- The necessary information to handle a request is contained within it, whether as part of the <mark style="background: #C900FFA6;">URI</mark>, <mark style="background: #C900FFA6;">query-string parameters</mark>, <mark style="background: #C900FFA6;">body</mark>, or <mark style="background: #C900FFA6;">headers</mark>.  
-- <mark style="background: #C900FFA6;">The URI uniquely identifies the resource, and the body</mark> contains that resource's state (or state change). After the server processes, the appropriate state is communicated to the client via headers, status and response body.  
-- In REST, <mark style="background: #C900FFA6;">every HTTP request occurs in complete isolation</mark>; if something is repeatedly required (e.g. authentication tokens), the client must send it again across multiple requests.  
+- The necessary information to handle a request is contained within it, whether as part of the <mark style="background: #C900FFA6;">URI</mark>, <mark style="background: #C900FFA6;">query-string parameters</mark>, <mark style="background: #C900FFA6;">body</mark>, or <mark style="background: #C900FFA6;">headers</mark>.
+- <mark style="background: #C900FFA6;">The URI uniquely identifies the resource, and the body</mark> contains that resource's state (or state change). After the server processes, the appropriate state is communicated to the client via headers, status and response body.
+- In REST, <mark style="background: #C900FFA6;">every HTTP request occurs in complete isolation</mark>; if something is repeatedly required (e.g. authentication tokens), the client must send it again across multiple requests.
 - <mark style="background: #C900FFA6;">Statelessness</mark> enables <mark style="background: #C900FFA6;">greater scalability</mark> since the server cannot maintain or communicate sessions.
 
 ```shell
@@ -316,9 +324,9 @@ Expires: Wed, 10 Jun 2026 10:00:00 GMT
 “name”: “Laptop”,  
 “price”: 999  
 }  
-The Expires header tells the client it can  
-reuse this response until that date.
 ```
+
+The Expires header tells the client it can reuse this response until that date.
 
 <mark style="background: #C900FFA6;">4. Client-Server:</mark> 
 - The <mark style="background: #C900FFA6;">uniform interface separates clients from servers</mark>. This separation of concerns means that, for example, <mark style="background: #C900FFA6;">clients are not concerned with data storage</mark>, which remains internal to each server, improving the portability of client code.  
@@ -326,9 +334,9 @@ reuse this response until that date.
 - Servers and clients may also be replaced and developed independently as long as the interface is not altered.
 
 <mark style="background: #C900FFA6;">Client–Server – Example</mark>  
-- A mobile app sends GET /products/10.  
+- A mobile app sends ``GET /products/10``.  
 - The client only displays the product and does not know how the data is stored. The server retrieves the data from its database and returns JSON.  
-- If the server changes its internal database, the app still works as long as the API does not change.  
+- If the server changes its internal database, the app still works as long as the API does not change.
 - Client handles the UI. Server handles data. Both evolve independently.
 
 <mark style="background: #C900FFA6;">5. Layered System:</mark>
@@ -342,7 +350,7 @@ reuse this response until that date.
 <mark style="background: #C900FFA6;">6. Code on Demand (optional):</mark>  
 - When necessary, the response can contain executable code.  
 - Servers can temporarily extend or customise the client functionality by transferring logic that the client can execute.  
-- Examples of this may include compiled components such as Java applets, or client-side scrips: JavaScript.
+- Examples of this may include compiled components such as Java applets, or client-side scripts: JavaScript.
 
 ![[Pasted image 20260304115155.png]]
 
@@ -350,7 +358,7 @@ reuse this response until that date.
 
 Everything that should be identifiable should get an ID. On the Web, there is a unified concept for IDs: The URI.  
 
-URIs make up a global namespace, and using URIs to identify your key resources means they get a unique, global ID.  
+URIs make up a global namespace, and using URIs to identify your key resources means they get a unique, global ID.
 
 <mark style="background: #C900FFA6;">These identify all of the “high-level” resources that your application provides, whether they represent:</mark>  
 - individual items  
@@ -372,11 +380,11 @@ As you traverse the path from more generic to more specific, you are navigating 
 ### <mark style="background: #C900FFA6;">REST conventions</mark> 
 
 <mark style="background: #C900FFA6;">www.mysite.com:</mark>  
-- Retrieve a list of users: GET www.mysite.com/users  
-- Retrieve user 56: GET www.mysite.com/users/56  
-- Create a new user: POST www.mysite.com/users  
-- Update user 56: PUT www.mysite.com/users/56  
-- Remove user 56: DELETE www.mysite.com/users/56
+- Retrieve a list of users: ``GET www.mysite.com/users``  
+- Retrieve user 56: ``GET www.mysite.com/users/56``  
+- Create a new user:`` POST www.mysite.com/users``  
+- Update user 56: ``PUT www.mysite.com/users/56``  
+- Remove user 56: ``DELETE www.mysite.com/users/56``
 
 www.mysite.com/users instead of www.mysite.com/overview.php?type=users&list=all => URL routing
 
@@ -509,7 +517,7 @@ However, some firewalls will strip the ``Access-Control-Allow-Origin: *`` header
 <mark style="background: #C900FFA6;">Example: Google Maps Distance Matrix API:</mark>  
 
 ```js
-$.get("https://cors-anywhere.herokuapp.com/"+"https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seattle&destinations=San+Francisco&key="+YOUR_API_KEY,function(data){ // consume the response });
+$.get("https://cors-anywhere.herokuapp.com/"+"https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seattle&destinations=San+Francisco&key="+YOUR_API_KEY,function(data){ /* consume the response */ });
 ```  
 
 You’ll need to read the documentation for each specific API to determine how to format your query.  
@@ -518,9 +526,9 @@ Mind the daily request quota for free APIs.
 
 ### <mark style="background: #C900FFA6;">Requesting via the Server-Side</mark>  
 
-You can also forward the request to your server, have a script request the API data, and send the result back to the client-side code;  
+You can also forward the request to your server, have a script request the API data, and send the result back to the client-side code;
 
-This method does not trigger security settings in browsers or firewalls, and it is compatible across all browsers.  
+This method does not trigger security settings in browsers or firewalls, and it is compatible across all browsers. 
 
 However, <mark style="background: #C900FFA6;">it may affect your server’s load and scalability</mark>.
 

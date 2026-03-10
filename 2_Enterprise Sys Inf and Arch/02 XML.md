@@ -1,31 +1,24 @@
-### <mark style="background: #00ECFFA6;">XML</mark>
-
-EXtensible Markup Language  
-
-XML was designed to carry data  
-
-XML tags are not predefined - you must define your own tags
+<mark style="background: #00ECFFA6;">XML</mark>
+- EXtensible Markup Language  
+- XML was designed to carry data  
+- XML tags are not predefined - you must define your own tags
 
 ### <mark style="background: #00ECFFA6;">XML Example</mark> 
 
 ```xml
 <message>  
-<to>John</to>  
-<from>Jane</from>  
-<subject>Greeting</subject>  
-<body>Hi John</body>  
+	<to>John</to>  
+	<from>Jane</from>  
+	<subject>Greeting</subject>  
+	<body>Hi John</body>  
 </message>
 ```
 
-### <mark style="background: #00ECFFA6;">XML – Naming Rules</mark>
-
-Names can contain letters, numbers, and other characters  
-
-Names cannot start with a number or punctuation character  
-
-Names cannot start with the letters xml (or XML, or Xml, etc.)  
-
-Names cannot contain spaces
+<mark style="background: #00ECFFA6;">XML – Naming Rules</mark>
+- Names can contain letters, numbers, and other characters  
+- Names cannot start with a number or punctuation character  
+- Names cannot start with the letters xml (or XML, or Xml, etc.)  
+- Names cannot contain spaces
 
 ### <mark style="background: #00ECFFA6;">XML Documents</mark> 
 
@@ -38,7 +31,7 @@ The prolog and epilog are optional and provide information about the document it
 
 ### <mark style="background: #00ECFFA6;">Structure of an XML doc</mark>
 
-The prolog consists of four parts in the following order:  
+<mark style="background: #00ECFFA6;">The prolog consists of four parts in the following order:</mark>
 - XML declaration
 - Miscellaneous statements or comments
 - Schema / Document type declaration
@@ -50,25 +43,25 @@ None of these four parts are required, but it is good form to include them.
 
 ### <mark style="background: #00ECFFA6;">XML Declaration</mark>
 
-The XML declaration is always the first line of code in an XML document. It tells the processor what follows is written using XML.  
+The XML declaration is always the first line of code in an XML document. It tells the processor what follows is written using XML.
 
-It can also provide any information about how the parser should interpret the code.  
+It can also provide any information about how the parser should interpret the code.
 
 <mark style="background: #00ECFFA6;">The complete syntax is:</mark>
 ```xml
-<?xml version=“version number” encoding=“encoding type” standalone=“yes | no” ?>
+<?xml version="version number" encoding="encoding type" standalone="yes | no" ?>
 ```  
 
 <mark style="background: #00ECFFA6;">A sample declaration might look like this:</mark>
 ```xml 
-<?xml version=“1.0” encoding=“UTF-8” standalone=“yes” ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 ```
 
 ### <mark style="background: #00ECFFA6;">XML Comments</mark>
 
 Comments or miscellaneous statements go after the declaration. Comments may appear anywhere after the declaration.  
 
-The syntax for comments is: <!- - comment text - -> 
+The syntax for comments is: ``<!- - comment text - ->`` 
 
 This is the same syntax for HTML comments
 
@@ -76,7 +69,9 @@ This is the same syntax for HTML comments
 
 Elements are the basic building blocks of XML Documents (files).  
 
-XML supports two types of elements:  
+<mark style="background: #00ECFFA6;">XML supports two types of elements:</mark>
+- Closed
+- Empty/Open
 
 <mark style="background: #00ECFFA6;">Closed:</mark> 
 ```xml
@@ -85,7 +80,7 @@ Example: <Student>John Doe</Student>
 ```  
 
 <mark style="background: #00ECFFA6;">Empty (also called Open):</mark>
-```
+```xml
 <element_name/>
 Example: <Student/>
 ```
@@ -110,11 +105,11 @@ All elements must be nested within a single <mark style="background: #00ECFFA6;"
 
 An <mark style="background: #00ECFFA6;">open</mark> or <mark style="background: #00ECFFA6;">empty element</mark> is an element that contains no content. They can be used to mark sections of the document for the XML parser.
 
-An attribute is a feature or characteristic of an element.  
+An attribute is a feature or characteristic of an element.
 
 Attributes are text strings and must be placed in single or double quotes. The syntax is:  
 ```xml
-<element_name attribute=“value”> ... </element_name>  
+<element_name attribute="value"> ... </element_name>  
 
 Example:  
 <message id="9">  
@@ -161,7 +156,7 @@ Example:
 
 ![[Pasted image 20260203151451.png]]
 
-<mark style="background: #00ECFFA6;">Name Collision:</mark> The above figure shows two documents each with a “Name” element
+<mark style="background: #00ECFFA6;">Name Collision:</mark> The above figure shows two documents each with a "Name" element
 
 ### <mark style="background: #00ECFFA6;">Working with Namespaces</mark> 
 
@@ -188,7 +183,7 @@ Namespaces must be declared before they can be used.
 A namespace can be declared in the prolog or as an element attribute. The syntax to declare a namespace in the prolog is:  
 
 ```xml
-<?xml:namespace ns=“URI” prefix=“prefix”?>
+<?xml:namespace ns="URI" prefix="prefix"?>
 ```
 
 Where <mark style="background: #00ECFFA6;">URI</mark> is a <mark style="background: #00ECFFA6;">Uniform Resource Identifier</mark> that assigns a unique name to the namespace, and <mark style="background: #00ECFFA6;">prefix</mark> is a string of letters that associates each element or attribute in the document with the declared namespace.
@@ -203,10 +198,10 @@ This figure shows the structure of a UHOSP.xml file and the collision between th
 
 <mark style="background: #00ECFFA6;">For example:</mark>
 ```xml
-<?xml:namespace ns=“http://uhosp/patients/ns” prefix=“pat”?>
+<?xml:namespace ns="http://uhosp/patients/ns" prefix="pat"?>
 ```  
 
-Declares a namespace with the prefix “pat” and the URI http://uhosp/patients/ns.  
+Declares a namespace with the prefix "pat" and the URI http://uhosp/patients/ns.  
 
 The URI is not a Web address. A URI identifies a physical or an abstract resource (see next slide).
 
@@ -220,11 +215,11 @@ The URI http://uhosp/patients/ns is simply a text identifier.
 
 ### <mark style="background: #00ECFFA6;">Applying a Namespace to an Element</mark>  
 
-Once it has been declared and its URI specified, the namespace is applied to elements and attributes by inserting the namespace prefix before each element name that belongs to the namespace.  
+Once it has been declared and its URI specified, the namespace is applied to elements and attributes by inserting the namespace prefix before each element name that belongs to the namespace.
 
 ```xml
 <prefix:element>  
-content  
+	content  
 </prefix:element>
 ```  
 
@@ -260,7 +255,7 @@ Where prefix and URI are the prefix and URI for the namespace.
 
 The example on the previous slide applies the namespace http://uhosp/patients/ns to the Patient element and all of its child elements.  
 
-While the <mark style="background: #00ECFFA6;">“pat”</mark> prefix was only added to the Patients element name, the XML parser considers the other elements part of the Patients namespace and they inherit the namespace.  
+While the <mark style="background: #00ECFFA6;">"pat"</mark> prefix was only added to the Patients element name, the XML parser considers the other elements part of the Patients namespace and they inherit the namespace.  
 
 They are <mark style="background: #00ECFFA6;">unqualified elements</mark>, though, because they lack a namespace prefix. 
 
@@ -270,9 +265,9 @@ All elements are children of the <mark style="background: #00ECFFA6;">root</mark
 
 ### <mark style="background: #00ECFFA6;">Declaring a Default Namespace</mark>  
 
-You can specify a default namespace by omitting the prefix in the namespace declaration.  
+You can specify a default namespace by omitting the prefix in the namespace declaration. 
 
-The element containing the namespace attribute and all of its child elements are assumed to be part of the default namespace.  
+The element containing the namespace attribute and all of its child elements are assumed to be part of the default namespace.
 
 ```xml
 <message xmlns="http://www.1234.com">  
@@ -285,7 +280,7 @@ The element containing the namespace attribute and all of its child elements are
 
 ### <mark style="background: #00ECFFA6;">Using Namespaces with Attributes</mark>  
 
-Attributes, like elements, can become qualified by adding the namespace prefix to the attribute name.  
+Attributes, like elements, can become qualified by adding the namespace prefix to the attribute name.
 
 ```xml
 prefix:attribute="value"
@@ -294,4 +289,3 @@ prefix:attribute="value"
 No element may contain two attributes with the same name.  
 
 No element may contain two qualified attribute names with the same local part, pointing to identical namespaces, even if the prefixes are different.
-

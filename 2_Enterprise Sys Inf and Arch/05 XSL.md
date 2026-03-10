@@ -51,9 +51,9 @@ An XSLT processor takes an XML document and an XSLT style sheet and produces a r
 
 ### <mark style="background: #00ECFFA6;">Transforming an XML Document</mark>  
 
-<mark style="background: #00ECFFA6;">Server-side transformation:</mark> A client can request an XML document from the server. The server applies the style sheet and returns the resulting document and not the original XML document  
+<mark style="background: #00ECFFA6;">Server-side transformation:</mark> A client can request an XML document from the server. The server applies the style sheet and returns the resulting document and not the original XML document.
 
-<mark style="background: #00ECFFA6;">Client-side transformation:</mark> A client can request and XML document and a stylesheet from a server and perform the transformation itself
+<mark style="background: #00ECFFA6;">Client-side transformation:</mark> A client can request and XML document and a stylesheet from a server and perform the transformation itself.
 
 ### <mark style="background: #00ECFFA6;">XSLT Stylesheets</mark>
 
@@ -162,8 +162,8 @@ XSLT and Literal Result Elements
 ```  
 
 A template contains two types of content: <mark style="background: #00ECFFA6;">XSLT elements</mark> and <mark style="background: #00ECFFA6;">literal result elements</mark>  
-- XSLT elements are those elements that are part of the XSLT namespace and are used to send commands to the XSLT processor  
-- A literal result element is text sent to the result document, but not acted upon by the XSLT processor  
+- XSLT elements are those elements that are part of the XSLT namespace and are used to send commands to the XSLT processor
+- A literal result element is text sent to the result document, but not acted upon by the XSLT processor
   
 ```xsd
 <xsl:template match="node">  
@@ -189,7 +189,7 @@ To control how the processor formats the source document, you can specify the ou
 
 Attributes of the <xsl:output/> Element
 
-Transforming a Document  
+### <mark style="background: #00ECFFA6;">Transforming a Document</mark>
 
 Most XSLT processors provide the capability to create the result document as a separate file  
 
@@ -197,9 +197,9 @@ An XSLT processor could transform an XML file into a HTML file.
 
 A browser with a <mark style="background: #00ECFFA6;">built-in</mark> XSLT processor allows you to view the result document
 
-### <mark style="background: #00ECFFA6;">Example:</mark>
+### <mark style="background: #00ECFFA6;">Example: Transforming an XML Document into a HTML Document </mark>
 
-Transforming an XML Document into a HTML Document XSLT can be used to transform XML into many different types of documents  
+XSLT can be used to transform XML into many different types of documents  
 
 From an <mark style="background: #00ECFFA6;">Enterprise</mark> perspective, this is most useful when <mark style="background: #00ECFFA6;">transforming XML from one schema to another schema</mark> (or any other data format).  
 
@@ -209,7 +209,7 @@ The XSLT processor adds one extra line to the document that provides additional 
 
 ### <mark style="background: #00ECFFA6;">Back to our Stylesheet - Insert a Node value</mark> 
 
-To insert a node’s value into the result document, the syntax is:  
+<mark style="background: #00ECFFA6;">To insert a node’s value into the result document, the syntax is:</mark>
 - ``<xsl:value-of select=“XPath Expression” />``
 - where XPath Expression is an expression that identifies the node from the source document’s node tree  
 

@@ -1,16 +1,12 @@
-### <mark style="background: #00ECFFA6;">XML Schemas</mark>  
-
-A <mark style="background: #00ECFFA6;">schema</mark> is an XML document that defines the content and structure of one or more XML documents  
-
-Defines a <mark style="background: #00ECFFA6;">vocabulary</mark> and rules around specific XML  
-
-Alternative to <mark style="background: #00ECFFA6;">Document Type Definitions (DTDs)</mark>  
-
-The XML document containing the content is called the <mark style="background: #00ECFFA6;">instance document</mark>
+<mark style="background: #00ECFFA6;">XML Schemas</mark>  
+- A <mark style="background: #00ECFFA6;">schema</mark> is an XML document that defines the content and structure of one or more XML documents  
+- Defines a <mark style="background: #00ECFFA6;">vocabulary</mark> and rules around specific XML  
+- Alternative to <mark style="background: #00ECFFA6;">Document Type Definitions (DTDs)</mark>  
+- The XML document containing the content is called the <mark style="background: #00ECFFA6;">instance document</mark>
 
 ### <mark style="background: #00ECFFA6;">Schema Dialects</mark>  
 
-There is no single schema form. Several schema "dialects" have been developed in the XML language.  
+There is no single schema form. Several schema "dialects" have been developed in the XML language.
 
 Support for a particular schema depends on the XML parser being used for validation
 
@@ -26,9 +22,11 @@ A schema is always placed in a separate XML document that is <mark style="backgr
 
 ### <mark style="background: #00ECFFA6;">Schema (Element) Types</mark>
 
-XML Schema recognize two categories of element types: complex and simple.  
+<mark style="background: #00ECFFA6;">XML Schema recognise two categories of element types:</mark> 
+- complex
+- simple.  
 
-A complex type element has one or more attributes or is the parent to one or more child elements.  
+A complex type element has one or more attributes or is the parent to one or more child elements.
 
 A simple type element contains only character data and has no attributes.
 
@@ -40,13 +38,13 @@ Use the following syntax to declare a simple type element in XML Schema: ``<elem
 
 Above, name is the name of the element in the instance document and type is the data type of the element.  
 
-If a namespace prefix is used with the XML Schema namespace, any XML  
-
-Schema tags must be qualified with the namespace prefix. e.g. ``<xs:element name="message" type="xs:string"/>``
+If a namespace prefix is used with the XML Schema namespace, any XML Schema tags must be qualified with the namespace prefix. e.g. ``<xs:element name="message" type="xs:string"/>``
 
 ### <mark style="background: #00ECFFA6;">Understanding Data Types</mark>
 
-XML Schema supports two data types: <mark style="background: #00ECFFA6;">built-in</mark> and <mark style="background: #00ECFFA6;">user-derived</mark>. 
+<mark style="background: #00ECFFA6;">XML Schema supports two data types:</mark> 
+- built-in
+- and user-derived. 
 
 A <mark style="background: #00ECFFA6;">built-in</mark> data type is part of the XML Schema specifications and is available to all XML Schema authors.
 
@@ -54,7 +52,7 @@ A <mark style="background: #00ECFFA6;">user-derived</mark> data type is created 
 
 A <mark style="background: #00ECFFA6;">primitive data type</mark>, also called a base type, is one of 19 fundamental data types not defined in terms of other types.  
 
-A <mark style="background: #00ECFFA6;">derived data type</mark> is a collection of 25 data types that the XML Schema developers created based on the 19 primitive types
+A <mark style="background: #00ECFFA6;">derived data type</mark> is a collection of 25 data types that the XML Schema developers created based on the 19 primitive types.
 
 ![[Pasted image 20260210151119.png]]
 
@@ -62,8 +60,7 @@ A <mark style="background: #00ECFFA6;">derived data type</mark> is a collection 
 
 ### <mark style="background: #00ECFFA6;">Complex Type Elements</mark> 
 
-The syntax for complex type elements is:  
-
+<mark style="background: #00ECFFA6;">The syntax for complex type elements is:</mark>
 ```XML
 <element name="name">  
 	<complexType>  
@@ -75,11 +72,11 @@ The syntax for complex type elements is:
 </element>
 ```  
 
-Here, <mark style="background: #00ECFFA6;">name</mark> is the name of the element in the instance document  
+Here, <mark style="background: #00ECFFA6;">name</mark> is the name of the element in the instance document.
 
-<mark style="background: #00ECFFA6;">Compositors</mark> define how the list of elements is to be organized
+<mark style="background: #00ECFFA6;">Compositors</mark> define how the list of elements is to be organised.
 
-<mark style="background: #00ECFFA6;">Element declarations</mark> can be simple type element declarations for each child element (or could be complex types)  
+<mark style="background: #00ECFFA6;">Element declarations</mark> can be simple type element declarations for each child element (or could be complex types).
 
 <mark style="background: #00ECFFA6;">Attribute declarations</mark> define any of the attributes of the elements.
 
@@ -96,7 +93,7 @@ Compositors may be nested inside of one another.
 
 ### <mark style="background: #00ECFFA6;">Declaring an Attribute</mark>  
 
-Any element that contains an attribute is also a complex type. The syntax to declare an attribute is:  
+Any element that contains an attribute is also a complex type. The syntax to declare an attribute is:
 ```xml
 <attribute name="name" type="type" use="use"  
 default="default" fixed="fixed"/>
@@ -104,23 +101,20 @@ default="default" fixed="fixed"/>
 
 ### <mark style="background: #00ECFFA6;">Attribute Examples</mark>
 
+If no value is specified in the XML instance the default as specified will be used 
 ```xml
 <xs:attribute name="lang" type="xs:string" default="EN"/>
 ```  
-
-If no value is specified in the XML instance the default as specified will be used  
-
+ 
+The value “EN” will always appear  
 ```xml
 <xs:attribute name="lang" type="xs:string" fixed="EN"/>
 ```  
 
-The value “EN” will always appear  
-
+Use of the attribute is mandatory
 ```XML
 <xs:attribute name="lang" type="xs:string" use="required"/>
 ```  
-
-Use of the attribute is mandatory
 
 ### <mark style="background: #00ECFFA6;">Example – excerpt from message.xsd</mark>
 
@@ -149,7 +143,7 @@ Use of the attribute is mandatory
 
 ### <mark style="background: #00ECFFA6;">Attaching a Schema to a Namespace</mark>
 
-The syntax to associate the schema with a namespace is:  
+The syntax to associate the schema with a namespace is:
 ``<prefix:schema xmlns:prefix=http://www.w3.org/2001/XMLSchema>``  
 
 ```xml
@@ -231,7 +225,6 @@ This can be useful if you want to use attributes with several different elements
 - <mark style="background: #00ECFFA6;">Union:</mark> the combination of two or more data types.
 - <mark style="background: #00ECFFA6;">Restriction:</mark> a limit placed on the facet of a base type.
 
-
 ### <mark style="background: #00ECFFA6;">Deriving a Restricted Data Type</mark>
 
 The most common way to derive a new data type is to restrict the properties of a base type. XML Schema provides twelve constraining facets for this purpose.  
@@ -255,7 +248,7 @@ This element is defined to have an integer value between 0 and 120 inclusive
 
 ### <mark style="background: #00ECFFA6;">The Patterns Facet</mark>
 
-A pattern can be created with a formatted text string called a <mark style="background: #00ECFFA6;">regular expression</mark> or <mark style="background: #00ECFFA6;">regex</mark>.  
+A pattern can be created with a formatted text string called a <mark style="background: #00ECFFA6;">regular expression</mark> or <mark style="background: #00ECFFA6;">ReGex</mark>.
 
 The basic unit of a regex is called an <mark style="background: #00ECFFA6;">atom</mark>. It can be a single character, a group of characters, or another regex enclosed in parenthesis.  
 
@@ -306,7 +299,7 @@ Here we specify a default namespace – all child elements will also belong to t
 </message>
 ```
 
-Here, we also specify the <mark style="background: #00ECFFA6;">xsi</mark> namespace prefix and use it to give the XML schema location\name
+Here, we also specify the <mark style="background: #00ECFFA6;">xsi</mark> namespace prefix and use it to give the XML schema location\name.
 
 ### <mark style="background: #00ECFFA6;">Example – message.xsd</mark>
 
@@ -328,4 +321,3 @@ elementFormDefault="qualified">
 	</xs:element>  
 </xs:schema>
 ```
-
