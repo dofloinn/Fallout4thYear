@@ -9,7 +9,6 @@ IT can change the way businesses compete
 - Reduce a competitive disadvantage  
 - Or meet other strategic enterprise objectives
 
-
 ### <mark style="background: #00ECFFA6;">Does IT matter?</mark>
 
 <mark style="background: #00ECFFA6;">No ?</mark>  Nicholas Carr argued that IT is infrastructure, much like electricity, too commonplace to offer a competitive advantage  
