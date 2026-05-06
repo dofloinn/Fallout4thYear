@@ -2,7 +2,6 @@
 
 ### <mark style="background: #04FF00A6;">Map Projections</mark> 
 
-
 This will always be a distortion.  
 
 <mark style="background: #04FF00A6;">A map projects a 3D surface onto a 2D plane:</mark>
@@ -29,7 +28,9 @@ Projection -> Mathematical transformation
 - Area  
 - Shape  
 - Distance  
-- Direction simultaneously
+- Direction 
+
+simultaneously
 
 ### <mark style="background: #04FF00A6;">Map Projections</mark> 
 
@@ -77,7 +78,6 @@ A <mark style="background: #04FF00A6;">map projection</mark> is a way of flatten
 
 ### <mark style="background: #04FF00A6;">Azimuthal Projection – Plane Projection</mark> 
 
-
 Preserves direction from one or two points to every other point.  
 
 Also called Zenithal.
@@ -120,7 +120,7 @@ Projection = flattening method
 - Projection ≠ CRS  
 - Projection is part of CRS.  
 
-Geodesy (geodetics )=science of creating geoids
+Geodesy (geodetics)=science of creating geoids
 
 ### <mark style="background: #04FF00A6;">Geographic CRS</mark>
 

@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a51f96bb715d7837",
+            "id": "3e29dbd854a8571a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_Systems Software/00 Introduction.md",
+                "file": "2_Systems Software/18 auditd and init.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00 Introduction"
-            }
-          },
-          {
-            "id": "657ff31ea7240ccb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2_Enterprise Sys Inf and Arch/06 XSL Transformations.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06 XSL Transformations"
+              "title": "18 auditd and init"
             }
           }
         ]
@@ -67,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "overflow",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -193,45 +180,45 @@
       "bases:Create new base": false
     }
   },
-  "active": "a51f96bb715d7837",
+  "active": "3e29dbd854a8571a",
   "lastOpenFiles": [
-    "2_Enterprise Sys Inf and Arch/Test 1 Prep.md",
-    "2_Enterprise Sys Inf and Arch/06 XSL Transformations.md",
-    "2_Enterprise Sys Inf and Arch/05 XSL.md",
-    "2_Enterprise Sys Inf and Arch/04 JSON.md",
-    "2_Enterprise Sys Inf and Arch/03 XSD.md",
-    "2_Enterprise Sys Inf and Arch/02 XML.md",
-    "2_Enterprise App Dev/11 Rest.md",
-    "2_Enterprise Sys Inf and Arch/01 Introduction.md",
-    "2_Visualising Data/06 Visualising Time Trends.md",
-    "2_Systems Software/10 IPC Message Queues.md",
-    "2_Systems Software/09 IPC and Pipes.md",
-    "images/Pasted image 20260306114410.png",
-    "images/Pasted image 20260306112431.png",
-    "images/Pasted image 20260306112343.png",
-    "images/Pasted image 20260306112254.png",
-    "images/Pasted image 20260306112210.png",
-    "2_Visualising Data/07 Geospatial Data Visualisation.md",
-    "images/Pasted image 20260304184254.png",
-    "images/Pasted image 20260304184011.png",
-    "images/Pasted image 20260304183644.png",
-    "images/Pasted image 20260304183552.png",
-    "images/Pasted image 20260304182955.png",
-    "2_Enterprise Sys Inf and Arch/08 Enterprise Resource Planning.md",
-    "2_Enterprise App Dev/10 Next.js - theoretical foundations.md",
-    "2_Enterprise App Dev/09 Express.md",
-    "2_Visualising Data/L04 Visualising Relationships.md",
-    "2_Visualising Data/L02 Human Perception.md",
-    "2_Visualising Data/L02 MISTAKE Human Perception.md",
-    "2_Visualising Data/L03 Exploratory and Explanatory Visualisation.md",
+    "2_Systems Software/17 Kernel Modules.md",
+    "2_Systems Software/18 auditd and init.md",
+    "2_Systems Software/16 Terminal IO.md",
+    "2_Visualising Data/14 Full Revision.md",
+    "2_Enterprise Sys Inf and Arch/13 Module Review.md",
+    "images/Pasted image 20260505112131.png",
+    "images/Pasted image 20260505112111.png",
+    "images/Pasted image 20260505111836.png",
+    "images/Pasted image 20260505111741.png",
+    "images/Pasted image 20260505111715.png",
+    "images/Pasted image 20260505111630.png",
+    "images/Pasted image 20260505105314.png",
+    "images/Pasted image 20260505105304.png",
+    "2_Enterprise Sys Inf and Arch/12 AI in Enterprise.md",
+    "images/Pasted image 20260505104506.png",
+    "images/Pasted image 20260505103415.png",
+    "2_Enterprise Sys Inf and Arch/11 Enterprise Service Bus.md",
+    "2_Enterprise Sys Inf and Arch/10 Enterprise Applications Integration.md",
+    "2_Enterprise Sys Inf and Arch/Assignment.md",
+    "2_Visualising Data/13 Design Framework - Gestalt.md",
+    "2_Visualising Data/12 Design Frameworks - Accent and Few.md",
+    "2_Enterprise App Dev/13 Microservices.md",
+    "2_Enterprise App Dev/14 Authentication and Sessions.md",
+    "2_Visualising Data/11 Visualising Text.md",
+    "2_Visualising Data/10 Storytelling.md",
+    "1_Advanced Databases/All Notes.md",
+    "2_Systems Software/15 Stat.md",
+    "2_Systems Software/14 Security.md",
+    "2_Systems Software/13 Logging.md",
+    "2_Enterprise App Dev/JSON Web Token - JWT.md",
+    "2_Enterprise Sys Inf and Arch/09 Customer Relationship Management.md",
+    "2_Systems Software/12 Threads.md",
+    "2_Visualising Data/09 Handling Uncertainty in Data Visualisation.md",
+    "2_Enterprise App Dev/12 MongoDB.md",
+    "2_Visualising Data/08 Responsible Data Visualisation.md",
+    "2_Systems Software/11 Sockets.md",
     "images/lab3_script.r",
-    "2_Systems Software/08 C Refresher - Pointers.md",
-    "2_Systems Software/07 Orphans Zombies and Daemons.md",
-    "2_Enterprise Sys Inf and Arch/07 Enterprise Strategy and Information Systems.md",
-    "2_Enterprise App Dev/08 Main benefits of React.md",
-    "2_Enterprise App Dev/05 Node and AJAX working together.md",
-    "2_Enterprise App Dev/07 Intro to React.md",
-    "2_Enterprise App Dev/06 React vs Angular.md",
     "2_Systems Software",
     "2_Visualising Data",
     "2_Enterprise Sys Inf and Arch",

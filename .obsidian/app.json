@@ -5,6 +5,7 @@
   "newFileFolderPath": "images",
   "attachmentFolderPath": "images",
   "pdfExportSettings": {
+    "includeName": false,
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
