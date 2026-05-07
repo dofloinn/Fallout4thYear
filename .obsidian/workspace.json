@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_Enterprise Sys Inf and Arch/All notes.md",
+                "file": "2_Enterprise Sys Inf and Arch/Exam Revision.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "All notes"
+              "title": "Exam Revision"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -181,6 +182,19 @@
   },
   "active": "3e29dbd854a8571a",
   "lastOpenFiles": [
+    "images/Pasted image 20260507211041.png",
+    "images/Pasted image 20260507211029.png",
+    "images/Pasted image 20260507211023.png",
+    "images/Pasted image 20260507211011.png",
+    "images/Pasted image 20260507211003.png",
+    "images/Pasted image 20260507210952.png",
+    "images/Pasted image 20260507210945.png",
+    "images/Pasted image 20260507210936.png",
+    "images/Pasted image 20260507210928.png",
+    "images/Pasted image 20260507210917.png",
+    "images/Pasted image 20260507210909.png",
+    "2_Enterprise Sys Inf and Arch/All notes.md",
+    "2_Enterprise Sys Inf and Arch/Exam Revision.md",
     "2_Visualising Data/All notes.md",
     "2_Systems Software/All notes.md",
     "2_Systems Software/18 auditd and init.md",
@@ -204,20 +218,7 @@
     "2_Systems Software/01 Development Tools and Scripting Techniques.md",
     "2_Systems Software/00 Introduction.md",
     "2_Visualising Data/14 Full Revision.md",
-    "2_Visualising Data/13 Design Framework - Gestalt.md",
-    "2_Visualising Data/12 Design Frameworks - Accent and Few.md",
-    "2_Visualising Data/11 Visualising Text.md",
     "2_Enterprise Sys Inf and Arch/LinkSlayerObsidian.py",
-    "images/Pasted image 20260505112131.png",
-    "images/Pasted image 20260505112111.png",
-    "images/Pasted image 20260505111836.png",
-    "images/Pasted image 20260505111741.png",
-    "images/Pasted image 20260505111715.png",
-    "images/Pasted image 20260505111630.png",
-    "images/Pasted image 20260505105314.png",
-    "images/Pasted image 20260505105304.png",
-    "images/Pasted image 20260505104506.png",
-    "images/Pasted image 20260505103415.png",
     "images/lab3_script.r",
     "2_Systems Software",
     "2_Visualising Data",
