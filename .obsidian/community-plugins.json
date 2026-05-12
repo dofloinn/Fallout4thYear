@@ -1,4 +1,6 @@
 [
   "obsidian-file-color",
-  "highlightr-plugin"
+  "highlightr-plugin",
+  "obsidian-pandoc",
+  "obsidian-enhancing-export"
 ]

@@ -173,7 +173,7 @@ A program needs to be compiled and this process creates a binary code file that 
 
 The numbers are related to the page sections.  
 
-Eg: man ls The manual is a very good resource and should be used to get  
+Eg: ``man ls`` The manual is a very good resource and should be used to get  
 more information and detail for commands etc....
 
 ### <mark style="background: #FFF503A6;">Unix Development Philosophy</mark>
@@ -191,19 +191,13 @@ The philosophy documented by Doug McIlroy was later summarised by Peter H. Salus
 2. Write programs to work together.  
 3. Write programs to handle text streams, because that is a universal interface.
 
-Rob Pike (one of the great masters of C programming) detailed a different set of rules in Notes on C Programming:  
-
-<mark style="background: #FFF503A6;">Rule 1:</mark> You can’t tell where a program is going to spend its time. Bottlenecks occur in surprising places, so don’t try to second guess and put in a speed hack until you’ve proven that’s where the bottleneck is.  
-
-<mark style="background: #FFF503A6;">Rule 2:</mark> Measure. Don’t tune for speed until you’ve measured, and even then don’t unless one part of the code overwhelms the rest.  
-
-<mark style="background: #FFF503A6;">Rule 3:</mark> Fancy algorithms are slow when n is small, and n is usually small. Fancy algorithms have big constants. Until you know that n is frequently going to be big, don’t get fancy. (Even if n does get big, use Rule 2 first.)  
-
-<mark style="background: #FFF503A6;">Rule 4:</mark> Fancy algorithms are buggier than simple ones, and they’re much harder to implement. Use simple algorithms as well as simple data structures.  
-
-<mark style="background: #FFF503A6;">Rule 5:</mark> Data dominates. If you’ve chosen the right data structures and organised things well, the algorithms will almost always be self-evident. Data structures, not algorithms, are central to programming.  
-
-<mark style="background: #FFF503A6;">Rule 6:</mark> There is no Rule 6.
+<mark style="background: #FFF503A6;">Rob Pike</mark> (one of the great masters of C programming) detailed a different set of rules in Notes on C Programming:  
+- <mark style="background: #FFF503A6;">Rule 1:</mark> You can’t tell where a program is going to spend its time. Bottlenecks occur in surprising places, so don’t try to second guess and put in a speed hack until you’ve proven that’s where the bottleneck is.  
+- <mark style="background: #FFF503A6;">Rule 2:</mark> Measure. Don’t tune for speed until you’ve measured, and even then don’t unless one part of the code overwhelms the rest.  
+- <mark style="background: #FFF503A6;">Rule 3:</mark> Fancy algorithms are slow when n is small, and n is usually small. Fancy algorithms have big constants. Until you know that n is frequently going to be big, don’t get fancy. (Even if n does get big, use Rule 2 first.)  
+- <mark style="background: #FFF503A6;">Rule 4:</mark> Fancy algorithms are buggier than simple ones, and they’re much harder to implement. Use simple algorithms as well as simple data structures.  
+- <mark style="background: #FFF503A6;">Rule 5:</mark> Data dominates. If you’ve chosen the right data structures and organised things well, the algorithms will almost always be self-evident. Data structures, not algorithms, are central to programming.  
+- <mark style="background: #FFF503A6;">Rule 6:</mark> There is no Rule 6.
 
 Source: The Art of Unix Programming by Eric Steven Raymond 2003
 
@@ -221,7 +215,7 @@ Tell, Don’t Ask
 
 ### <mark style="background: #FFF503A6;">DRY – Don’t Repeat Yourself</mark>
 
-The DRY design principle places an emphasis on not duplicating data or behaviour in the code base.  
+The DRY design principle places an emphasis on not duplicating data or behaviour in the code base.
 
 When developing large\complex systems it can be easy to duplicate data \ code \ logic to get something working.  
 
@@ -344,6 +338,17 @@ Most often, the makefile tells make how to compile and link a program.
 <mark style="background: #FFF503A6;">Makefiles are a good idea because:</mark>
 - faster to recompile things (less typing, and it only recompiles based on what’s changed and leaves the rest)
 - organise “steps” in a (potentially complex) compilation into one place (the makefile), which makes it easier for other people to compile your code
+
+```
+build: go.c primes.c
+	gcc -o go go.c primes.c
+
+run:
+	./go 3
+
+clean:
+	rm go
+```
 
 ### <mark style="background: #FFF503A6;">What a Rule Looks Like</mark>
 
@@ -496,9 +501,9 @@ We have been talking about variable types and how many bytes they take up in mem
 
 An important quantity to know about is that one byte is made up of 8 bits. One bit can take on two possible values: 0 or 1. An unsigned 8-bit variable can take on values between 0 and (28)-1 =255. A signed 8-bit variable can take on values between -128 to 127.  
 
-When a variable is signed, it can take on negative values, and half of its total range is spread below zero, and the other half above zero.  
+When a variable is signed, it can take on negative values, and half of its total range is spread below zero, and the other half above zero.
 
-A signed int can take on values between -2,147,483,648 and +2,147,483,647. If we want to be able to represent integers larger than +2,147,483,647, then we can either use more bits (e.g., by using a long int), or by forcing all 32 bits of our int to be used on the positive side of zero.  
+A signed int can take on values between -2,147,483,648 and +2,147,483,647. If we want to be able to represent integers larger than +2,147,483,647, then we can either use more bits (e.g., by using a long int), or by forcing all 32 bits of our int to be used on the positive side of zero.
 
 An unsigned int (4 bytes or 32 bits) can take on values between 0 and 4,294,967,295
 
@@ -533,8 +538,9 @@ int main() {
 	double b = 50.2;  
 	double c = 100.0;  
 	double d[] = {a, b, c};  
-	printf("a=%.3f, b=%.3f, c=%.3f, d=[%.3f, %.3f, %.3f]\n", a, b, c, d[0],  
-	d[1], d[2]);  
+	
+	printf("a=%.3f, b=%.3f, c=%.3f, d=[%.3f, %.3f, %.3f]\n", a, b, c, d[0], 	d[1], d[2]);  
+	
 	return 0;  
 }
 ```
@@ -660,9 +666,9 @@ Debugging is the process of finding out where the bug in your code lies. It can 
 
 <mark style="background: #FFF503A6;">gdb</mark> is a powerful debugging tool for C
 
-<mark style="background: #FFF503A6;">Why not printf?</mark> The disadvantages of debugging using trace code are that you need many printf() statements all over your program, and it becomes a nuisance to put them in, take them out, etc.
+<mark style="background: #FFF503A6;">Why not printf?</mark> The disadvantages of debugging using trace code are that you need many ``printf()`` statements all over your program, and it becomes a nuisance to put them in, take them out, etc.
 
-Moreover a symbolic debugger can do a lot more stuff than simple trace code. It can:
+<mark style="background: #FFF503A6;">Moreover a symbolic debugger can do a lot more stuff than simple trace code. It can:</mark>
 - halt a program
 - allow you to inspect variable values
 - jump to an arbitrary line of code
@@ -675,7 +681,7 @@ GDB is the GNU’s Project debugger
 
 GDB gives an insight into what is actually happening within a program while it is running.  
 
-There are 4 specific tasks GDB can help with to try identify bugs:  
+<mark style="background: #FFF503A6;">There are 4 specific tasks GDB can help with to try identify bugs:</mark> 
 - Start your program, specifying anything that might affect its behaviour.  
 - Make your program stop on specified conditions.  
 - Examine what has happened, when your program has stopped.  
@@ -783,7 +789,7 @@ When the program has stopped it possible to values variables are holding, examin
 
 Enter GDB for the program in question
 
-Add a breakpoint using the following syntax:
+<mark style="background: #FFF503A6;">Add a breakpoint using the following syntax:</mark>
 - ``break 12``
 - This will add a breakpoint to line 12
 
@@ -800,8 +806,8 @@ break hello.c:12
 Enter GDB for the program in question  
 
 <mark style="background: #FFF503A6;">Add a function breakpoint using the following syntax:</mark>
-- break myfunction  
-- This will add a breakpoint to line 12  
+- ``break myfunction``  
+- This will add a breakpoint to the myfunction function
 
 When the program is run it will stop at each breakpoint in the program
 
@@ -901,7 +907,7 @@ Programmers can make use of this functionality when writing programs
 
 ### <mark style="background: #FFF503A6;">Processes in Linux</mark>
 
-In a Linux environment, the functions that are used to manipulate processes are found in the unistd.h header file. 
+In a Linux environment, the functions that are used to manipulate processes are found in the ``unistd.h`` header file. 
 
 Have a look at the following for more details: http://pubs.opengroup.org/onlinepubs/7908799/xsh/unistd.h.html
 
@@ -929,7 +935,7 @@ Other signals can be sent to a process, we will see this later in the slides.
 
 Open a calculator  
 
-Use the PS command with pgrep to find the process  
+Use the PS command with ``pgrep`` to find the process  
 
 Kill the process with: kill 1896 (if 1896 is the process id)
 
@@ -941,7 +947,7 @@ The following link contains a comprehensive list of system calls: http://man7.or
 
 ### <mark style="background: #FFF503A6;">Creating a process</mark> 
 
-In Linux there are two main ways to start a process in a C program:  
+<mark style="background: #FFF503A6;">In Linux there are two main ways to start a process in a C program:</mark>
 - System
 - Fork and Exec  
 
@@ -1021,9 +1027,9 @@ Should only be run at the end of a shell script since nothing will run afterward
 
 Saves a pid and about 1ms of CPU time.
 
-See man exec  
+See ``man exec``  
 
-<mark style="background: #FFF503A6;">xecvp and execlp:</mark> Take a program name, doesn’t require full page name  
+<mark style="background: #FFF503A6;">execvp and execlp:</mark> Take a program name, doesn’t require full page name  
 
 <mark style="background: #FFF503A6;">execv, execvp, execve:</mark> Accept an argument list for the new program (null terminated array)  
 
@@ -1088,13 +1094,11 @@ What do you think happens when we run this?
 
 ### <mark style="background: #FFF503A6;">Signals</mark>  
 
-A signal is a software interrupt  
-
-A program needs to be able to handle software interrupts.
-
-A signal can be used to send an asynchronous message to a program.  
-
-Depending on the signal that was sent the program can decide how to proceed.
+<mark style="background: #FFF503A6;">Signals:</mark>
+- A signal is a software interrupt  
+- A program needs to be able to handle software interrupts.
+- A signal can be used to send an asynchronous message to a program.  
+- Depending on the signal that was sent the program can decide how to proceed.
 
 ### <mark style="background: #FFF503A6;">Signals in Linux</mark>
 
@@ -1121,7 +1125,7 @@ When a signal is received, the process needs to tell the kernel how to proceed.
 - Catch the signal  
 - Go with the signal default  
 
-Note: The specific signals for kill cannot be ignored or caught (Sigkill and Sigstop). Why? If the kernel or an administrator need to stop a process they should be able to do so.  
+<mark style="background: #FFF503A6;">Note:</mark> The specific signals for kill cannot be ignored or caught (Sigkill and Sigstop). Why? If the kernel or an administrator need to stop a process they should be able to do so.  
 
 The header file that offers signal functionality is ``signal.h``
 
@@ -1191,8 +1195,8 @@ Note that ``kill –n <pid>`` gives increasingly aggressive kill signals
 ### <mark style="background: #FFF503A6;">Differences in execl and execv</mark>  
 
 <mark style="background: #FFF503A6;">1. Argument format:</mark>  
-- execl, execlp, execle: Take individual arguments as separate strings after the filename.  
-- execv, execve, execvp, execvpe: Take an array of null-terminated string pointers (including the filename) as the second argument.  
+- ``execl, execlp, execle:`` Take individual arguments as separate strings after the filename.  
+- ``execv, execve, execvp, execvpe:`` Take an array of null-terminated string pointers (including the filename) as the second argument.  
 
 <mark style="background: #FFF503A6;">2. Path searching:</mark>  
 - ``execl:`` Searches only the current directory or the root directory (/).  
@@ -1247,9 +1251,7 @@ A file system is a software that dictates how to store and read data from disks.
 
 The Unix directory structure follows the POSIX standard.  
 
-The Portable Operating System Interface (POSIX) is a family of standards specified by the IEEE  
-
-Computer Society for maintaining compatibility between operating systems  
+The Portable Operating System Interface (POSIX) is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems  
 
 It has several predefined directories that we cannot move or rename.  
 
@@ -1395,12 +1397,12 @@ Each column in the permission field from ls –l has particular meaning.
 
 ### <mark style="background: #FFF503A6;">Changing File Permissions</mark>  
 
-Syntax for setting permissions: 
+<mark style="background: #FFF503A6;">Syntax for setting permissions:</mark>
 ``chmod [OPTIONS] NUMBER FILE``  
 
 The NUMBER is a three-digit string, each digit (0 - 7) representing the permission for one category of users.  
 
-The corresponding value for each permission possibility is:  
+<mark style="background: #FFF503A6;">The corresponding value for each permission possibility is:</mark> 
 - 4 -> read
 - 2 -> write
 - 1 -> execute
@@ -1428,13 +1430,13 @@ What would the chmod command look like?
 
 ### <mark style="background: #FFF503A6;">fopen</mark>  
 
-Before a file can be read or written to, it has to be opened using the fopen() function.  
+Before a file can be read or written to, it has to be opened using the ``fopen()`` function.  
 
 It takes as arguments a string corresponding to the filename, and a second argument (also a string) corresponding to the mode.  
 
 The mode is read (“r”), write (“w”) or append (“a”).  
 
-The fopen() function then returns a pointer to the (open) file.  
+The ``fopen()`` function then returns a pointer to the (open) file.  
 
 See ClassCode/file-examples/file_example1.c  
 
@@ -1458,7 +1460,9 @@ See ClassCode/file-examples/file_example5.c
 fputs() is a standard C library function that is used to write a string of characters to a file at the location indicated by the file pointer.  
 
 <mark style="background: #FFF503A6;">Declaration of the fputs() function:</mark>
-``int fputs (const char * str, FILE * stream);``  
+```C
+int fputs (const char * str, FILE * stream);
+```  
 
 The ``fputs()`` function returns 0 if the string is written to the file successfully.  
 
@@ -1470,13 +1474,13 @@ See ClassCode/file-examples/file_example3.c
 
 The fread library function in C is used to read values from a given data stream and put them values into an array.  
 
-The fread function takes in the following 4 parameters:  
+<mark style="background: #FFF503A6;">The fread function takes in the following 4 parameters:</mark>  
 1. ptr − points to a block of memory that is at least size len bytes long.  
 2. len − number of elements that need to be read, where each element is size bytes long.  
 3. size − size of each element (in bytes) that needs to be read.  
 4. input − points to a FILE object that determines a stream of input.  
 
-The fwrite() function writes binary and text data from an array to a given data stream.  
+The`` fwrite()`` function writes binary and text data from an array to a given data stream.  
 
 <mark style="background: #FFF503A6;">Takes the following parameters:</mark>  
 5. buffer: points to the first object in the array to be written  
@@ -1505,9 +1509,7 @@ Compile it and run with the `time` command to show its runtime – doesn’t pro
 
 ### <mark style="background: #FFF503A6;">More on gprof profiling</mark>
 
-Profiling works by changing how every function in your program is compiled so that when it is called.  
-
-It will stash away some information about where it was called from.  
+Profiling works by changing how every function in your program is compiled so that when it is called. it will stash away some information about where it was called from.  
 
 From this, the profiler can figure out what function called it, and can count how many times it was called.  
 
@@ -1539,7 +1541,7 @@ It can also query special CPU registers to give you even more insight of what's 
 
 ### <mark style="background: #FFF503A6;">Process Groups</mark>
 
-Every process running is part of a unique process group (PGID)  
+Every process running is part of a unique <mark style="background: #FFF503A6;">process group (PGID)</mark>  
 
 When a process is created, it becomes a member of the group its parent is in.  
 
@@ -1551,7 +1553,7 @@ A process group is a group of related process which may be collectively running 
 
 ### <mark style="background: #FFF503A6;">Process Groups – System Calls</mark> 
 
-Useful Process Group commands (see man for more details)  
+<mark style="background: #FFF503A6;">Useful Process Group commands (see man for more details):</mark>  
 - ``getpgrp()``  
 - ``getpgid(0)``  
 - ``getpgid(PID)``  
@@ -1612,7 +1614,41 @@ An integer value is assigned to each record/entry.
 
 This integer value is the file descriptor. If a process has opened 5 files, there will be 5 file descriptors associated with the process.  
 
-See example_filed.c [Note std i/o/err may occupy 0/1/2]
+See example_filed.c 
+
+```C
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main() {
+    int fd1, fd2, fd3; // File descriptors
+    char filename1[] = "file1.txt";
+    char filename2[] = "file2.txt";
+
+    // Open files
+    fd1 = open(filename1, "r");
+    fd2 = open(filename2, "w");
+
+    // Check if files opened successfully
+    if (fd1 == -1 || fd2 == -1) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    // Print file descriptors
+    printf("File descriptors:\n");
+    printf("File 1: %d\n", fd1);
+    printf("File 2: %d\n", fd2);
+
+    // Close files
+    close(fd1);
+    close(fd2);
+
+    return 0;
+}
+
+```
 
 ### <mark style="background: #FFF503A6;">Orphan Processes</mark>
 
@@ -1628,6 +1664,40 @@ The orphan will default back to init as its parent (PPID of 1).
 
 Trial ``example_orphan.c``  
 
+```C
+// Orphan Example
+// The child process is adopted by init process, when parent process dies.
+#include<stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+
+int main()
+{
+    // Create a child process      
+    int pid = fork();
+ 
+    if (pid > 0) {
+        // if PID > 0 :: this is the parent
+        // this process performs printf and finishes
+      printf("Parent process, pid %d\n",getpid());
+        sleep(5);  // uncomment to wait 5 seconds before process ends
+        exit(EXIT_SUCCESS); // Kill the parent 
+    } else if (pid == 0) {
+       printf("Child process");
+       
+       // Keep process running with infinite loop
+       // When the parent finishes after 5 seconds, 
+       while(1) {
+          sleep(1);
+	  printf("child 1: pid %d, parent pid: %i\n", getpid(),getppid());
+       }
+    }
+ 
+    return 0;
+}
+```
 Note when running that the parent terminates after 5 seconds and the child is orphaned  
 
 Orphans are adopted by init (pid=1), or system –user if managing user services in a user session  
@@ -1636,11 +1706,11 @@ Need to kill the orphan
 
 ### <mark style="background: #FFF503A6;">Zombie Processes</mark> 
 
-When a process terminates, it isn't removes straight away from memory.  
+When a process terminates, it isn't removed straight away from memory.  
 
 The process status becomes ``EXIT_ZOMBIE`` and its parent is notified via ``SIGCHLD`` signal.  
 
-The parent should execute the wait() system call to read the child processes exit status.  
+The parent should execute the ``wait()`` system call to read the child processes exit status.  
 
 Once the parent has processed this information from the child, the terminated process can be removed from memory.  
 
@@ -1651,8 +1721,32 @@ The zombie doesn’t get the signal to leave the memory.
 ### <mark style="background: #FFF503A6;">Zombie Example</mark>  
 
 Try out example_zombie.c  
+```C
+// A C program to demonstrate Zombie Process. 
+// Child becomes Zombie as parent is sleeping
+// when child process exits.
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+int main()
+{
+    // Fork returns process id
+    // in parent process
+    pid_t child_pid = fork();
+ 
+    // Parent process 
+    if (child_pid > 0) {
+        sleep(100);
+    } else {  // Child process   
+      exit(1);
+    }
+    return 0;
+}
 
-Note the process state codes - Defunct (‘zombie’) process, terminated but not cleaned up.  
+```
+
+Note the process state codes - Defunct (‘zombie’) process, terminated but not cleaned up. 
 
 This means that a dead process isn’t immediately removed and continues to hog the system’s memory, hence becoming a zombie  
 
@@ -1681,6 +1775,92 @@ A daemon usually has a Parent PID of 1. They are usually started when the system
 
 ### <mark style="background: #FFF503A6;">Daemon example</mark>  
 
+
+```C
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <syslog.h>
+
+// Function to transform main process into a daemon
+static void become_daemon() {
+  pid_t child_pid;
+
+  // Step 1: Fork off the parent process
+  child_pid = fork();
+
+  // Error handling: exit if fork fails
+  if (child_pid < 0) {
+    exit(EXIT_FAILURE);
+  }
+
+  // Parent process exits if fork succeeds
+  if (child_pid > 0) {
+    exit(EXIT_SUCCESS);
+  }
+
+  // Step 2: Child process becomes session leader
+  if (setsid() < 0) {
+    exit(EXIT_FAILURE);
+  }
+
+  // Step 3: Ignore specific signals
+  signal(SIGCHLD, SIG_IGN);
+  signal(SIGHUP, SIG_IGN);
+
+  // Step 4: Second fork to detach completely
+  child_pid = fork();
+
+  // Error handling: exit if fork fails
+  if (child_pid < 0) {
+    exit(EXIT_FAILURE);
+  }
+
+  // Parent process exits if fork succeeds
+  if (child_pid > 0) {
+    exit(EXIT_SUCCESS);
+  }
+
+  // Step 5: Change working directory
+  chdir("/");
+
+  // Step 6: Set new file permissions
+  umask(0);
+
+  // Step 7: Close all open file descriptors
+  for (int fd = sysconf(_SC_OPEN_MAX); fd >= 0; fd--) {
+    close(fd);
+  }
+
+  // Open log file
+  openlog("mydaemon", LOG_PID, LOG_DAEMON);
+}
+
+int main() {
+  // Transform into a daemon process
+  become_daemon();
+
+  // Main loop: log every 20 seconds
+  while (1) {
+    syslog(LOG_NOTICE, "mydaemon started");
+    sleep(20);
+    break;
+  }
+
+  // Log termination and close log file
+  syslog(LOG_NOTICE, "mydaemon terminated");
+  closelog();
+
+  return EXIT_SUCCESS;
+}
+
+```
+
 Compile the code: gcc -o mydaemon example_daemon.c  
 
 Start the daemon: ./mydaemon  
@@ -1703,7 +1883,7 @@ F UID PID PPID PRI NI VSZ RSS WCHAN STAT TTY TIME COMMAND
 - The daemon has no controlling terminal (TTY = ?)  
 - The parent process ID (PPID) is 1 (The init process), or else a system –user process  
 - The PID != SID which means that our process is NOT the session leader (because of the second fork())  
-- Because PID != SID our process can't take control of a TTY again  
+- Because PID != SID our process can't take control of a TTY again
 
 <mark style="background: #FFF503A6;">Reading the syslog:</mark>  
 - Locate your syslog file. Mine is here: /var/log/syslog  
@@ -1795,6 +1975,31 @@ Then every time a function exits, all of the variables pushed onto the stack by 
 
 Once a stack variable is freed, that region of memory becomes available for other stack variables
 
+```C
+#include <stdio.h>
+
+double multiplyByTwo (double input) {
+  // twice is pushed onto stack when called  
+  double twice = input * 2.0;
+  // as soon as twice returns it is popped off stack and gone forever
+  return twice;
+}
+
+int main (int argc, char *argv[])
+{
+
+  // These three variables are pushed onto the stack 
+  int age = 30;
+  double salary = 12345.67;
+  double myList[3] = {1.2, 2.3, 3.4};
+
+  printf("double your salary is %.3f\n", multiplyByTwo(salary));
+
+  // when the main function exists, the 3 variables we added are popped off the stack
+  return 0;
+}
+```
+
 ### <mark style="background: #FFF503A6;">Memory Management with Stack</mark> 
 
 The advantage of using the stack to store variables, is that memory is managed for you.  
@@ -1821,7 +2026,7 @@ This is not the case for variables allocated on the <mark style="background: #FF
 
 ### <mark style="background: #FFF503A6;">The Heap</mark>
 
-The heap is a region of your computer’s memory that is not managed automatically for you, and is not as tightly managed by the CPU. It is a more free-floating region of memory (and is larger).  
+The <mark style="background: #FFF503A6;">heap</mark> is a region of your computer’s memory that is not managed automatically for you, and is not as tightly managed by the CPU. It is a more free-floating region of memory (and is larger).  
 
 Unlike the stack, the heap does not have size restrictions on variable size (apart from the obvious physical limitations of your computer).  
 
@@ -1831,9 +2036,9 @@ However, heap memory is slightly slower to be read from and written to, because 
 
 ### <mark style="background: #FFF503A6;">Memory Leak</mark> 
 
-To allocate memory on the heap, you must use malloc() or calloc(), which are built-in C functions.  
+To allocate memory on the heap, you must use ``malloc()`` or ``calloc()``, which are built-in C functions.  
 
-Once you have allocated memory on the heap, you are responsible for using free() to deallocate that memory once you don’t need it anymore.  
+Once you have allocated memory on the heap, you are responsible for using ``free()`` to deallocate that memory once you don’t need it anymore.  
 
 If you fail to do this, your program will have what is known as a <mark style="background: #FFF503A6;">memory leak</mark>. That is, memory on the heap will still be set aside (and won’t be available to other processes).  
 
@@ -1884,9 +2089,47 @@ If you are dealing with relatively small variables that only need to persist as 
 
 ### <mark style="background: #FFF503A6;">Look at an example of each</mark>
 
-Try out example_stack.c and example_heap.c  
+Try out ``example_stack.c`` and ``example_heap.c``  
 
-With the heap example, using malloc() to allocate memory on the heap and then using free() to deallocate is a bit cumbersome & prone to memory leak if done badly.  
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+double *multiplyByTwo (double *input) {
+  double *twice = (double*)malloc(sizeof(double));
+  *twice = *input * 2.0;
+  return twice;
+}
+
+int main (int argc, char *argv[])
+{
+  // we use malloc to allocate memory on the heap  
+  // The malloc() (and calloc() and free()) functions deal with pointers not actual values.
+  int *age = (int*)malloc(sizeof(int));
+  *age = 30;
+  double *salary = (double*)malloc(sizeof(double));
+  *salary = 12345.67;
+  double *myList = (double*)malloc(3 * sizeof(double));
+  myList[0] = 1.2;
+  myList[1] = 2.3;
+  myList[2] = 3.4;
+
+  double *twiceSalary = multiplyByTwo(salary);
+
+  printf("double your salary is %.3f\n", *twiceSalary);
+
+  // we use free to deallocate memory on the heap when we are finished. 
+  // cumbersome.
+  free(age);
+  free(salary);
+  free(myList);
+  free(twiceSalary);
+
+  return 0;
+}
+```
+
+With the heap example, using ``malloc()`` to allocate memory on the heap and then using ``free()`` to deallocate is a bit cumbersome & prone to memory leak if done badly.  
 
 The star symbols * indicate <mark style="background: #FFF503A6;">pointers</mark>.  
 
@@ -1927,9 +2170,31 @@ p: [.^ ] (pointing to age)
 
 Try out pointer-ex-1.c
 
+```C
+#include <stdio.h>
+
+int main (int argc, char *argv[])
+{
+  int age = 30;
+  int *p;
+  p = &age;
+  printf("age=%d\n", age);
+  printf("p=%p\n", p); // this is a memory address that points to where age is
+  printf("*p=%d\n", *p); // we see how to access the value that a pointer points to
+  printf("sizeof(p)=%ld\n", sizeof(p)); // we can see that our pointer p is 8 bytes.
+  *p = 40; // this is called pointer dereferencing,  we can set the value of the variable pointed to by p to 40
+  // Since p points to the age variable, we are setting the value of the address in memory corresponding to the age variable to 40
+
+
+  printf("*p=%d\n", *p);
+  printf("age=%d\n", age);
+  return 0;
+}
+```
+
 ### <mark style="background: #FFF503A6;">Pointers and Arrays</mark>  
 
-When you declare an array using an expression like int vec[5]  
+When you declare an array using an expression like ``int vec[5]``  
 
 What is really happening is that a block of memory is being allocated (on the stack in this case) large enough to hold 5 integers, and the vec variable is a pointer that points to the first element in the array.  
 
@@ -1945,17 +2210,98 @@ Pointers can also be used to point to a struct.
 
 Try pointer-structs.c
 
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+// we define a struct that contains three int values: year, month and day. 
+// We use typedef to name our new struct type date.
+typedef struct {
+  int year;
+  int month;
+  int day;
+} date;
+
+int main(void) {
+
+  // we declare a new variable today to be a pointer to date. 
+  date *today;
+  // we use malloc() to allocate a block of memory (on the heap) to store one date struct.
+  today = (date*)malloc(sizeof(date));
+
+  // the explicit way of accessing fields of our struct
+  // this uses explicit pointer syntax. S
+  // for example the expression (*today).day means, dereference the today pointer and then access the day field 
+  // of the thing you find there (which will be a date struct).
+  (*today).day = 15;
+  (*today).month = 6;
+  (*today).year = 2022;
+
+  printf("the longhand way of displaying date is %d/%d/%d\n", (*today).day, today->month, today->year);
+
+  // the more readable shorthand way of doing it
+  today->day = 15;
+  today->month = 6;
+  today->year = 2023;
+
+  printf("the readable way of displaying date is %d/%d/%d\n", today->day, today->month, today->year);
+
+  free(today);
+
+  return 0;
+}
+```
+
 ### <mark style="background: #FFF503A6;">Pointers and Functions</mark> 
 
 One of the handy things you can do in C, is to use a pointer to point to a function. Then you can pass this function pointer to other functions as an argument, you can store it in a struct, etc.  
 
 Try pointer-functions.c
 
+```C
+#include <stdio.h>
+
+int add( int a, int b ) {
+  return a + b;
+}
+
+int subtract( int a, int b ) {
+  return a - b;
+}
+
+int multiply( int a, int b ) {
+  return a * b;
+}
+
+// we define a function doMath which returns nothing (hence void) and which takes three input arguments.
+// The first argument is a pointer to a function. It’s actually more specific than that. It’s a pointer to a 
+// specific kind of function: a function that returns an int, and that takes two int values as inputs.
+// The (*fn) says this is a pointer to a function, and we shall refer to that function as fn. 
+// The preceding int says, it’s a function that returns an int. 
+// The subsequent (int a, int b) says it’s a function that takes two int arguments as inputs.
+void doMath( int (*fn)(int a, int b), int a, int b ) {
+  int result = fn(a, b);
+  printf("result = %d\n", result);
+}
+
+int main(void) {
+
+  int a = 2;
+  int b = 3;
+
+  doMath(add, a, b);
+  doMath(subtract, a, b);
+  doMath(multiply, a, b);
+
+  return 0;
+}
+```
+
 ### <mark style="background: #FFF503A6;">Function Arguments: Passing By Value vs Passing By Reference</mark>
 
 Typically when you think about passing arguments to functions, you think about passing the function the value of some variable.  
 
-A common idiom in C however is to pass function arguments by reference, using pointers.  
+A common idiom in C however is to pass function arguments by reference, using pointers.
 
 This is the case in particular with large data structures like arrays and structs, for which it would be inefficient to pass copies to functions.  
 
@@ -1965,15 +2311,50 @@ Instead, in passing by reference, you simply pass a pointer to the data, to the 
 1. ``pointer-function-pass-value.c``  
 2. ``pointer-function-pass-reference.c``  
 
+```C
+#include <stdio.h>
+
+void myFun(int x) {
+  x = x * 2;
+}
+
+int main(void) {
+  // We assign the value 50 to the variable y
+  int y = 50;
+  printf("y=%d\n", y);
+  // This is passing by value since we are handing over to myFun() the value of y (50)
+  // Within myFun() we multiply the argument passed to it by 2 and exit. In main() when we print the value of y, after the function call to myFun(), it is still 50 (not 100).
+  myFun(y);
+  printf("y=%d\n", y);
+  return 0;
+}
+```
+
+```C
+#include <stdio.h>
+
+void myFun(int *x) {
+  *x = *x * 2;  /* x is a local pointer, referencing the location of y (outside the function's scope) */
+}
+
+int main(void) {
+  int y = 50;
+  printf("y=%d\n", y);
+  myFun(&y);              /* Pass address of y in main scope */
+  printf("y=%d\n", y);
+  return 0;
+}
+```
+
 Make sure you understand these two code examples above, and why they do different things
 
 ### <mark style="background: #FFF503A6;">Dynamically Allocated Memory</mark>  
 
 In the heap, we can control the amount of memory allocated to a certain variable by using some built in C functions  
 
-If you use malloc() or calloc() to allocate an array on the heap, you can use realloc() to resize it at some later time. In order to use these functions.  
+If you use ``malloc()`` or ``calloc()`` to allocate an array on the heap, you can use ``realloc()`` to resize it at some later time. 
 
-You will need to ``#include <stdlib.h>`` at the top of your C file.  
+In order to use these functions, you will need to ``#include <stdlib.h>`` at the top of your C file.  
 
 The built-in functions ``malloc()``, ``calloc()``, ``realloc()`` ``memcpy()`` and free() are what you will use to manage dynamically allocated data structures on the heap, “by hand”. 
 
@@ -2008,7 +2389,7 @@ Any memory allocated with ``malloc()`` or ``calloc()`` is <mark style="backgroun
 
 If you fail to deallocate memory then you will have a <mark style="background: #FFF503A6;">memory leak</mark>. If your program uses a lot of heap memory, that is not deallocated, and runs for a long time, then you might find that your computer (and your program) slows down, or suddenly freezes, or crashes.  
 
-The rule is, anytime you use ``malloc()`` or ``calloc()``, you must also use free()  
+The rule is, anytime you use ``malloc()`` or ``calloc()``, you must also use ``free()``  
 
 Some dev tools can help with this – e.g. valgrind
 
@@ -2029,9 +2410,7 @@ Some dev tools can help with this – e.g. valgrind
 
 ### <mark style="background: #FFF503A6;">IPC</mark>
 
-Inter Process Communication (IPC)  
-
-Facilitating communication between different processes.  
+<mark style="background: #FFF503A6;">Inter Process Communication (IPC):</mark> Facilitating communication between different processes.  
 
 <mark style="background: #FFF503A6;">IPC can be offered between:</mark>  
 - Related processes  
@@ -2047,17 +2426,13 @@ Streams are represented as File * objects.
 
 File descriptors are represented as objects of type int.
 
-### <mark style="background: #FFF503A6;">File Streams</mark>  
+<mark style="background: #FFF503A6;">File Streams:</mark>  
+- A stream offers a high level interface that is layered on top of the file descriptors.  
+- There are more features and functionality that comes with the stream interface for file IO.
 
-A stream offers a high level interface that is layered on top of the file descriptors.  
-
-There are more features and functionality that comes with the stream interface for file IO.
-
-### <mark style="background: #FFF503A6;">File Descriptors</mark> 
-
-File descriptors offer a primitive low lever interface for IO operations.  
-
-A file descriptor can connect to a file, a device (terminal), or a pipe or socket to communicate with another process.  
+<mark style="background: #FFF503A6;">File Descriptors:</mark> 
+- File descriptors offer a primitive, low level interface for IO operations.
+- A file descriptor can connect to a file, a device (terminal), or a pipe or socket to communicate with another process.
 
 File descriptors should be used for IO with devices, and for nonblocking IO operations.
 
@@ -2073,7 +2448,7 @@ The ``fdopen()`` function associates a stream with the existing file descriptor,
 
 ### <mark style="background: #FFF503A6;">fstat</mark> 
 
-``stat()`` retrieve information about the file pointed to by pathname; the differences for ``fstatat()`` are described below.  
+``stat()`` retrieves information about the file pointed to by pathname; the differences for ``fstatat()`` are described below.  
 
 ``fstatat()`` is identical to ``stat()``, except that the file about which information is to be retrieved is specified by the file descriptor fd.
 
@@ -2089,7 +2464,7 @@ The pipe has no name.
 
 The pipe as created by a parent process and uses it to communicate with a child process.  
 
-Pipe is one-way communication only i.e. we can use a pipe such that one process write to the pipe, and the other process reads from the pipe
+Pipe use one-way communication only i.e. we can use a pipe such that one process writes to the pipe, and the other process reads from the pipe
 
 ### <mark style="background: #FFF503A6;">Pipe Syntax in C</mark>  
 
@@ -2099,7 +2474,7 @@ int pipe(int fds[2]);
 
 <mark style="background: #FFF503A6;">Parameters:</mark>  
 
-- ``fd[0]`` will be the fd(file descriptor) for the read end of pipe. 
+- ``fd[0]`` will be the fd (file descriptor) for the read end of pipe. 
 - ``fd[1]`` will be the fd for the write end of pipe.
 - <mark style="background: #FFF503A6;">Returns:</mark> 0 on Success. -1 on error.
 
@@ -2145,13 +2520,63 @@ Child must close ``fd[0]``
 
 If we read from a pipe that was closed, the return should be 0  
 
-If we write to a pipe with read closed on the other end, the SIGPIPE signal will be sent. This will need to be dealt with.
+If we write to a pipe with read closed on the other end, the ``SIGPIPE`` signal will be sent. This will need to be dealt with.
 
 ### <mark style="background: #FFF503A6;">Pipe Example</mark> 
 
 See pipe-example-1.c  
+```C
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <stdlib.h>
+#include <string.h>
 
-We create a pipe using the command pipe(fd)  
+int main(void)
+{
+        int     fd[2], nbytes;
+        pid_t   pid;
+        char    string[] = "Howya Friend!!!\n";
+        char    readbuffer[100];
+
+	// Create the pipe        
+	pipe(fd);
+        
+	// create a child process
+	pid = fork();
+
+        if(pid < -1)
+        {
+                perror("Something went wrong with fork");
+                exit(1);
+        }
+
+        if(pid == 0) // This is the child
+        {
+                // Take no input, close fd[0]
+                close(fd[0]);
+
+                // Send output to parent via write
+                write(fd[1], string, (strlen(string)+1));
+                exit(0);
+        }
+        else // This is the parent
+        {
+                // Send no output, close fd[1]
+                close(fd[1]);
+
+                // Get input from the pipe via read 
+                nbytes = read(fd[0], readbuffer, sizeof(readbuffer));
+                printf("Message from Child: %s", readbuffer);
+        }
+        
+        return(0);
+}
+
+
+```
+
+We create a pipe using the command ``pipe(fd)``  
 
 We use the fork command to create a child, this communicates with the parent using the write (to pipe) command  
 
@@ -2174,7 +2599,7 @@ We will go through the solution next.
 
 ### <mark style="background: #FFF503A6;">Need dup library call</mark>  
 
-The dup() system call creates a copy of a file descriptor.  
+The ``dup()`` system call creates a copy of a file descriptor.  
 
 It uses the lowest-numbered unused descriptor for the new descriptor.  
 
@@ -2302,7 +2727,7 @@ Using wait ensures that child processes finish before the parent terminates, pre
 
 ### <mark style="background: #FFF503A6;">Pipes – Making Life Easier</mark>
 
-The ``popen()`` function can be used to automate the creation of the pipe and the forking process.  
+The ``popen()`` function can be used to automate the creation of the pipe and the forking process.
 
 ```C
 fp = popen("ls *", "r");
@@ -2315,37 +2740,38 @@ fp = popen("ls *", "r");
 2. Fork()  
 3. Child process runs ls * command and returns results to parent  
 4. Parent reads with fgets and displays with printf  
-
+ 
+See mypopen.c
 ```C
 #include <stdio.h>
 
-int main() {  
-	FILE *fp;  
-	int status;  
-	char path[1024]; 
-	 
-	fp = popen("ls *", "r"); 
-	 
-	while (fgets(path, 1024, fp) != NULL)  
-		printf("%s", path);  
-	
-	status = pclose(fp);  
-}
-```  
+int main() {
+   FILE *fp;
+   int status;
+   char path[1024];
 
-See mypopen.c
+   fp = popen("ls *", "r");
+
+   while (fgets(path, 1024, fp) != NULL)
+      printf("%s", path);
+
+   status = pclose(fp);
+
+}
+
+```
 
 ### <mark style="background: #FFF503A6;">Named Pipes - FIFO</mark>
 
-A FIFO special file sends data from one process to another so that the receiving process reads the data first-in-first-out (FIFO)  
+A FIFO special file sends data from one process to another so that the receiving process reads the data first-in-first-out (FIFO)
 
-A FIFO special file is also called a named pipe, or a FIFO  
+A FIFO special file is also called a named pipe, or a FIFO
 
-A named pipe operates like a normal pipe  
+A named pipe operates like a normal pipe
 
-The main difference is the named pipe exists as a special file  
+The main difference is the named pipe exists as a special file
 
-The special file is a FIFO file, and doesn't contain any user info  
+The special file is a FIFO file, and doesn't contain any user info
 
 A FIFO special file can also be shared by a number of processes that were not created by forks.
 
@@ -2361,16 +2787,18 @@ A named pipe operates like a file
 
 ### <mark style="background: #FFF503A6;">FIFO Named Pipe using mkfifo:</mark>  
 
-The mkfifo function can be used to create a FIFO file.  
+The ``mkfifo`` function can be used to create a FIFO file.  
+
 ```C
 mkfifo(fifoFile, 0666);
 ```  
 
 Use read and write operations to send information between processes.  
 
-The processes don’t need to be related (ancestors)  
+The processes don’t need to be related (ancestors).
 
-Unlink can be called to remove the file. 
+Unlink can be called to remove the file.
+
 ```C
 unlink(fifoFile);
 ```
@@ -2378,6 +2806,75 @@ unlink(fifoFile);
 ### <mark style="background: #FFF503A6;">FIFO Named Pipe Example</mark>
 
 Copy the files named-pipes-writeread.c and named-pipes - readwrite.c and compile them in your local directory.  
+
+```C
+//Writes first, then reads
+
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int main() {
+    const char *myfifo = "myfifo";
+    mkfifo(myfifo, 0666);  // Create the FIFO
+	
+    char buffer[80];
+	
+    while (1) {
+        int fd = open(myfifo, O_WRONLY);  // Open for writing
+        fgets(buffer, sizeof(buffer), stdin);
+        write(fd, buffer, strlen(buffer));
+        close(fd);
+		
+	// Add a delay (e.g., 0.25 seconds)
+        usleep(250000); // semaphores better practice than delays...
+		
+		
+	fd = open(myfifo, O_RDONLY);  // Open for reading
+        read(fd, buffer, sizeof(buffer));
+        printf("User1: %s\n", buffer);
+        close(fd);
+    }
+	
+    return 0;
+}
+```
+
+```C
+//Reads first, then writes
+
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int main() {
+    const char *myfifo = "myfifo";
+    mkfifo(myfifo, 0666);  // Create the FIFO
+
+    char buffer[80];
+
+    while (1) {
+        int fd = open(myfifo, O_RDONLY);  // Open for reading
+        read(fd, buffer, sizeof(buffer));
+        printf("User2: %s\n", buffer);
+        close(fd);
+
+	// Add a delay (e.g., 0.25 seconds)
+        usleep(250000);
+
+	fd = open(myfifo, O_WRONLY);  // Open for writing
+        fgets(buffer, sizeof(buffer), stdin);
+        write(fd, buffer, strlen(buffer));
+        close(fd);
+    }
+
+    return 0;
+}
+```
 
 After you compile both files, open up two terminals side by side.  
 
@@ -2429,7 +2926,7 @@ A Queue is created using ``mq_open()``
 
 The return from creating the queue is a file descriptor.  
 
-This needs to be stored as type mqd_t, this will be used to access the queue for all subsequent calls.  
+This needs to be stored as type ``mqd_t``, this will be used to access the queue for all subsequent calls.  
 
 Each queue will be given a unique name.  
 
@@ -2440,13 +2937,13 @@ See ``man mq_open`` or ``man mq_overview`` for more details
 ### <mark style="background: #FFF503A6;">Sending and Receiving Messages with the Queue</mark>  
 
 <mark style="background: #FFF503A6;">With the queue setup:</mark>  
-- messages can be sent with mq_send  
-- messages can be received with mp_receive
+- messages can be sent with ``mq_send``  
+- messages can be received with ``mp_receive``
 
 <mark style="background: #FFF503A6;">Example:</mark>
-- For the Message Queue we will be creating a server program to manage the operation of the queue.  
-- server.c  
-- A client program will be created to show the operation of the queue  
+- For the Message Queue we will be creating a server program to manage the operation of the queue.
+- server.c
+- A client program will be created to show the operation of the queue
 - client.c
 
 ### <mark style="background: #FFF503A6;">Setup the Server</mark> 
@@ -2537,7 +3034,7 @@ Received: Hello
 
 Shared memory can be used as a mechanism to pass data between different processes.  
 
-One process will create the memory portion and other process can access the memory portion (if permitted).  
+One process will create the memory portion and other process can access the memory portion (if permitted).
 
 A process creates a shared memory segment using ``shmget()``
 
@@ -2552,6 +3049,43 @@ Access can also be removed.
 The two API calls that are used for this are called ``mmap`` and ``shm_open`` – you can do man ``mmap`` or man ``shm_open`` for more info  
 
 See mmap-example.c
+```C
+#include <stdio.h>
+#include <sys/mman.h>
+
+// We allocate memory using mmap. Here we used PROT_READ | PROT_WRITE protection for reading and writing 
+// to the mapped region. 
+// We used the MAP_PRIVATE | MAP_ANONYMOUS flag. MAP_PRIVATE is used because the mapping region is not 
+// shared with other processes, and MAP_ANONYMOUS is used because here, we have not mapped any file. 
+// For the same reason, the file descriptor and the offset value is set to 0.
+
+int main(){
+	int N=5;
+	int *ptr = mmap ( NULL, N*sizeof(int),
+	 PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0 );
+	
+	if(ptr == MAP_FAILED){
+	    printf("Mapping Failed\n");
+	    return 1;
+	}
+	
+	for(int i=0; i<N; i++)
+	    ptr[i] = i*10;
+	
+	for(int i=0; i<N; i++)
+	    printf("[%d] ",ptr[i]);
+	
+	printf("\n");
+	// we free the shared memory
+	int err = munmap(ptr, 10*sizeof(int));
+	if(err != 0){
+	    printf("UnMapping Failed\n");
+	    return 1;
+	}
+	
+	return 0;
+}
+```
 
 # <mark style="background: #FFF503A6;">11 Sockets</mark>
 
@@ -2588,12 +3122,11 @@ Sockets will provide for communication between a Client program and a server.
 
 ### <mark style="background: #FFF503A6;">Revision:: What is a Socket</mark>
 
-A socket is an end-point that provides for two-way  
-communication between a client and a server.  
+A socket is an end-point that provides for two-way communication between a client and a server.  
 
 The program on the server will be assigned a port. This will allow a client to connect to the socket on the server using the server IP address and the assigned port number.  
 
-Syntax:  
+<mark style="background: #FFF503A6;">Syntax:</mark>
 ```R
 int sockfd = socket(int domain, int type, int protocol);
 ```
@@ -2624,7 +3157,7 @@ The socket network Interface in Linux can be used to facilitate communication be
 
 Socket communication draws on the strength of network communication protocols.  
 
-The examples we cover in this session are using TCP/IP. (It is possible to use other network protocols for socket communication, but TCP/IP is the most widely used standard)
+The examples we cover in this session are using TCP/IP. (It is possible to use other network protocols for socket communication, but TCP/IP is the most widely used standard).
 
 ### <mark style="background: #FFF503A6;">Socket Descriptors</mark>
 
@@ -2634,8 +3167,7 @@ In the Linux environment a socket descriptor is used to access sockets.
 
 Socket descriptors are implemented as file descriptors in the UNIX System.  
 
-Most of the functions used for reading and writing  
-work with the socket descriptor.  
+Most of the functions used for reading and writing work with the socket descriptor.  
 
 As always you can get more information with `man 2 socket`
 
@@ -2941,13 +3473,13 @@ client 2090691 sdo 3u IPv4 64032803 0t0 TCP localhost:48616->localhost:8082 (EST
 
 ### <mark style="background: #FFF503A6;">Summary</mark> 
 
-Socket Programming can be used to facilitate IPC.  
+Socket Programming can be used to facilitate IPC.
 
-The main benefits is that the processes don’t have to be on the same machine.  
+The main benefits is that the processes don’t have to be on the same machine.
 
 Networks and Internet Protocols can be used to facilitate communication.  
 
-Sockets offers full duple communications.
+Sockets offers full duplex communications.
 
 # <mark style="background: #FFF503A6;">12 Threads</mark>
 
@@ -2961,7 +3493,7 @@ Sockets offers full duple communications.
 
 ### <mark style="background: #FFF503A6;">Introduction to Threading</mark>
 
-A thread is a unit of execution within a process.  
+A <mark style="background: #FFF503A6;">thread</mark> is a unit of execution within a process.  
 
 Lightweight process that shares the same memory and resources as the main process, but it can execute instructions independently.  
 
@@ -3058,6 +3590,7 @@ Most of the kernel level threads can generally not be pre-empted (interrupted) b
 ### <mark style="background: #FFF503A6;">Multithreading Fundamentals</mark>
 
 ![[Pasted image 20260321124427.png]]
+
 ![[Pasted image 20260321124443.png]]
 
 ### <mark style="background: #FFF503A6;">POSIX threads - pthreads</mark>
@@ -3097,7 +3630,7 @@ pthreads are kernel threads implemented as lightweight processes
 - nice value (setpriority(2))  
 - resource limits (setrlimit(2))  
 
-Not shared: measurements of the consumption of CPU time (times(2)) and resources (getrusage(2))
+<mark style="background: #FFF503A6;">Not shared:</mark> measurements of the consumption of CPU time (times(2)) and resources (getrusage(2))
 
 ### <mark style="background: #FFF503A6;">Thread Primitives</mark>  
 
@@ -3187,9 +3720,9 @@ int main() {
 
 The first thing you have to be able to do to write a multi-threaded program is to create new threads, and thus some kind of thread creation interface must exist.  
 
-In POSIX, a thead is is created and starts using the function pthread_create().  
+In POSIX, a thread is is created and starts using the function ``pthread_create()``.  
 
-It takes four parameters:
+<mark style="background: #FFF503A6;">It takes four parameters:</mark>
 
 <table>
 	<tr>
@@ -3233,7 +3766,7 @@ What happens when we want to wait for a thread to complete?
 
 In this case, a parent thread is made to wait for a child thread using ``pthread_join()``.  
 
-The two parameters of this function are:  
+<mark style="background: #FFF503A6;">The two parameters of this function are:</mark>
   
 <table>
 	<tr>
@@ -3292,6 +3825,63 @@ void* foo(void* p){
 C program to demonstrate three threads running concurrently  
 
 See thread1.c  
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void *print_message_function( void *ptr );
+
+void main()
+{
+     pthread_t thread1, thread2, thread3;
+     const char *message1 = "Hello from Thread 1\nGoodbye From Thread 1\n";
+     const char *message2 = "Hello From Thread 2\nGoodbye From Thread 2\n";
+     const char *message3 = "Hello From Thread 3\nGoodbye From Thread 3\n";
+
+     int  iret1, iret2, iret3;
+
+     // create the threads
+     iret1 = pthread_create( &thread1, NULL, print_message_function, (void*) message1);
+     if(iret1)
+     {
+         fprintf(stderr,"Error - pthread_create() return code: %d\n",iret1);
+         exit(EXIT_FAILURE);
+     } 
+     // pthread_join( thread1, NULL);
+     
+     iret2 = pthread_create( &thread2, NULL, print_message_function, (void*) message2);
+     if(iret2)
+     {
+         fprintf(stderr,"Error - pthread_create() return code: %d\n",iret2);
+         exit(EXIT_FAILURE);
+     }
+
+     iret3 = pthread_create( &thread3, NULL, print_message_function, (void*) message3);
+     if(iret3)
+     {
+         fprintf(stderr,"Error - pthread_create() return code: %d\n",iret3);
+         exit(EXIT_FAILURE);
+     }
+
+
+    // wait for threads
+     pthread_join( thread1, NULL); 
+     pthread_join( thread2, NULL); 
+     pthread_join( thread3, NULL);
+     
+     exit(EXIT_SUCCESS);
+}
+
+void *print_message_function( void *ptr )
+{
+     char *message;
+     message = (char *) ptr;
+     printf("%s \n", message);
+     // kill the thread
+     pthread_exit(NULL);
+}
+```
 
 Linking with pthread may be necessary [-lpthread]
 
@@ -3326,7 +3916,7 @@ However, instead of first executing the function and then returning to the calle
 
 The routine runs independently of the caller, perhaps before returning from the create, but perhaps much later.  
 
-What runs next is determined by the OS scheduler, and although the scheduler likely implements some sensible algorithm, it is hard to know what will run at any given moment in time.  
+What runs next is determined by the OS scheduler, and although the scheduler likely implements some sensible algorithm, it is hard to know what will run at any given moment in time.
 
 Outputs are not deterministic.
 
@@ -3438,16 +4028,18 @@ In particular, we annotate source code with locks, putting them around critical 
 
 ### <mark style="background: #FFF503A6;">Solution: mutex</mark>
 
-A mutex, short for Mutual Exclusion, is a synchronisation primitive used in multithreaded programming. It acts as a lock to ensure that only one thread can access a shared resource at a time.  
+A <mark style="background: #FFF503A6;">mutex</mark>, short for Mutual Exclusion, is a synchronisation primitive used in multithreaded programming. It acts as a lock to ensure that only one thread can access a shared resource at a time.  
 
 This prevents race conditions and data inconsistencies that can occur when multiple threads try to modify the same data concurrently.
 
 ### <mark style="background: #FFF503A6;">Locks: The Basic Idea</mark>
 
 As an example, assume some critical section looks like this, the canonical update of a shared variable:  
+
 ``balance = balance + 1;``  
 
-To use a lock, you add some code around the critical section like this:  
+<mark style="background: #FFF503A6;">To use a lock, you add some code around the critical section like this:</mark>
+
 ```C
 lock_t mutex; // some globally-allocated lock ’mutex’  
 lock(&mutex);  
@@ -3465,19 +4057,19 @@ You could store other information in the data type as well, such as which thread
 
 ### <mark style="background: #FFF503A6;">Locks: Semantics</mark>
 
-The semantics of the lock() and unlock() routines are simple.  
+The semantics of the ``lock()`` and ``unlock()`` routines are simple.  
 
 Calling the routine lock() tries to acquire the lock; if no other thread holds the lock (i.e., it is free), the thread will acquire the lock and enter the critical section.  
 
 This thread is sometimes said to be the <mark style="background: #FFF503A6;">owner</mark> of the lock. 
 
-If another thread then calls lock() on that same lock variable (mutex in this example), it will not return while the lock is held by another thread; in this way, other threads are prevented from entering the critical section while the first thread that holds the lock is in there.
+If another thread then calls ``lock()`` on that same lock variable (mutex in this example), it will not return while the lock is held by another thread; in this way, other threads are prevented from entering the critical section while the first thread that holds the lock is in there.
 
-Once the owner of the lock calls unlock(), the lock is now available (free) again.  
+Once the owner of the lock calls ``unlock()``, the lock is now available (free) again.  
 
-If no other threads are waiting for the lock (i.e., no other thread has called lock() and is stuck therein), the state of the lock is simply changed to free.  
+If no other threads are waiting for the lock (i.e., no other thread has called ``lock()`` and is stuck therein), the state of the lock is simply changed to free.
 
-If there are waiting threads (stuck in lock()), one of them will (eventually) notice (or be informed of) this change of the lock’s state, acquire the lock, and enter the critical section.
+If there are waiting threads (stuck in ``lock()``), one of them will (eventually) notice (or be informed of) this change of the lock’s state, acquire the lock, and enter the critical section.
 
 Locks provide some minimal amount of control over scheduling to programmers.  
 
@@ -3618,7 +4210,7 @@ These log files can be used to see how a given process is performing and if any 
 
 The syslog daemon is used to centralise error messages for processes running on system.  
 
-The syslog files can be kept of the same server or centralised on a different server.
+The syslog files can be kept on the same server or centralised on a different server.
 
 ### <mark style="background: #FFF503A6;">syslog Protocol</mark>
 
@@ -3652,13 +4244,15 @@ The option argument to ``openlog()`` is a bit mask constructed by ORing (bitwise
 - <mark style="background: #FFF503A6;">LOG_CONS:</mark> Write directly to the system console if there is an error while sending to the system logger.
 - <mark style="background: #FFF503A6;">LOG_NDELAY:</mark> Open the connection immediately (normally, the connection is opened when the first message is logged). This may be useful, for example, if a subsequent ch‐root(2) would make the pathname used internally by the logging facility unreachable.
 - <mark style="background: #FFF503A6;">LOG_NOWAIT:</mark> Don't wait for child processes that may have been created while logging the message. (The GNU C library does not create a child process, so this option has no effect on Linux.)
-- <mark style="background: #FFF503A6;">LOG_ODELAY:</mark> The converse of LOG_NDELAY; opening of the connection is delayed until syslog() is called. (This is the default, and need not be specified.)
+- <mark style="background: #FFF503A6;">LOG_ODELAY:</mark> The converse of ``LOG_NDELAY``; opening of the connection is delayed until syslog() is called. (This is the default, and need not be specified.)
 - <mark style="background: #FFF503A6;">LOG_PERROR:</mark> (Not in POSIX.1-2001 or POSIX.1-2008.) Also log the message to stderr. 
 - <mark style="background: #FFF503A6;">LOG_PID:</mark> Include the caller's PID with each message.
 
 ### <mark style="background: #FFF503A6;">facility argument of openlog</mark>  
 
 The facility argument is used to specify what type of program is logging the message. This lets the configuration file specify that messages from different facilities will be handled differently.  
+
+<mark style="background: #FFF503A6;">Arguments:</mark>
 - <mark style="background: #FFF503A6;">LOG_AUTH:</mark> security/authorisation messages 
 - <mark style="background: #FFF503A6;">LOG_AUTHPRIV:</mark> security/authorisation messages (private) 
 - <mark style="background: #FFF503A6;">LOG_CRON:</mark> clock daemon (cron and at) 
@@ -3753,7 +4347,7 @@ A resource can be associated with a UID. This can be used to limit access to the
 
 Sharing resources between multiple users can be problematic. 
 
-Linux doesn’t associate multiple UID’s with a file, it doesn’t create a list of users who can assess this file.
+Linux doesn’t associate multiple UIDs with a file, it doesn’t create a list of users who can assess this file.
 
 <mark style="background: #FFF503A6;">To solve this problem Linux offers group functionality:</mark>
 - Each group has its own Group Id (GID), a group can also have a name  
@@ -3796,7 +4390,6 @@ It examines the permissions to perform the operation (system call) and check thi
 
 ### <mark style="background: #FFF503A6;">Example: try id then uidgid.c</mark>
 
-  
 ```C
 #include <stdio.h>  
 #include <unistd.h>  
@@ -3830,9 +4423,9 @@ int main() {
 
 <mark style="background: #FFF503A6;">To create a new user:</mark>
 - ``useradd –m sarah –p password``
-- Where sarah is the username  
-- -m creates the home directory for the user 
-- -p sets the password  
+- Where sarah is the username
+- -m creates the home directory for the user
+- -p sets the password
 
 <mark style="background: #FFF503A6;">To remove a user:</mark>  
 - ``deluser --remove-home sarah``
@@ -3921,13 +4514,13 @@ Based on the above, the bits are checked to see if the desired task is permitted
 - stat and file attributes
 - Flags 
 - Permissions Example  
-- Retrieving additional file MetaData
+- Retrieving additional file Metadata
 
 ### <mark style="background: #FFF503A6;">What is the stat function?</mark> 
 
-The <mark style="background: #FFF503A6;">stat</mark> is a command which gives information about the file and filesystem.  
+<mark style="background: #FFF503A6;">stat</mark> is a command which gives information about the file and filesystem.  
 
-<mark style="background: #FFF503A6;">stat</mark> command gives information such as the size of the file, access permissions and the user ID and group ID, birth time access time of the file.  
+The <mark style="background: #FFF503A6;">stat</mark> command gives information such as the size of the file, access permissions and the user ID and group ID, birth time access time of the file.  
 
 <mark style="background: #FFF503A6;">stat</mark> can also provide the file system information.  
 
@@ -3952,10 +4545,17 @@ Change: 2023-03-15 16:25:26.711765050 +0000
 
 <mark style="background: #FFF503A6;">st_nlink</mark> number of hard links  
 
-<mark style="background: #FFF503A6;">st_uid</mark> UID of file owner ``st_gid``  
-- GID of owner ``st_size`` size in bytes ``st_atim`` last access time  
-- ``st_mtim`` last modified time  
-- ``st_ctim`` last change time  
+<mark style="background: #FFF503A6;">st_uid</mark> UID of file owner
+
+<mark style="background: #FFF503A6;">st_gid</mark> GID of owner 
+
+<mark style="background: #FFF503A6;">st_size</mark> size in bytes
+
+<mark style="background: #FFF503A6;">st_atim</mark> last access time  
+
+<mark style="background: #FFF503A6;">st_mtim</mark> last modified time  
+
+<mark style="background: #FFF503A6;">st_ctim</mark> last change time  
 
 <mark style="background: #FFF503A6;">st_blksize</mark> block size for filesystem IO  
 
@@ -3966,6 +4566,32 @@ Change: 2023-03-15 16:25:26.711765050 +0000
 ### <mark style="background: #FFF503A6;">Example with stat</mark>
 
 See file-owner.c
+
+```C
+#include <stdio.h>
+#include <sys/stat.h>
+
+int main(int argc, char* argv[]) {
+   const char* const filename = argv[1];
+   struct stat buf;
+
+   stat (filename, &buf);
+   
+   if (buf.st_mode & S_IRUSR) { 
+      printf("Owner can read %s\n", filename);
+   }
+
+   if (buf.st_mode & S_IWUSR) { 
+      printf("Owner can modify %s\n", filename);
+   }
+
+   if (buf.st_mode & S_IXUSR) { 
+      printf("Owner can execute %s\n", filename);
+   }
+
+   return 0;
+}
+```
 
 <mark style="background: #FFF503A6;">S_IRUSR</mark> is the read flag for the owner  
 
@@ -4184,7 +4810,7 @@ Terminal IO has always been a problematic and complex area for all types of oper
 
 The manual page for terminal I/O is usually one of the longest in most editions of the programmer’s manuals.  
 
-GUIs are not the only way to interact with a system.  
+GUIs are not the only way to interact with a system.
 
 <mark style="background: #FFF503A6;">Terminal device drivers are used for different types of devices:</mark> 
 - Terminals  
@@ -4222,13 +4848,13 @@ Limitations on the length of a line can be determined by using  ``_POSIX_MAX_CAN
 
 ### <mark style="background: #FFF503A6;">Input and Output Queues for Terminal Device</mark> 
 
-Every terminal device will have an input queue and an output queue.  
+Every terminal device will have an input queue and an output queue.
 
-If echoing is enabled there is a link between the queues.  
+If echoing is enabled there is a link between the queues.
 
 <mark style="background: #FFF503A6;">The input queue will have an associated max size/capacity:</mark> 
-- MAX_INPUT (size of input queue)  
-- MAX_CANON (Max bytes input line)  
+- ``MAX_INPUT`` (size of input queue)  
+- ``MAX_CANON`` (Max bytes input line)  
 
 The size of the output queue is finite, but there are no variables to define this, as the kernel will manage this.
 
@@ -4273,7 +4899,7 @@ The control flags affect the RS-232 serial lines (e.g. ignore modem status lines
 
 The local flags affect the interface between the driver and the user (e.g. echo on or off, job control stop signal for background output)
 
-Use “man termios” and search for control flag options (c_cflag)  
+Use “``man termios``” and search for control flag options (``c_cflag``)  
 
 Too many options to list here
 
@@ -4531,7 +5157,7 @@ Chapter 18 – Advanced Programming in the Unix Environment (Stevens and Rago)
 
 ### <mark style="background: #FFF503A6;">Kernel Modules</mark>
 
-LKMs facilitate adding to the Linux Kernel at runtime.  
+<mark style="background: #FFF503A6;">LKMs</mark> facilitate adding to the Linux Kernel at runtime.  
 
 Useful for device drivers by letting the kernel communicate the underlying hardware (without needing to know how the hardware works)  
 
@@ -4549,15 +5175,15 @@ On most linux systems, the kernel modules will reside inside ``/lib/modules/<ker
 
 ### <mark style="background: #FFF503A6;">Working with Kernel Modules</mark>
 
-<mark style="background: #FFF503A6;">lsmod:</mark> Show the status of modules in the Linux Kernel, showing what kernel modules are currently loaded.  
+<mark style="background: #FFF503A6;">lsmod:</mark> Show the status of modules in the Linux Kernel, showing what kernel modules are currently loaded.
 
-<mark style="background: #FFF503A6;">insmod:</mark> insert a module into the Linux Kernel  
+<mark style="background: #FFF503A6;">insmod:</mark> insert a module into the Linux Kernel
 
-<mark style="background: #FFF503A6;">modinfo:</mark> show information about a Linux Kernel module  
+<mark style="background: #FFF503A6;">modinfo:</mark> show information about a Linux Kernel module
 
-<mark style="background: #FFF503A6;">rmmod:</mark> remove a module from the Linux Kernel  
+<mark style="background: #FFF503A6;">rmmod:</mark> remove a module from the Linux Kernel
 
-<mark style="background: #FFF503A6;">modprob:</mark> add and remove modules from the Linux Kernel 
+<mark style="background: #FFF503A6;">modprob:</mark> add and remove modules from the Linux Kernel
 
 ``sudo apt-get install build-essential linux-headers-`uname -r``
 
@@ -4589,19 +5215,18 @@ module_exit(hello_exit);
 
 <mark style="background: #FFF503A6;">linux/module.h:</mark> Core component for all modules.  
 
-<mark style="background: #FFF503A6;">linux/kernel.h:</mark> Provides KERN_INFO for logging purposes.  
+<mark style="background: #FFF503A6;">linux/kernel.h:</mark> Provides ``KERN_INFO`` for logging purposes.  
 
 <mark style="background: #FFF503A6;">linux/init.h:</mark> Definitions for initialisation and exit macros.  
 
 <mark style="background: #FFF503A6;">Module Macros:</mark>  
-- MODULE_LICENSE("GPL"): License type, needed to avoid tainting the  
-kernel.  
-- MODULE_AUTHOR/DESCRIPTION/VERSION: Module metadata.  
+- ``MODULE_LICENSE("GPL"):`` License type, needed to avoid tainting the kernel.  
+- ``MODULE_AUTHOR/DESCRIPTION/VERSION:`` Module metadata.  
 
 <mark style="background: #FFF503A6;">Initialisation and Exit:</mark>  
 - ``__init hello_init(void):`` Initialisation function, runs when module is loaded.  
 - ``__exit hello_exit(void):`` Cleanup function, runs when module is removed.  
-- <mark style="background: #FFF503A6;">Logging:</mark> ``printk(KERN_INFO "Hello/Goodbye, world\n")`` Logs messages to the kernel log.  
+- <mark style="background: #FFF503A6;">Logging:</mark> ``printk(KERN_INFO "Hello/Goodbye, world\n")`` Logs messages to the kernel log.
 - <mark style="background: #FFF503A6;">Module Registration:</mark> ``module_init()`` and ``module_exit()`` macros register init and exit functions.
 
 ### <mark style="background: #FFF503A6;">Example: Makefile</mark>
@@ -4744,9 +5369,9 @@ Rules are contained within rule files on the system.
 
 The default auditd configuration should be suitable for most environments.  
 
-However, if your environment has to meet the criteria set by the Controlled Access Protection Profile (CAPP), which is a part of the Common Criteria certification, the Audit daemon configuration must abide by a strict set of rules  
+However, if your environment has to meet the criteria set by the <mark style="background: #FFF503A6;">Controlled Access Protection Profile (CAPP)</mark>, which is a part of the Common Criteria certification, the Audit daemon configuration must abide by a strict set of rules  
 
-An <mark style="background: #FFF503A6;">example of this</mark> is the directory that holds the Audit log files (usually /var/log/audit/) should reside on a separate partition. This prevents other processes from consuming space in this directory, and provides accurate detection of the remaining space for the Audit daemon.  
+An <mark style="background: #FFF503A6;">example of this</mark> is the directory that holds the Audit log files (usually /var/log/audit/) should reside on a separate partition. This prevents other processes from consuming space in this directory, and provides accurate detection of the remaining space for the Audit daemon.
 
 The CAPP is a Common Criteria security profile that specifies a set of functional and assurance requirements  
 
@@ -4761,7 +5386,7 @@ These will probably need to be setup and configured to suit the systems needs (w
 <mark style="background: #FFF503A6;">Auditd can only audit:</mark>  
 - The file system  
 - System call rules  
-- Other security related evens (logins, network connections, etc)  
+- Other security related events (logins, network connections, etc)  
 
 For rules created it follows a “first match wins” approach.  
 
@@ -4769,17 +5394,17 @@ The rest of the rules are not evaluated
 
 ### <mark style="background: #FFF503A6;">auditd rules</mark>  
 
-<mark style="background: #FFF503A6;">Rules are written to:</mark>  /etc/audit/audit.rules  
+<mark style="background: #FFF503A6;">Rules are written to:</mark>  ``/etc/audit/audit.rules``  
 
 These rules are loaded by the audit daemon when it starts  
 
-auditctl can be used to set rules  
+``auditctl`` can be used to set rules  
 
-These rules only make temp changes, we need to modify audit.rules to set a rule.  
+These rules only make temp changes, we need to modify ``audit.rules`` to set a rule.  
 
 <mark style="background: #FFF503A6;">Logs can be viewed via:</mark>  
-- ausearch  
-- aureport
+- ``ausearch``  
+- ``aureport``
 
 ### <mark style="background: #FFF503A6;">auditd reporting</mark>
 

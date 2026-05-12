@@ -177,7 +177,7 @@ The challenge is to create effective and engaging visualisations that are approp
 - Photographs, blueprints, ...  
 - Phases of the moon recorded as drawings, 1869
 
-<mark style="background: #04FF00A6;">Analyze: support reasoning about information</mark>
+<mark style="background: #04FF00A6;">Analyse: support reasoning about information</mark>
 - Process and calculate  
 - Reason about data  
 - Feedback and interaction
@@ -193,7 +193,7 @@ The challenge is to create effective and engaging visualisations that are approp
 
 ### <mark style="background: #04FF00A6;">1854 London Cholera Epidemic</mark>  
 
-On the evening of August 31, 1854 Cholera broke out in the Broad Street area of central London John Snow, a London doctor, was asked to investigate Visualisation was key to his solution
+On the evening of August 31, 1854 Cholera broke out in the Broad Street area of central London John Snow, a London doctor, was asked to investigate. Visualisation was key to his solution
 
 ![[Pasted image 20260128163209.png]]
 
@@ -217,11 +217,11 @@ On the evening of August 31, 1854 Cholera broke out in the Broad Street area of 
 
 Cairo, A. (2016). The truthful art: Data, charts, and maps for communication. New Riders Publishing.
  
-Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design ...  
-- It consists of complex ideas communicated with clarity, precision, and efficiency. ...
-- It is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space ...
-- It is nearly always multivariate ...
-- And graphical excellence requires telling the truth about the data.“  
+<mark style="background: #04FF00A6;">Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design:</mark>  
+- It consists of complex ideas communicated with clarity, precision, and efficiency. . . .
+- It is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space . . .
+- It is nearly always multivariate . . .
+- And graphical excellence requires telling the truth about the data.
 - Tufte, E. R. (1985). The visual display of quantitative information. The Journal for Healthcare Quality (JHQ), 7(3), 15
 
 <mark style="background: #04FF00A6;">Great visualisation features:</mark>
@@ -266,8 +266,7 @@ Healy, K. (2018). Data visualisation: a practical introduction. Princeton Univer
 <mark style="background: #04FF00A6;">London Underground map circa 1930</mark>
 ![[Pasted image 20260128164220.png]]
 
-Draughtsman Harry Beck, thought, "If you're going  
-underground, why do you need bother about geography? ... Connections are the thing" and designed a new map.
+Draughtsman Harry Beck, thought, "If you're going underground, why do you need bother about geography? ... Connections are the thing" and designed a new map.
 
 ![[Pasted image 20260128164310.png]]
 
@@ -346,9 +345,9 @@ A visualisation maps data variables to these perceptual channels.
 
 ### <mark style="background: #04FF00A6;">How Visualisations are built:</mark>
 
-A visualisation maps data variables to perceptual channels such as position, colour, size, and shape. In ggplot, these mappings are called aesthetics.  
+A visualisation maps data variables to perceptual channels such as position, colour, size, and shape. In ``ggplot``, these mappings are called aesthetics.  
 
-Using ggplot() we build the visualisation in layers
+Using ``ggplot()`` we build the visualisation in layers
 
 # <mark style="background: #04FF00A6;">03 Human Perception and Memory</mark>
 
@@ -372,11 +371,11 @@ By <mark style="background: #04FF00A6;">translating data into visual elements</m
 
 ![[Pasted image 20260204160327.png]]
 
-Effective data storytelling requires an understanding of visual perception and design principles to ensure clarity and impact.  
+Effective data storytelling requires an understanding of visual perception and design principles to ensure clarity and impact.
 
 <mark style="background: #04FF00A6;">The goal:</mark>  
 - Turn data into a compelling story.
-- Clarity, accuracy, and engagement
+- Clarity, accuracy, and engagement.
 
 ### <mark style="background: #04FF00A6;">To make data meaningful, we must give it form through visualisation</mark> 
 
@@ -413,7 +412,7 @@ Before we think about perception and memory, we need to think about how data its
 	<tr>
 		<th>Ordinal</th>
 		<td>Ordered categories</td>
-		<td>Likert scale, ratings (low–high)</td>
+		<td>Like scale, ratings (low–high)</td>
 		<td>Rank, compare order</td>
 	</tr>
 	<tr>
@@ -448,7 +447,7 @@ Categorisation is a form of encoding - it reduces cognitive effort before percep
 
 Use the fewest visual encodings necessary to communicate the message clearly.  
 
-Every visual encoding (colour, size, shape, texture, position) demands attention and memory.  
+Every visual encoding (colour, size, shape, texture, position) demands attention and memory.
 
 If an encoding does <mark style="background: #04FF00A6;">not add new information</mark>, it should not be used.
 
@@ -537,7 +536,7 @@ Can you remember some rhymes you were taught as children to learn things? - E.g.
 
 <mark style="background: #04FF00A6;">Rhymes and songs:</mark> Alphabet song, nursery rhymes, or learning rules through jingles.  
 
-<mark style="background: #04FF00A6;">Poetry and rap lyrics:</mark> Rhyme, rhythm, and meter strengthen memory through sound patterns.  
+<mark style="background: #04FF00A6;">Poetry and rap lyrics:</mark> Rhyme, rhythm, and meter strengthen memory through sound patterns.
 
 <mark style="background: #04FF00A6;">Reading new words aloud:</mark> Sounding out unfamiliar words supports recall.
 
@@ -549,7 +548,7 @@ Can you remember some rhymes you were taught as children to learn things? - E.g.
 
 <mark style="background: #04FF00A6;">Information has to pass through distinct stages:</mark>
 - <mark style="background: #04FF00A6;">Sensory</mark> Memory,  
-- <mark style="background: #04FF00A6;">Working</mark> Memory  
+- <mark style="background: #04FF00A6;">Working</mark> Memory,
 - <mark style="background: #04FF00A6;">Short-Term</mark> Memory,  
 - and finally <mark style="background: #04FF00A6;">Long-Term</mark> Memory.
 
@@ -618,10 +617,10 @@ And a short duration (around 15–30 seconds).
 - Enhances encoding into long-term memory
 
 <mark style="background: #04FF00A6;">To transfer visual information into long-term memory, it must undergo encoding, which involves processes like:</mark> 
-- Repetition (rehearsing the information)  
-- Elaboration (connecting it to existing knowledge)  
-- Emotional Impact (strong emotions enhance memory storage)  
-- Visual Imagery (creating mental images or associating with known images)  
+- Repetition (rehearsing the information)
+- Elaboration (connecting it to existing knowledge)
+- Emotional Impact (strong emotions enhance memory storage)
+- Visual Imagery (creating mental images or associating with known images)
 - Occurs mainly in the hippocampus and other brain regions.
 
 ![[Pasted image 20260204163758.png]]
@@ -634,7 +633,7 @@ And a short duration (around 15–30 seconds).
 
 ![[Pasted image 20260204164355.png]]
 
-The amount of mental effort required to process and understand information.  
+<mark style="background: #04FF00A6;">Cognitive load:</mark> The amount of mental effort required to process and understand information.  
 
 <mark style="background: #04FF00A6;">It comes from Cognitive Load Theory (CLT) and is divided into three types:</mark>
 - <mark style="background: #04FF00A6;">Intrinsic Load:</mark> The inherent difficulty of the task or information  
@@ -645,10 +644,10 @@ Data visualisation shifts the balance between perception and cognition to take f
 
 <mark style="background: #04FF00A6;">Well-designed visualisations:</mark>  
 - Simplify complex data  
-- Making it easier to process and understand patterns  
-- Reducing intrinsic cognitive load
+- Make it easier to process and understand patterns  
+- Reduce intrinsic cognitive load
 
-Data visualisation shifts the balance between perception and cognition to take fuller advantage of the brain's abilities.  
+Data visualisation shifts the balance between perception and cognition to take fuller advantage of the brain's abilities.
 
 <mark style="background: #04FF00A6;">Well-designed visualisations:</mark>  
 - Simplify complex data  
@@ -711,8 +710,6 @@ We want more visual perception and less cognition
 - Get a sense of the story contained in these numbers  
 - Compare whole sets of numbers rather than two at a time
 
-
-
 What does this allow us to do more easily?
 
 What does it not do?
@@ -737,8 +734,7 @@ What does it not do?
 
 Help identify patterns, trends, and outliers across categories.  
 
-Simplify complex data for better understanding and  
-decision-making.  
+Simplify complex data for better understanding and decision-making.  
 
 Crucial for comparisons and highlighting differences between groups.
 
@@ -820,7 +816,7 @@ Bad visuals force users to decode weak or ambiguous signals
 
 Effective categorisation relies on clear visual grouping  
 
-Effective visualisations work because they align visual encoding with semantic encoding — and minimise reliance on acoustic encoding.
+Effective visualisations work because they align visual encoding with semantic encoding - and minimise reliance on acoustic encoding.
 
 ### <mark style="background: #04FF00A6;">Creating Visualisations for Categorisation</mark>  
 
@@ -854,11 +850,11 @@ Effective visualisations work because they align visual encoding with semantic e
 
 ### <mark style="background: #04FF00A6;">Chunking in Visualisation</mark>
 
-When we look at a visual, we can process much more information than when looking at the data in a table.  
+When we look at a visual, we can process much more information than when looking at the data in a table.
 
 <mark style="background: #04FF00A6;">Concept of Small Multiples:</mark>
-- Involves displaying a series of similar graphs or charts using the same scale and axes, allowing for easy comparison across different partitions of a dataset.  
-- By presenting data in this segmented manner, viewers can more readily identify patterns and differences without being overwhelmed by a single, complex visualisation.  
+- Involves displaying a series of similar graphs or charts using the same scale and axes, allowing for easy comparison across different partitions of a dataset.
+- By presenting data in this segmented manner, viewers can more readily identify patterns and differences without being overwhelmed by a single, complex visualisation.
 - The term was popularised by Edward Tufte, who emphasised its effectiveness in handling multivariate data
 
 ![[Pasted image 20260204170431.png]]
@@ -995,7 +991,7 @@ Visualisations with six, seven, or more dimensions can be found but may be more 
 <mark style="background: #04FF00A6;">Challenges in designing complex visualisations:</mark>  
 - More dimensions => more encoding, => more individual visual properties  
 - Few well-known conventions, metaphors, defaults, and best practices to rely on  
-- There is more of a burden on the designer to make good choices that can be easily understood by the reader  
+- There is more of a burden on the designer to make good choices that can be easily understood by the reader
 
 However, there are smart ways to think about and represent the data
 
@@ -1095,7 +1091,7 @@ Working with both the Mental Health and Music dataset and a new Spotify dataset
 
 Assessment (Must be complete by 5pm Week 3 – February 13th )  
 
-Short quis based on this lecture plus lab – using Lockdown Browser  
+Short quiz based on this lecture plus lab – using Lockdown Browser  
 
 <mark style="background: #04FF00A6;">Demo to a TA:</mark>
 - Lab work set in Week 2  
@@ -1187,14 +1183,14 @@ The same data demands different design decisions depending on whether we are exp
 Demo - CMPU4091-L3-Exploratory-v-Explanatory.qmd and .html
 
 <mark style="background: #04FF00A6;">EXPLORATORY</mark>
-- Goal: help see patterns, not help an audience understand them  
+- <mark style="background: #04FF00A6;">Goal:</mark> help see patterns, not help an audience understand them  
 - Prioritises flexibility over polish
 - Often sacrifices clarity for completeness
 - May include clutter, multiple encodings, or rough scales
 - May intentionally rescale axes (log, zoom, limits) to reveal structure, outliers, or variation.
 
 <mark style="background: #04FF00A6;">EXPLANATORY:</mark>
-- Goal: reduce working memory load for the viewer
+- <mark style="background: #04FF00A6;">Goal:</mark> reduce working memory load for the viewer
 - Prioritises perceptual clarity and cognitive ease
 - Reduces data, encodings, and chart types intentionally  
 - Uses rescaling sparingly and transparently, only when it supports the intended message and audience understanding.
@@ -1222,7 +1218,6 @@ Demo - CMPU4091-L3-Exploratory-v-Explanatory.qmd and .html
 - Used for differentiating, grouping, subsetting etc
 
 ![[Pasted image 20260211161813.png]]
-
 
 <mark style="background: #04FF00A6;">Nominal:</mark>
 - Represent discrete units and are used to label variables that have no quantitative value
@@ -1258,8 +1253,8 @@ Demo - CMPU4091-L3-Exploratory-v-Explanatory.qmd and .html
 
 <mark style="background: #04FF00A6;">Interval:</mark>
 - Represent ordered units that have a meaningful difference (interval) between values  
-- Does not have a meaningful zero.  
-- A variable that is interval, contains numeric values that are ordered and where we know the exact interval between the values  
+- Does not have a meaningful zero.
+- A variable that is interval, contains numeric values that are ordered and where we know the exact interval between the values
 
 <mark style="background: #04FF00A6;">Visualising:</mark>  
 - Benefits from aligned numeric axes and consistent scales, because equal spacing does represent equal differences  
@@ -1278,7 +1273,7 @@ Demo - CMPU4091-L3-Exploratory-v-Explanatory.qmd and .html
 
 A descriptive statistic for quantitative/numerical data.  
 
-A single number to serve as a representative value around which all the numbers in the set tend to cluster.  
+A single number to serve as a representative value around which all the numbers in the set tend to cluster.
 
 <mark style="background: #04FF00A6;">Mode:</mark> the value that occurs most frequently for a variable in a set of data  
 
@@ -1296,9 +1291,9 @@ Example CMPU4091-L3-Mean-Median.qmd and html
 
 ### <mark style="background: #04FF00A6;">Rescaling as an Analytical Decision</mark>
 
-Rescaling does not change the data — it changes what the eye can compare  
+Rescaling does not change the data - it changes what the eye can compare  
 
-Poor scaling can hide spread, skew, and outliers  
+Poor scaling can hide spread, skew, and outliers
 
 Good scaling aligns the visual encoding with the analytical question 
 
@@ -1313,7 +1308,7 @@ If a pattern only appears after rescaling, it was never ‘created’ - it was r
 
 ### <mark style="background: #04FF00A6;">Measures of Dispersion</mark> 
 
-Measures of Dispersion are descriptive statistics that describe how similar a set of values are to each other (or the range of values)  
+Measures of Dispersion are descriptive statistics that describe how similar a set of values are to each other (or the range of values).
 
 The more similar the values are to each other, the lower the measure of dispersion will be  
 
@@ -1341,7 +1336,7 @@ Measure of Central Tendency needs to be considered in relation to the variabilit
 - The IQR is the difference between the upper (Q3) and lower (Q1) quartiles  
 
 <mark style="background: #04FF00A6;">Variance/Standard Deviation:</mark>
-- Concerned with how different values for a variable are from the mean  
+- Concerned with how different values for a variable are from the mean
 - Standard deviation= square root of variance
 
 ![[Pasted image 20260211163030.png]]
@@ -1427,15 +1422,15 @@ If you don’t rescale appropriately, you may not be able to see it.
 ### <mark style="background: #04FF00A6;">Data distribution</mark>
 
 <mark style="background: #04FF00A6;">How data values are spread or arranged in a dataset:</mark>
-- Provides insights into the shape, centre, and variability of the data  
-- Helps in understanding patterns and making statistical inferences.  
+- Provides insights into the shape, centre, and variability of the data
+- Helps in understanding patterns and making statistical inferences.
 
 <mark style="background: #04FF00A6;">Single variable distribution can be plotted using:</mark>
-- A histogram / frequency polygon  
-- A density plot  
-- A box plot  
-- A violin plot  
-- Combines density and box plot  
+- A histogram / frequency polygon
+- A density plot
+- A box plot
+- A violin plot
+- Combines density and box plot
 
 Whether we can see this variability depends on scale used.
 
@@ -1443,21 +1438,21 @@ Whether we can see this variability depends on scale used.
 
 Invented by Karl Pearson  
 
-A chart that displays numeric data in ranges, where each bar(bin) represents how frequently numbers fall into a particular range  
+A chart that displays numeric data in ranges, where each bar(bin) represents how frequently numbers fall into a particular range.
 
 Provides an In-depth view of a single numeric variable.
 
 ![[Pasted image 20260211164123.png]]
 
-A bin in a histogram represents a range of values used to group the data.  
+A bin in a histogram represents a range of values used to group the data.
 
-It determines how the continuous numerical data is divided into intervals, allowing us to see the frequency distribution of the dataset.  
+It determines how the continuous numerical data is divided into intervals, allowing us to see the frequency distribution of the dataset.
 
 <mark style="background: #04FF00A6;">Each bin has:</mark>
 - A fixed width (interval size).  
 - A height that represents the number of data points falling into that range.
 
-Imagine you have a dataset of exam scores: 45, 50, 55, 60, 65, 70, 72, 74, 75, 78, 80, 85, 90, 92, 95, 100  
+Imagine you have a dataset of exam scores: 45, 50, 55, 60, 65, 70, 72, 74, 75, 78, 80, 85, 90, 92, 95, 100
 
 If we divide these into bins of width 10, we get:
 ![[Pasted image 20260211164225.png]]
@@ -1471,7 +1466,7 @@ If we divide these into bins of width 10, we get:
 
 Bin width is a design choice that directly shapes the story a viewer perceives.  
 
-<mark style="background: #04FF00A6;">The Sturges' rule suggests the number of bins as:</mark>  Bins=1+log 2 (n)where n is the number of observations.
+<mark style="background: #04FF00A6;">The Sturges' rule suggests the number of bins as:</mark>  Bins=1+log 2 (n), where n is the number of observations.
 
 Poor binning increases visual noise  
 
@@ -1543,17 +1538,17 @@ Scale decides how those grouped values are mapped to the eye
 
 <mark style="background: #04FF00A6;">Evaluating Data Clusters and Mode:</mark>
 - Peaks in a histogram show modes (most frequent values).  
-- Unimodal: One peak  
-- Bimodal: Two peaks  
-- Multimodal: Multiple peaks  
+- <mark style="background: #04FF00A6;">Unimodal:</mark> One peak  
+- <mark style="background: #04FF00A6;">Bimodal:</mark> Two peaks  
+- <mark style="background: #04FF00A6;">Multimodal:</mark> Multiple peaks  
 
 E.g. A histogram of ages at a theme park might show two peaks: one for children and one for adults.
 
 ![[Pasted image 20260211165520.png]]
 
 <mark style="background: #04FF00A6;">Detecting Outliers:</mark>
-- Unusually high or low bars indicate outliers.  
-- Helps decide whether to remove or investigate extreme values  
+- Unusually high or low bars indicate outliers.
+- Helps decide whether to remove or investigate extreme values
 - E.g.: In a sales data histogram, an unexpected spike might indicate data entry errors or fraud.
 
 ![[Pasted image 20260211165552.png]]
@@ -5758,7 +5753,7 @@ Groups similar words under one root to reduce redundancy and improve model perfo
 
 Stripping out punctuation, emojis, numbers, symbols, HTML tags, and other non-alphabetic characters.  
 - These characters can interfere with tokenisation and analysis.
-- They rarely add meaning unless you're analyzing specific character use (e.g., emoji use in tweets or sentiment).  
+- They rarely add meaning unless you're analysing specific character use (e.g., emoji use in tweets or sentiment).  
 
 <mark style="background: #04FF00A6;">Examples:</mark>
 - "This is amazing!!! #blessed" →  
