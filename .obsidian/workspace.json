@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_Systems Software/All notes.md",
+                "file": "2_Systems Software/Exam revision.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "All notes"
+              "title": "Exam revision"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "39f7645219470cf8",
@@ -181,23 +182,27 @@
   },
   "active": "a9969621116d63b1",
   "lastOpenFiles": [
+    "images/Pasted image 20260513113343.png",
+    "images/Pasted image 20260513113337.png",
+    "images/Pasted image 20260513113333.png",
+    "images/Pasted image 20260513113321.png",
+    "images/Pasted image 20260513113315.png",
+    "images/Pasted image 20260513113301.png",
+    "images/Pasted image 20260513113255.png",
+    "images/Pasted image 20260513113245.png",
+    "images/Pasted image 20260513113241.png",
+    "images/Pasted image 20260513113231.png",
+    "images/Pasted image 20260513113220.png",
+    "2_Systems Software/TrimmedNotesForExam.md",
+    "2_Systems Software/Exam revision.md",
+    "2_Systems Software/Trimmed Notes for Exam.html",
+    "2_Systems Software/All notes.md",
     "2_Enterprise Sys Inf and Arch/Exam Revision.md",
     "2_Enterprise Sys Inf and Arch/Trimmed Notes for Exam.md",
     "2_Enterprise Sys Inf and Arch/All notes.md",
     "2_Enterprise Sys Inf and Arch/Assignment.md",
     "2_Visualising Data/All notes.md",
-    "2_Systems Software/All notes.md",
     "2_Systems Software/C files examples.md",
-    "images/Pasted image 20260507211041.png",
-    "images/Pasted image 20260507211029.png",
-    "images/Pasted image 20260507211023.png",
-    "images/Pasted image 20260507211011.png",
-    "images/Pasted image 20260507211003.png",
-    "images/Pasted image 20260507210952.png",
-    "images/Pasted image 20260507210945.png",
-    "images/Pasted image 20260507210936.png",
-    "images/Pasted image 20260507210928.png",
-    "images/Pasted image 20260507210917.png",
     "2_Systems Software/18 auditd and init.md",
     "2_Visualising Data/L01 R and Quarto tutorial.md",
     "2_Systems Software/17 Kernel Modules.md",
@@ -214,9 +219,6 @@
     "2_Systems Software/06 File IO and profiling.md",
     "2_Systems Software/05 Processes and Signals.md",
     "2_Systems Software/04 GDB.md",
-    "2_Systems Software/03 C.md",
-    "2_Systems Software/02 Make.md",
-    "2_Systems Software/01 Development Tools and Scripting Techniques.md",
     "2_Enterprise Sys Inf and Arch/LinkSlayerObsidian.py",
     "images/lab3_script.r",
     "2_Systems Software",

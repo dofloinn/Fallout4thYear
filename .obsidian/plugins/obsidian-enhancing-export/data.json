@@ -7,7 +7,8 @@
       "name": "Markdown (Hugo)"
     },
     {
-      "name": "Html"
+      "name": "Html",
+      "customArguments": "--mathjax=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js\" --wrap=none"
     },
     {
       "name": "TextBundle"
@@ -57,7 +58,8 @@
   "env": {},
   "showExportProgressBar": true,
   "lastExportDirectory": {
-    "win32": "C:\\Users\\dervl\\OneDrive\\Documents"
+    "win32": "C:\\Users\\dervl\\Downloads"
   },
-  "lastExportType": "Html"
+  "lastExportType": "Html",
+  "lastEditName": "Html"
 }
