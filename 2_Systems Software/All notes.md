@@ -1777,8 +1777,6 @@ A daemon usually has a Parent PID of 1. They are usually started when the system
 
 
 ```C
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

@@ -14,7 +14,6 @@ Expressed in one sentence
 - Ensures focus
 - Supports communication
 
-
 ### <mark style="background: #04FF00A6;">From Exploratory to Explanatory</mark>
 
 <mark style="background: #04FF00A6;">Exploration:</mark> find patterns
@@ -585,7 +584,6 @@ T – Thoughtful use of colour
 - Highlight insights
 - Ensure correct interpretation
 
-
 ### <mark style="background: #04FF00A6;">Stephen Few – Key Principles</mark>
 
 <mark style="background: #04FF00A6;">FEW:</mark>
@@ -864,7 +862,6 @@ Explain the difference between exploratory and explanatory
 
 <mark style="background: #04FF00A6;">Key idea:</mark> Better perception = better comparison
 
-
 <mark style="background: #04FF00A6;">Distinguish between annotation and tooltips:</mark>
 - annotation → always visible, supports explanation
 - tooltips → on-demand, supports exploration
@@ -902,6 +899,5 @@ Explain the difference between exploratory and explanatory
 - Evaluate trade-offs
 
 <mark style="background: #04FF00A6;">Key idea:</mark> Data is always uncertain, showing uncertainty improves honesty, but must remain interpretable
-
 
 <mark style="background: #04FF00A6;">ALWAYS:</mark> Be able to link design decisions to how they affect perception and interpretation - including perceptual accuracy, clarity, cognitive load, and potential for misinterpretation

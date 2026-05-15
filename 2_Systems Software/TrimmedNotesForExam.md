@@ -1010,7 +1010,6 @@ switch (s.st_mode & S_IFMT) {
 - `fstat(fd, &s)` - same but takes an open file descriptor
 - `fstatat(fd, path, &s, flags)` - relative to a directory FD
 
-
 ### <mark style="background: #FFF503A6;">16. Message Queues (IPC)</mark>
 
 <mark style="background: #FFF503A6;">What is a message queue?</mark> A linked list of messages stored in the kernel. Each queue has a unique identifier. Processes exchange data as discrete messages.
